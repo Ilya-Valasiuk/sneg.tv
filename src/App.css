@@ -1,32 +1,17 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+#root, .snow, .snow-col {
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.snow-col-feed, .snow-col-main {
+  height: 100%;
+  overflow-y: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.snow-col-main > div {
+  height: 4000px;
 }

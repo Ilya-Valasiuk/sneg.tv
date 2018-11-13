@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col } from 'reactstrap';
+
+import { NewsFeed } from './components/news-feed/news-feed';
+import { Home } from './components/home/home';
+
+import './app.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container className="snow p-0" fluid>
+        <Row className="snow-col" noGutters>
+          <Col className="snow-col-feed" xs='auto'>
+            <NewsFeed />
+          </Col>
+          <Col className="snow-col-main" xs='auto'>
+            <Home />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
