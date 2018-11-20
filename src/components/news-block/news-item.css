@@ -1,0 +1,22 @@
+.news-item {
+
+}
+
+.news-item .placeholder {
+  left: 20px;
+  bottom: 20px;
+  font-family: HelveticaNeueCyr;
+  line-height: 32px;
+  font-size: 27px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.news-block .news-item-large .preview-text {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
+  font-size: 18px;
+  color: #2A2A2A;
+}

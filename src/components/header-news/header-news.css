@@ -1,0 +1,21 @@
+.header-news {
+  height: 51px;
+  background-color: #ffffff;
+  box-shadow: -34px 0 30px -16px rgba(0, 0, 0, 0.15) inset
+}
+
+.header-news .header-news-wrapper {
+  width: auto;
+  overflow-x: auto;
+}
+
+.header-news .link {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #949494;
+}
+
+.header-news .link:hover {
+  border-bottom: 2px solid #13A5F7;
+  color: #2A2A2A;
+}

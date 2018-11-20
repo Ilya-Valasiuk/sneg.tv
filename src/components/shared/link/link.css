@@ -1,0 +1,8 @@
+.link {
+  font-family: HelveticaNeueCyr;
+  font-size: 11px;
+}
+
+.link:hover {
+  text-decoration: none;
+}
