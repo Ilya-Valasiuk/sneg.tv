@@ -1,10 +1,11 @@
 import React from 'react';
-import { banner1, fordBanner, barsRestaurant } from '../../img/banners';
+import { banner1, fordBanner, barsRestaurant, primeVideo } from '../../img/banners';
 
 const bannerMap = {
   banner1,
   fordBanner,
   barsRestaurant,
+  primeVideo,
 }
 
 export function AdBanner({ bannerType }) {

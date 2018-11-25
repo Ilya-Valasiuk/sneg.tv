@@ -36,6 +36,15 @@
   font-weight: bold;
 }
 
+.news-block .article-text {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
+  font-size: 18px;
+  color: #2A2A2A;
+}
+
 .news-block .title-line {
   border-bottom: 1px solid #EFEFEF;
 }

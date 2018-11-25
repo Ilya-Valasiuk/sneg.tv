@@ -7,3 +7,7 @@ export function Link({ children, className, ...props }) {
     <a className={`link ${className}`} {...props}>{children}</a>
   )
 }
+
+Link.defaultProps = {
+  className: '',
+}
