@@ -80,7 +80,7 @@ export function News({ }) {
                 type={type}
                 date="10 октября 2018 18:16"
               />
-              <Col className="px-0">
+              <Col className="px-0 pb-4">
                 <AdBanner bannerType="primeVideo" />
               </Col>
               <NewsItem
