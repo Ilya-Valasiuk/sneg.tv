@@ -9,7 +9,7 @@ import { AdBanner } from './../ad-banner/ad-baner';
 import { NewsItem } from './news-item';
 import { NewsSimpleItem } from './news-simple-item';
 
-import './news-block.css';
+import './news-block.scss';
 
 const type = 'Знания';
 

@@ -14,7 +14,7 @@ import {
 import { NewsItem } from './../news-item';
 import { More } from './../more';
 
-import './../news-block.css';
+import './../news-block.scss';
 import { TestBlock } from '../test-block';
 
 const type = 'Эмоции';

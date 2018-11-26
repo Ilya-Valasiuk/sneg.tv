@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
 
-import './header.css';
+import './header.scss';
 
 export function Header() {
   return (

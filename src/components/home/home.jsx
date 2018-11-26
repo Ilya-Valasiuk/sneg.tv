@@ -8,7 +8,7 @@ import { EmotionSection } from './../news-block/sections/emotion-section';
 import { News } from './../news-block/news';
 import { Footer } from './../footer/footer';
 
-import './home.css'
+import './home.scss'
 
 export function Home() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './link.css';
+import './link.scss';
 
 export function Link({ children, className, ...props }) {
   return (

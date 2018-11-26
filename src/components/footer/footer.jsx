@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { FooterLinks } from './footer-links';
 
-import './footer.css'
+import './footer.scss'
 
 export function Footer({ }) {
   return (

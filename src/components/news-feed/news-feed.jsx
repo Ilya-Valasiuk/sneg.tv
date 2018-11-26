@@ -1,39 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 import { AdBanner } from '../ad-banner/ad-baner';
 import { SnowLogo } from '../snow-logo/snow-logo';
 import { NewsFeedItem } from './news-feed-item';
+import { NewsFeedCollapsed } from './news-feed-collapsed';
+import { NewsFeedExpanded } from './news-feed-expanded';
 
 // STUB DATA
 import { NEWS_FEED_DATA } from './news-feed-data';
 
-import './news-feed.css';
+import './news-feed.scss';
 
-export function NewsFeed() {
-  return (
-    <Container className="news-feed">
-      <Row>
-        <Col className="px-0">
-          <SnowLogo />
-        </Col>
-      </Row>
-      <Row className="news-feed-list pt-4">
-        <Col>
-          <p className="news-feed-title mb-0">ЛЕНТА НОВОСТЕЙ</p>
-        </Col>
+export class NewsFeed extends Component {
+  state = {
+    isCollapsed: false,
+  }
+
+  toggleFeed = () => {
+    this.setState(({ isCollapsed }) => ({ isCollapsed: !isCollapsed }));
+  }
+
+  render() {
+    const { isCollapsed } = this.state;
+
+    return (
+      <Container className={classnames('news-feed', { 'collapsed': isCollapsed, 'expanded': !isCollapsed })}>
         {
-          NEWS_FEED_DATA.map(({ text, date }, index) => {
-            const shouldShowBanner = index && index % 4 === 0;
-
-            return (<Col className={shouldShowBanner ? 'px-0' : ''} xs={12} key={text + date}>
-              {
-                shouldShowBanner ? <AdBanner /> : <NewsFeedItem text={text} date={date} />
-              }
-            </Col>
-            )
-          })
+          isCollapsed ? <NewsFeedCollapsed /> : <NewsFeedExpanded onToggle={this.toggleFeed} />
         }
-      </Row>
-    </Container>
-  );
+      </Container>
+    );
+  }
 }

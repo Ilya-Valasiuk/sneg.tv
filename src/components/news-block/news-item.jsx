@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap';
 import { NewsSimpleItem } from './news-simple-item';
 import { Link } from '../shared/link/link';
 
-import './news-item.css';
+import './news-item.scss';
 
 export function NewsItem({
   imgSrc,

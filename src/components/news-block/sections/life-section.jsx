@@ -14,7 +14,7 @@ import { NewsItem } from './../news-item';
 import { NewsSimpleItem } from './../news-simple-item';
 import { More } from './../more';
 
-import './../news-block.css';
+import './../news-block.scss';
 
 export function LifeSection({ }) {
   return (

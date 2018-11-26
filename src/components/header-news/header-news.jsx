@@ -5,7 +5,7 @@ import { Link } from '../shared/link/link';
 // STUB DATA
 import { HEADER_NEWS_DATA } from './header-news-data';
 
-import './header-news.css';
+import './header-news.scss';
 
 export function HeaderNews() {
   return (
