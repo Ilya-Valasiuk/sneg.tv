@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 import classnames from 'classnames';
-import { AdBanner } from '../ad-banner/ad-baner';
-import { SnowLogo } from '../snow-logo/snow-logo';
-import { NewsFeedItem } from './news-feed-item';
 import { NewsFeedCollapsed } from './news-feed-collapsed';
 import { NewsFeedExpanded } from './news-feed-expanded';
-
-// STUB DATA
-import { NEWS_FEED_DATA } from './news-feed-data';
 
 import './news-feed.scss';
 
 export class NewsFeed extends Component {
-  state = {
-    isCollapsed: false,
-  }
 
   toggleFeed = () => {
-    this.setState(({ isCollapsed }) => ({ isCollapsed: !isCollapsed }));
+    this.props.onFeedPanelOpen(!this.props.isFeedOpened);
   }
 
   render() {
-    const { isCollapsed } = this.state;
+    const { isFeedOpened } = this.props;
 
     return (
-      <Container className={classnames('news-feed', { 'collapsed': isCollapsed, 'expanded': !isCollapsed })}>
+      <Container className={classnames('news-feed', { 'collapsed': isFeedOpened, 'expanded': !isFeedOpened })}>
         {
-          isCollapsed ? <NewsFeedCollapsed /> : <NewsFeedExpanded onToggle={this.toggleFeed} />
+          isFeedOpened ? <NewsFeedCollapsed /> : <NewsFeedExpanded onToggle={this.toggleFeed} />
         }
-      </Container>
+      </Container >
     );
   }
 }

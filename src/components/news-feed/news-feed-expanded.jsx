@@ -11,7 +11,7 @@ export function NewsFeedExpanded({ onToggle }) {
         </Col>
       </Row>
       <Row className="news-feed-list pt-4">
-        <Col className="news-feed-activator">
+        <Col className="pointer">
           <div onClick={onToggle}>
             <i class="fas fa-caret-right ml-2"></i>
             <p className="news-feed-title mb-0">ЛЕНТА НОВОСТЕЙ</p>

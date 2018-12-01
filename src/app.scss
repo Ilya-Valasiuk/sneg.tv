@@ -1,15 +1,67 @@
+@import './styles/breakpoints';
+
 html, body {
   height: 100%;
   overflow: hidden;
   margin: 0;
 }
+
+body {
+  font-family: HelveticaNeueCyr;
+}
+
 #root, .snow, .snow-col {
   height: 100%;
 }
 
+
+
 .snow-col-feed, .snow-col-main {
   height: 100%;
   overflow-y: scroll;
+}
+
+.snow-col-feed {
+  position: relative;
+  background-color: #F9F9F9;
+  z-index: 1;
+}
+
+.snow-col-main {
+  position: fixed;
+  margin-left: 54px;
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: 240px;
+  }
+
+  .feed-opened & {
+    overflow-y: hidden;
+
+    .blackout {
+      display: block;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      overflow-y: scroll;
+
+      .blackout {
+        display: none;
+      }
+    }
+  }
+
+  .blackout {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 999999px;
+    background-color: #333333;
+    opacity: .6;
+  }
 }
 
 /* .snow-col-main > div {
