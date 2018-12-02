@@ -1,9 +1,10 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 
 import './header.scss';
 
-export function Header() {
+export function Header({ isMenuOpened, isSearchOpened, onMenuToggle, onSearchToggle }) {
   return (
     <header className="header">
       <Row className="header-main align-items-center pl-3" noGutters>
@@ -43,13 +44,13 @@ export function Header() {
         </Col>
 
         <Col xs='auto'>
-          <div className="header-hamburger px-3">
-            <i className="fas fa-bars"></i>
+          <div className="header-hamburger px-3" onClick={onMenuToggle}>
+            {isMenuOpened ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
           </div>
         </Col>
         <Col xs='auto'>
-          <div className="header-search px-3">
-            <i className="fas fa-search"></i>
+          <div className="header-search px-3" onClick={onSearchToggle}>
+            {isSearchOpened ? <i className="fas fa-times"></i> : <i className="fas fa-search"></i>}
           </div>
         </Col>
       </Row>

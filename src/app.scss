@@ -19,6 +19,10 @@ body {
 .snow-col-feed, .snow-col-main {
   height: 100%;
   overflow-y: scroll;
+
+  .search-opened & {
+    overflow: hidden;
+  }
 }
 
 .snow-col-feed {

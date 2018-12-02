@@ -33,8 +33,10 @@
 .header-hamburger, .header-search {
   font-size: 18px;
   height: 51px;
+  width: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   color: #ffffff;
   border-left: 1px solid #464646;

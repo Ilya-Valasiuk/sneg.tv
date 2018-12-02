@@ -10,16 +10,37 @@ import { Home } from './../components/home/home';
 class MainPage extends Component {
   state = {
     isFeedOpened: false,
+    isMenuOpened: false,
+    isSearchOpened: false,
     isDesktop: true,
   }
 
-  toggleFeedPanel = (isOpened) => {
-    this.setState({ isFeedOpened: isOpened });
+  toggleMenu = () => {
+    this.setState(({ isMenuOpened }) => ({ isMenuOpened: !isMenuOpened, isSearchOpened: false }));
+  }
+
+  toogleSearch = () => {
+    this.setState(({ isSearchOpened }) => ({ isMenuOpened: false, isSearchOpened: !isSearchOpened }));
+  }
+
+  toggleFeedPanel = () => {
+    this.setState(({ isFeedOpened }) => ({ isFeedOpened: !isFeedOpened }));
   }
 
   onKeyDownHandler = (event) => {
-    if (!this.state.isDesktop && this.state.isFeedOpened && event.keyCode === 27) {
-      this.toggleFeedPanel(false);
+    if (event.keyCode === 27) {
+      if (!this.state.isDesktop && this.state.isFeedOpened) {
+        this.toggleFeedPanel();
+        return;
+      }
+
+      if (this.state.isMenuOpened || this.state.isSearchOpened) {
+        this.setState({
+          isMenuOpened: false,
+          isSearchOpened: false,
+        });
+        return;
+      }
     }
   }
 
@@ -30,16 +51,16 @@ class MainPage extends Component {
   }
 
   render() {
-    const { isDesktop, isFeedOpened } = this.state;
+    const { isDesktop, isFeedOpened, isMenuOpened, isSearchOpened } = this.state;
 
     return (
       <Container className="snow p-0" fluid onKeyDown={this.onKeyDownHandler} tabIndex={0}>
-        <Row className={classnames('snow-col', { 'feed-opened': isFeedOpened })} noGutters>
+        <Row className={classnames('snow-col', { 'feed-opened': isFeedOpened, 'menu-opened': isMenuOpened, 'search-opened': isSearchOpened })} noGutters>
           <Col className="snow-col-feed" xs='auto'>
-            <NewsFeed isFeedOpened={isDesktop || isFeedOpened} onFeedPanelOpen={this.toggleFeedPanel} />
+            <NewsFeed isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} isFeedOpened={isDesktop || isFeedOpened} onFeedPanelOpen={this.toggleFeedPanel} />
           </Col>
           <Col className="snow-col-main" xs='auto'>
-            <Home />
+            <Home isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={this.toggleMenu} onSearchToggle={this.toogleSearch} />
             <div className="blackout " />
           </Col>
         </Row>
