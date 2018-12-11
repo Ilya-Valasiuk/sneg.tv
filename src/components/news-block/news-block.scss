@@ -1,7 +1,10 @@
-.news-block {
+@import './../../styles/breakpoints';
 
-  padding-left: 20px;
-  padding-right: 20px;
+.news-block {
+  @media (min-width: $breakpoint-desktop) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   .news-more {
     line-height: 16px;
