@@ -21,6 +21,7 @@ export class Home extends Component {
     return (
       <div className={classnames('home', { 'menu-opened': isMenuOpened })}>
         <Header isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={onMenuToggle} onSearchToggle={onSearchToggle} />
+
         {
           isMenuOpened ?
             <Menu /> :

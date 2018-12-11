@@ -59,7 +59,7 @@ class MainPage extends Component {
           <Col className="snow-col-feed" xs='auto'>
             <NewsFeed isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} isFeedOpened={isDesktop || isFeedOpened} onFeedPanelOpen={this.toggleFeedPanel} />
           </Col>
-          <Col className="snow-col-main" xs='auto'>
+          <Col className="snow-col-main">
             <Home isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={this.toggleMenu} onSearchToggle={this.toogleSearch} />
             <div className="blackout " />
           </Col>

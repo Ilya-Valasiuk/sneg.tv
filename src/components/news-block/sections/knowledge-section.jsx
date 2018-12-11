@@ -22,14 +22,14 @@ export function KnowledgeSection({ }) {
   return (
     <Container className="py-3 news-block">
       <Row className="align-items-center">
-        <Col xs="auto"><p className="title mb-0">{type}</p></Col>
+        <Col xs="auto"><p className="title size-14 text-uppercase font-weight-900 mb-0">{type}</p></Col>
         <Col className="pl-0">
           <hr />
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={8}>
+      <Row noGutters>
+        <Col xs='auto' className="news-item-line-wrapper-large mr-15">
           <NewsItem
             imgSrc={largeBlockImg}
             imgAlt="Кокорин"
@@ -37,38 +37,43 @@ export function KnowledgeSection({ }) {
             text="Рассказ судьи о приговорах, коллегах и тайнах российского правосудия"
             type={type}
             date="10 октября 2018 18:16"
+            large
           />
         </Col>
-        <Col xs={4} className="editor-choise py-3">
-          <Row>
-            <Col>
-              <p className="editor-choise-title pt-4">Выбор редакции</p>
+        <Col className="news-item-line-wrapper">
+          <Row noGutters>
+            <Col className="editor-choise py-3 px-4">
+              <Row>
+                <Col>
+                  <p className="editor-choise-title font-weight-900 pt-3">Выбор редакции</p>
+                </Col>
+              </Row>
+              <NewsSimpleItem
+                previewText="Фотограф заставил тысячи людей смотреть на углы. И им это нравится"
+                type={type}
+                date="10 октября 2018 18:16"
+              />
+              <hr />
+              <NewsSimpleItem
+                previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
+                type={type}
+                date="10 октября 2018 18:16"
+              />
+              <hr />
+              <NewsSimpleItem
+                previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"
+                type={type}
+                date="10 октября 2018 18:16"
+              />
             </Col>
           </Row>
-          <NewsSimpleItem
-            previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
-            type={type}
-            date="10 октября 2018 18:16"
-          />
-          <hr />
-          <NewsSimpleItem
-            previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
-            type={type}
-            date="10 октября 2018 18:16"
-          />
-          <hr />
-          <NewsSimpleItem
-            previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"
-            type={type}
-            date="10 октября 2018 18:16"
-          />
         </Col>
       </Row>
       <Row>
         <Col className="py-3"><hr /></Col>
       </Row>
-      <Row>
-        <Col xs={4}>
+      <Row noGutters>
+        <Col className="news-item-line-wrapper mr-15">
           <NewsItem
             imgSrc={newsImg1}
             imgAlt="newsImg1"
@@ -77,7 +82,7 @@ export function KnowledgeSection({ }) {
             date="10 октября 2018 18:16"
           />
         </Col>
-        <Col xs={4}>
+        <Col className="news-item-line-wrapper mr-15">
           <NewsItem
             imgSrc={newsImg2}
             imgAlt="newsImg2"
@@ -86,7 +91,7 @@ export function KnowledgeSection({ }) {
             date="10 октября 2018 18:16"
           />
         </Col>
-        <Col xs={4}>
+        <Col className="news-item-line-wrapper">
           <NewsItem
             imgSrc={newsImg3}
             imgAlt="newsImg3"
@@ -99,8 +104,8 @@ export function KnowledgeSection({ }) {
       <Row>
         <Col className="py-3"><hr /></Col>
       </Row>
-      <Row>
-        <Col xs={4}>
+      <Row noGutters>
+        <Col className="news-item-line-wrapper mr-15">
           <NewsItem
             imgSrc={newsImg4}
             imgAlt="newsImg4"
@@ -109,7 +114,7 @@ export function KnowledgeSection({ }) {
             date="10 октября 2018 18:16"
           />
         </Col>
-        <Col xs={4}>
+        <Col className="news-item-line-wrapper mr-15">
           <NewsItem
             imgSrc={newsImg5}
             imgAlt="newsImg5"
@@ -118,7 +123,7 @@ export function KnowledgeSection({ }) {
             date="10 октября 2018 18:16"
           />
         </Col>
-        <Col xs={4}>
+        <Col className="news-item-line-wrapper">
           <NewsItem
             imgSrc={newsImg6}
             imgAlt="newsImg6"
@@ -129,8 +134,8 @@ export function KnowledgeSection({ }) {
         </Col>
       </Row>
       <Row>
-        <Col className="py-4">
-          <More title="Больше знаний" />
+        <Col className="pt-3">
+          <More title="Больше знаний" className="font-weight-bold" />
         </Col>
       </Row>
     </Container>

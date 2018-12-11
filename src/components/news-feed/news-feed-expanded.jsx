@@ -5,7 +5,7 @@ import { SnowLogo } from '../snow-logo/snow-logo';
 export function NewsFeedExpanded({ onToggle }) {
   return (
     <Fragment>
-      <Row>
+      <Row className="news-feed-sticky">
         <Col className="px-0">
           <SnowLogo isShort />
         </Col>

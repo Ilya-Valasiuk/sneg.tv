@@ -18,9 +18,9 @@ import './news-block.scss';
 
 export function NewsBlock({ title }) {
   return (
-    <Container className="py-3 news-block">
+    <Container className="py-3 pr-4 news-block">
       <Row className="align-items-center">
-        <Col xs="auto"><p className="title mb-0">{title}</p></Col>
+        <Col xs="auto"><p className="title size-14 text-uppercase mb-0">{title}</p></Col>
         <Col className="pl-0">
           <hr />
         </Col>

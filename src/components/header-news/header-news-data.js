@@ -3,6 +3,7 @@ export const HEADER_NEWS_DATA = [
     title: 'Главная',
     id: 0,
     link: '#',
+    active: true,
   },
   {
     title: 'Кокорин Мамаев',

@@ -1,39 +1,42 @@
 .news-block {
 
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .news-more {
+    line-height: 16px;
+    font-size: 16px;
+    text-align: center;
+
+    .btn-link {
+      font-size: 16px;
+      color: #13a5f7;
+    }
+  }
 }
 
 .news-block .title {
-  font-family: HelveticaNeueCyr;
-  font-size: 14px;
   letter-spacing: 7px;
-  text-transform: uppercase;
   color: #2A2A2A;
-  font-weight: bold;
 }
 
 .news-block .date {
-  font-family: HelveticaNeueCyr;
   line-height: 19px;
   font-size: 11px;
-  text-transform: uppercase;
   color: #B4B4B4;
 } 
 
 .news-block .type {
-  font-family: HelveticaNeueCyr;
   line-height: 16px;
   font-size: 11px;
   letter-spacing: 1px;
-  text-transform: uppercase;
   color: #13A5F7;
 }
 
 .news-block .preview-text {
-  font-family: HelveticaNeueCyr;
   line-height: 24px;
   font-size: 22px;
   color: #2A2A2A;
-  font-weight: bold;
 }
 
 .news-block .article-text {
@@ -49,13 +52,6 @@
   border-bottom: 1px solid #EFEFEF;
 }
 
-.news-block .news-more {
-  font-family: HelveticaNeueCyr;
-  line-height: 16px;
-  font-size: 16px;
-  text-align: center;
-}
-
 .news-block .link:hover .preview-text {
   color: #13A5F7;
 }
@@ -65,17 +61,14 @@
 }
 
 .news-block .editor-choise-title {
-  font-family: HelveticaNeueCyr;
   line-height: 14px;
   font-size: 14px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  font-weight: bold;
   color: #2A2A2A;
 }
 
 .news-block .test-btn {
-  font-family: HelveticaNeueCyr;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;

@@ -10,7 +10,6 @@ import './news-feed.scss';
 export class NewsFeed extends Component {
   render() {
     const { isFeedOpened, isMenuOpened, isSearchOpened, onFeedPanelOpen } = this.props;
-    console.log(isSearchOpened);
 
     return (
       <Container className={classnames('news-feed', { 'collapsed': isFeedOpened, 'expanded': !isFeedOpened })}>

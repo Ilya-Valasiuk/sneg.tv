@@ -33,10 +33,17 @@ body {
 
 .snow-col-main {
   position: fixed;
+  background-color: #efefef;
   margin-left: 54px;
+  width: calc(100% - 54px);
 
   @media (min-width: $breakpoint-desktop) {
     margin-left: 240px;
+    width: calc(100% - 240px);
+  }
+
+  .home {
+    background-color: #fff;
   }
 
   .feed-opened & {

@@ -16,8 +16,8 @@ const type = 'Знания';
 export function News({ }) {
   return (
     <Container className="py-3 news-block">
-      <Row>
-        <Col xs={8}>
+      <Row noGutters>
+        <Col xs='auto' className="news-item-line-wrapper-large mr-15">
           <Row>
             <Col xs={12}>
               <NewsItem
@@ -27,6 +27,7 @@ export function News({ }) {
                 text="Глава Конституционного суда Валерий Зорькин выступил с программной статьей «Буква и дух Конституции» в «Российской газете». Он предложил реформировать политическую и правовую системы, внести изменения в Конституцию"
                 type={type}
                 date="10 октября 2018 18:16"
+                large
               />
             </Col>
             <Col xs={12} className="py-3"><hr /></Col>
@@ -38,6 +39,7 @@ export function News({ }) {
                 text="Глава Конституционного суда Валерий Зорькин выступил с программной статьей «Буква и дух Конституции» в «Российской газете». Он предложил реформировать политическую и правовую системы, внести изменения в Конституцию"
                 type={type}
                 date="10 октября 2018 18:16"
+                large
               />
             </Col>
             <Col xs={12} className="py-3"><hr /></Col>
@@ -49,17 +51,18 @@ export function News({ }) {
                 text="Глава Конституционного суда Валерий Зорькин выступил с программной статьей «Буква и дух Конституции» в «Российской газете». Он предложил реформировать политическую и правовую системы, внести изменения в Конституцию"
                 type={type}
                 date="10 октября 2018 18:16"
+                large
               />
             </Col>
           </Row>
         </Col>
 
-        <Col xs={4}>
-          <Row>
-            <Col xs={12} className="">
+        <Col className="news-item-line-wrapper">
+          <Row noGutters>
+            <Col xs={12} className="pl-0">
               <Row className="align-items-center">
                 <Col xs='auto'>
-                  <p className="editor-choise-title pt-4">Лента новостей</p>
+                  <p className="editor-choise-title font-weight-900 pt-2">Лента новостей</p>
                 </Col>
                 <Col className="pl-0">
                   <hr />

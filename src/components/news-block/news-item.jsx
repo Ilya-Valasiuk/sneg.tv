@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import { Row, Col } from 'reactstrap';
 import { NewsSimpleItem } from './news-simple-item';
 import { Link } from '../shared/link/link';
@@ -16,16 +17,17 @@ export function NewsItem({
   date,
   link,
   text,
+  large
 }) {
   return (
     <Row className={`flex-column news-item ${imgPlaceholder ? 'news-item-large' : ''}`}>
       {header &&
-        <Col xs={12}><Link href={link}><p className="preview-text">{header}</p></Link></Col>
+        <Col xs={12}><Link href={link}><p className="news-item-header font-weight-900">{header}</p></Link></Col>
       }
       <Col xs={12}>
-        <div className="position-relative">
-          <img src={imgSrc} alt={imgAlt} className="img-fluid" />
-          {imgPlaceholder && <span className="position-absolute placeholder">{imgPlaceholder}</span>}
+        <div className={classnames('position-relative', { 'news-item-image': !large })}>
+          <img src={imgSrc} alt={imgAlt} className={classnames('img-fluid', { 'h-100': !large })} />
+          {imgPlaceholder && <span className="position-absolute font-weight-900 text-white placeholder">{imgPlaceholder}</span>}
         </div>
       </Col>
       <Col xs={12}>
@@ -45,4 +47,5 @@ export function NewsItem({
 NewsItem.defaultProps = {
   link: '#',
   typeLink: '#',
+  large: false,
 };

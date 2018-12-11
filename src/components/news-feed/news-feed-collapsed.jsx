@@ -10,9 +10,10 @@ import { NEWS_FEED_DATA } from './news-feed-data';
 export function NewsFeedCollapsed({ }) {
   return (
     <Fragment>
-      <Row>
+      <Row className="news-feed-sticky">
         <Col className="px-0">
           <SnowLogo />
+          <div class="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i class="fas fa-plus"></i></div>
         </Col>
       </Row>
       <Row className="news-feed-list pt-4">
