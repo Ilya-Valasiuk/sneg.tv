@@ -43,14 +43,14 @@ export function Menu() {
         <Col xs={4}>
           <Row>
             <Col xs={12} className="size-14 mb-5">
-              <Links title="РУБРИКИ" titleClass="mb-4 menu-links-title" items={[
+              <Links title="РУБРИКИ" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
                 { link: '#', title: 'Жизнь' },
                 { link: '#', title: 'Знания' },
                 { link: '#', title: 'Эмоции' },
               ]} />
             </Col>
             <Col xs={12} className="size-14 mb-5">
-              <Links title="ТЕМЫ" titleClass="mb-4 menu-links-title" items={[
+              <Links title="ТЕМЫ" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
                 { link: '#', title: 'Дедолларизация' },
                 { link: '#', title: 'Отставки губернаторов' },
                 { link: '#', title: 'Новые санкции США' },
@@ -60,7 +60,7 @@ export function Menu() {
               ]} />
             </Col>
             <Col xs={12} className="size-14 mb-5">
-              <Links title="О НАС" titleClass="mb-4 menu-links-title" items={[
+              <Links title="О НАС" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
                 { link: '#', title: 'Контакты' },
                 { link: '#', title: 'Редакция' },
                 { link: '#', title: 'Реклама' },

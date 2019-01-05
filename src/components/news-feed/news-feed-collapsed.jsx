@@ -24,7 +24,7 @@ export function NewsFeedCollapsed({ }) {
           NEWS_FEED_DATA.map(({ text, date }, index) => {
             const shouldShowBanner = index && index % 4 === 0;
 
-            return (<Col className={shouldShowBanner ? 'px-0' : ''} xs={12} key={text + date}>
+            return (<Col className={shouldShowBanner ? 'px-0 news-feed-banner' : ''} xs={12} key={text + date}>
               {
                 shouldShowBanner ? <AdBanner /> : <NewsFeedItem text={text} date={date} />
               }

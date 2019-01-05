@@ -15,13 +15,22 @@
 
   .separator {
     background-color: #434343;
+    margin-top: 26px;
   }
 
   &-links-title {
     letter-spacing: 7px;
     text-transform: uppercase;
     color: #595959;
-    font-weight: bold;
+    font-weight: 900;
+  }
+
+  &-links-item {
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.64;
   }
 
   &-item {
@@ -46,7 +55,7 @@
     .preview-text {
       line-height: 32px;
       font-size: 27px;
-      font-weight: bold;
+      font-weight: 900;
     }
 
     .article-text {

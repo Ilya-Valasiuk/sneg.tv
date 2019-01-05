@@ -6,7 +6,7 @@ import './footer.scss'
 
 export function Footer({ }) {
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer-subscribe d-flex align-items-center flex-column py-5">
         <p className="footer-subscribe-title mb-4">Подпишитесь на рассылку, чтобы быть в курсе первым</p>
         <div className="footer-subscribe-block d-flex">
@@ -29,7 +29,7 @@ export function Footer({ }) {
               Нашли опечатку? Выделите слово и нажмите <span className="text-white">Ctrl+Enter</span>
             </p>
           </Col>
-          <Col xs={2} className="size-14">
+          <Col xs='auto' className="size-14 footer-large-block">
             <FooterLinks title="ТЕМЫ" items={[
               { link: '#', title: 'Дедолларизация' },
               { link: '#', title: 'Отставки губернаторов' },
@@ -39,14 +39,14 @@ export function Footer({ }) {
               { link: '#', title: 'Пенсионная реформа' },
             ]} />
           </Col>
-          <Col xs={2} className="size-14">
+          <Col xs='auto' className="size-14 footer-small-block">
             <FooterLinks title="РУБРИКИ" items={[
               { link: '#', title: 'Жизнь' },
               { link: '#', title: 'Знания' },
               { link: '#', title: 'Эмоции' },
             ]} />
           </Col>
-          <Col xs={2} className="size-14">
+          <Col xs='auto' className="size-14 footer-medium-block">
             <FooterLinks title="О НАС" items={[
               { link: '#', title: 'Контакты' },
               { link: '#', title: 'Редакция' },

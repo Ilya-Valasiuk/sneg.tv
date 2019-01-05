@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 import { Link } from './../shared/link/link';
 
 export function MenuItem({ date, type, text, typeLink, previewText, link }) {
@@ -13,7 +14,7 @@ export function MenuItem({ date, type, text, typeLink, previewText, link }) {
         {
           link ?
             <Link className="text-white" href={link} >
-              {previewText && <p className={`preview-text ${text ? 'mb-2' : ''}`}>{previewText}</p>}
+              {previewText && <p className={classnames('preview-text', { 'mb-0': !text, 'mb-2': text })}>{previewText}</p>}
               {text && <p className="article-text mb-0">{text}</p>}
             </Link> :
             <Fragment>{previewText && <p className="preview-text mb-0">{previewText}</p>}</Fragment>

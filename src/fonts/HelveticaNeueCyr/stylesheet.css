@@ -12,7 +12,7 @@
 }
 
 @font-face {
-	font-family: 'HelveticaNeueCyr';
+	font-family: 'HelveticaNeueCyr-Heavy';
 	src: url('HelveticaNeueCyr-Heavy.eot');
 	src: local('HelveticaNeueCyr-Heavy'),
 		url('HelveticaNeueCyr-Heavy.eot?#iefix') format('embedded-opentype'),
@@ -133,7 +133,7 @@
 }
 
 @font-face {
-	font-family: 'HelveticaNeueCyr';
+	font-family: 'HelveticaNeueCyr-Roman';
 	src: url('HelveticaNeueCyr-Roman.eot');
 	src: local('HelveticaNeueCyr-Roman'),
 		url('HelveticaNeueCyr-Roman.eot?#iefix') format('embedded-opentype'),
