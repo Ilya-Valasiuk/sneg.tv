@@ -10,7 +10,7 @@ body {
   font-family: HelveticaNeueCyr;
 }
 
-#root, .snow, .snow-col {
+#root, #root > div, .snow, .snow-col {
   height: 100%;
 }
 

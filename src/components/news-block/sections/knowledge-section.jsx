@@ -21,7 +21,7 @@ const type = 'Знания';
 export function KnowledgeSection({ }) {
   return (
     <Container className="py-3 news-block">
-      <Row className="align-items-center">
+      <Row className="align-items-center mb-2">
         <Col xs="auto"><p className="title size-14 text-uppercase font-weight-900 mb-0">{type}</p></Col>
         <Col className="pl-0">
           <hr />

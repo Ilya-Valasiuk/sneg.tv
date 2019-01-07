@@ -15,15 +15,15 @@ export class NewsFeed extends Component {
       <Container className={classnames('news-feed', { 'collapsed': isFeedOpened, 'expanded': !isFeedOpened })}>
         {
           isMenuOpened ?
-            <NewsFeedOverlay isShort={!isFeedOpened} /> :
+            <NewsFeedOverlay isMenuOpened={isSearchOpened || isMenuOpened} isSearchOpened={isSearchOpened} isShort={!isFeedOpened} /> :
             <Fragment>
               {
-                isFeedOpened ? <NewsFeedCollapsed /> : <NewsFeedExpanded onToggle={onFeedPanelOpen} />
+                isFeedOpened ? <NewsFeedCollapsed isMenuOpened={isSearchOpened || isMenuOpened} /> : <NewsFeedExpanded isMenuOpened={isSearchOpened || isMenuOpened} onToggle={onFeedPanelOpen} />
               }
             </Fragment>
         }
         {isSearchOpened &&
-          <div className={classnames('search-overlay-wrapper', { 'search-overlay-wrapper-collapsed': !isFeedOpened })}><NewsFeedOverlay isShort={!isFeedOpened} isSearch /></div>}
+          <div className={classnames('search-overlay-wrapper', { 'search-overlay-wrapper-collapsed': !isFeedOpened })}><NewsFeedOverlay isMenuOpened={isSearchOpened || isMenuOpened} isShort={!isFeedOpened} isSearch /></div>}
       </Container >
     );
   }

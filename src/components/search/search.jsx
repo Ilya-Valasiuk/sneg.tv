@@ -16,7 +16,7 @@ export class Search extends Component {
   render() {
     return (
       <div className="search">
-        <Row className="search-content pl-3 pt-4" noGutters>
+        <Row className="search-content pl-3 pt-4 mt-3" noGutters>
           <Col xs={12} className="search-title"><p className="mb-0">ВВЕДИТЕ КЛЮЧЕВОЕ СЛОВО</p></Col>
           <Col xs={9}>
             <input className="search-input text-white pr-3 h-100 w-100" type="text" ref={this.inputRef} />
