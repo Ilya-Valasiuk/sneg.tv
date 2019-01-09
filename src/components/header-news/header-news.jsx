@@ -45,6 +45,7 @@ export class HeaderNews extends Component {
             )}
           </Row>
         </div>
+        <div className="header-news-shadow"></div>
         <Row className="header-news-navigator px-1 h-100 align-items-center" noGutters>
           <Col className="text-center size-14 pointer px" xs={6} onClick={this.prev}>
             <i className="fas fa-chevron-left"></i>
