@@ -13,42 +13,44 @@ export class HeaderNews extends Component {
     selectedIndex: 0,
   }
 
-  next = () => {
-    let nextIndex = this.state.selectedIndex + 1;
-    if (nextIndex > HEADER_NEWS_DATA.length - 1) {
-      nextIndex = 0;
-    }
+  constructor(props) {
+    super(props);
 
-    this.setState({ selectedIndex: nextIndex });
+    this.scroll = React.createRef();
+  }
+
+  next = () => {
+    this.scroll.current.scrollLeft += 100;
   }
 
   prev = () => {
-    let prevIndex = this.state.selectedIndex - 1;
-    if (prevIndex < 0) {
-      prevIndex = HEADER_NEWS_DATA.length - 1;
-    }
+    this.scroll.current.scrollLeft -= 100;
+  }
 
-    this.setState({ selectedIndex: prevIndex });
+  select = id => {
+    this.setState({ selectedIndex: id });
   }
 
   render() {
     const { style } = this.props;
-    
+
     return (
       <div style={style} className="header-news d-flex align-items-center">
-        <Row noGutters className="header-news-wrapper flex-nowrap h-100 font-weight-500">
-          {HEADER_NEWS_DATA.map(({ title, id, link }, index) =>
-            <Col className="px-3" xs="auto" key={id}>
-              <Link href={link} className={classnames('d-block py-3', { 'active': index === this.state.selectedIndex })} >{title}</Link>
-            </Col>
-          )}
-        </Row>
+        <div className="header-news-wrapper" ref={this.scroll}>
+          <Row noGutters className="flex-nowrap h-100 font-weight-500 ml-1">
+            {HEADER_NEWS_DATA.map(({ title, id, link }, index) =>
+              <Col className="px-3" xs="auto" key={id}>
+                <Link onClick={() => this.select(index)} href={link} className={classnames('d-block py-3', { 'active': index === this.state.selectedIndex })} >{title}</Link>
+              </Col>
+            )}
+          </Row>
+        </div>
         <Row className="header-news-navigator px-1 h-100 align-items-center" noGutters>
           <Col className="text-center size-14 pointer px" xs={6} onClick={this.prev}>
-            <i class="fas fa-chevron-left"></i>
+            <i className="fas fa-chevron-left"></i>
           </Col>
           <Col className="text-center size-14 pointer px" xs={6} onClick={this.next}>
-            <i class="fas fa-chevron-right"></i>
+            <i className="fas fa-chevron-right"></i>
           </Col>
         </Row>
       </div>

@@ -2,6 +2,10 @@ import React, { PureComponent } from 'react';
 import { Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 
+import { MenuIcon } from './../icons/menu';
+import { CloseIcon } from './../icons/close';
+import { SearchIcon } from './../icons/search';
+
 import './header.scss';
 
 export class Header extends PureComponent {
@@ -11,7 +15,7 @@ export class Header extends PureComponent {
     return (
       <header className="header" style={style}>
         <Row className="header-main align-items-center pl-3" noGutters>
-          <Col className="font-weight-500" xs='auto'>Понедельник, 8 ОКТ 2018, 14:58</Col>
+          <Col className="font-weight-500 ml-1" xs='auto'>Понедельник, 8 ОКТ 2018, 14:58</Col>
           <Col className="font-weight-500 px-3 pl-4" xs='auto'>
             <span className="text-white">$</span> 65.90 <i className="fas fa-caret-up caret-green" />
           </Col>
@@ -52,12 +56,12 @@ export class Header extends PureComponent {
 
           <Col xs='auto'>
             <div className="header-hamburger px-3" onClick={onMenuToggle}>
-              {isMenuOpened ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
+              {isMenuOpened ? <CloseIcon /> : <MenuIcon />}
             </div>
           </Col>
           <Col xs='auto'>
             <div className="header-search px-3" onClick={onSearchToggle}>
-              {isSearchOpened ? <i className="fas fa-times"></i> : <i className="fas fa-search"></i>}
+              {isSearchOpened ? <CloseIcon /> : <SearchIcon />}
             </div>
           </Col>
         </Row>

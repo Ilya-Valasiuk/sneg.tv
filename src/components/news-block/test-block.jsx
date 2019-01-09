@@ -4,7 +4,7 @@ import { NewsSimpleItem } from './news-simple-item';
 
 export function TestBlock({ imgSrc, imgAlt, date, type, typeLink, previewText, handler }) {
   return (
-    <Row noGutters>
+    <Row noGutters className="news-item">
       <Col xs={12}>
         <img className="img-fluid" src={imgSrc} alt={imgAlt} />
       </Col>
@@ -17,7 +17,7 @@ export function TestBlock({ imgSrc, imgAlt, date, type, typeLink, previewText, h
           previewText={previewText}
         />
         <div className="text-center py-3">
-          <Button className="test-btn" color="primary">Начать тест</Button>
+          <Button className="test-btn pt-2" color="primary">Начать тест</Button>
         </div>
       </Col>
     </Row>

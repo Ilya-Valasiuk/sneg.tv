@@ -8,6 +8,7 @@
   background-color: #333333;
   color: #fff;
   display: none;
+  height: calc(100% - 51px);
 
   .menu-opened & {
     display: block;

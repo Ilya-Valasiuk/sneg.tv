@@ -48,9 +48,9 @@
   border-left: 1px solid #464646;
 }
 
-.header-hamburger:hover,
-.header-search:hover {
-  color: #4dabf7;
+.header-hamburger:hover svg path,
+.header-search:hover svg path {
+  stroke: #4dabf7;
 }
 
 .header-main .caret-green {

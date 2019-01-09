@@ -13,12 +13,12 @@ export function NewsFeedCollapsed({ isMenuOpened }) {
       <Row className="news-feed-sticky">
         <Col className="px-0">
           <SnowLogo />
-          {!isMenuOpened && <div class="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i class="fas fa-plus"></i></div>}
+          {!isMenuOpened && <div className="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>}
         </Col>
       </Row>
       <Row className="news-feed-list pt-4">
         <Col>
-          <p className="news-feed-title mb-0 pt-2">ЛЕНТА НОВОСТЕЙ</p>
+          <p className="news-feed-title mb-3 pt-2">ЛЕНТА НОВОСТЕЙ</p>
         </Col>
         {
           NEWS_FEED_DATA.map(({ text, date }, index) => {

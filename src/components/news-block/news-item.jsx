@@ -26,7 +26,7 @@ export function NewsItem({
       }
       <Col xs={12}>
         <div className={classnames('position-relative', { 'news-item-image': !large })}>
-          <img src={imgSrc} alt={imgAlt} className={classnames('img-fluid', { 'h-100': !large })} />
+          <img src={imgSrc} alt={imgAlt} className={classnames('img-fluid', { 'w-100 min-h-100': !large })} />
           {imgPlaceholder && <span className="position-absolute font-weight-900 text-white placeholder">{imgPlaceholder}</span>}
         </div>
       </Col>
