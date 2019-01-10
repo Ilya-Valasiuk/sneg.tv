@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Row, Col } from 'reactstrap';
+import { Link as RouterLink } from "react-router-dom";
 import { NewsSimpleItem } from './news-simple-item';
 import { Link } from '../shared/link/link';
 
@@ -20,7 +21,7 @@ export function NewsItem({
   large
 }) {
   return (
-    <Row className={`flex-column news-item ${imgPlaceholder ? 'news-item-large' : ''}`}>
+    <Row tag={RouterLink} to="/inner" className={`flex-column news-item ${imgPlaceholder ? 'news-item-large' : ''}`}>
       {header &&
         <Col xs={12}><Link href={link}><p className="news-item-header font-weight-900">{header}</p></Link></Col>
       }

@@ -2,10 +2,18 @@ import React, { Component, Fragment } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import ReactResizeDetector from 'react-resize-detector';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { NewsFeed } from './../components/news-feed/news-feed';
 import { NewsFeedCollapsed } from './../components/news-feed/news-feed-collapsed';
+import { Header } from '../components/header/header';
+import { Search } from './../components/search/search';
 import { Home } from './../components/home/home';
+import { Inner } from './../components/inner/inner';
+import { Menu } from './../components/menu/menu';
+import { Footer } from './../components/footer/footer';
+
+import './main.scss';
 
 class MainPage extends Component {
   constructor(props) {
@@ -91,8 +99,24 @@ class MainPage extends Component {
               <NewsFeed isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} isFeedOpened={isDesktop || isFeedOpened} onFeedPanelOpen={this.toggleFeedPanel} />
             </Col>
             <Col className="snow-col-main">
-              <Home isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={this.toggleMenu} onSearchToggle={this.toggleSearch} />
-              <div className="blackout " />
+              <div className={classnames('main', { 'menu-opened': isMenuOpened })}>
+                <Header isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={this.toggleMenu} onSearchToggle={this.toggleSearch} />
+
+                {
+                  isMenuOpened ?
+                    <Menu /> :
+                    <Fragment>
+                      <Route exact path="/" component={() => <Home />} />
+                      <Route path="/inner" component={() => <Inner />} />
+                      <Footer />
+                    </Fragment>
+                }
+
+                <div className="blackout " />
+                {
+                  isSearchOpened && <Search />
+                }
+              </div>
             </Col>
           </Row>
           <ReactResizeDetector handleWidth onResize={this.onResize} />

@@ -46,10 +46,6 @@ body {
     width: calc(100% - 240px);
   }
 
-  .home {
-    background-color: #fff;
-  }
-
   .feed-opened & {
     overflow-y: hidden;
 
