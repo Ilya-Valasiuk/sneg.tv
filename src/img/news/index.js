@@ -6,6 +6,7 @@ import newsImg4 from './4.png';
 import newsImg5 from './5.png';
 import newsImg6 from './6.png';
 import test1 from './test1.png';
+import inner from './inner.png';
 
 export {
   largeBlockImg,
@@ -16,4 +17,5 @@ export {
   newsImg5,
   newsImg6,
   test1,
+  inner,
 };

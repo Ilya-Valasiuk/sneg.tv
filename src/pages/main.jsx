@@ -9,7 +9,7 @@ import { NewsFeedCollapsed } from './../components/news-feed/news-feed-collapsed
 import { Header } from '../components/header/header';
 import { Search } from './../components/search/search';
 import { Home } from './../components/home/home';
-import { Inner } from './../components/inner/inner';
+import { InnerWrapper } from './../components/inner/inner-wrapper';
 import { Menu } from './../components/menu/menu';
 import { Footer } from './../components/footer/footer';
 
@@ -107,7 +107,7 @@ class MainPage extends Component {
                     <Menu /> :
                     <Fragment>
                       <Route exact path="/" component={() => <Home />} />
-                      <Route path="/inner" component={() => <Inner />} />
+                      <Route path="/inner" component={() => <InnerWrapper />} />
                       <Footer />
                     </Fragment>
                 }

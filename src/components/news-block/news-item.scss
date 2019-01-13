@@ -1,5 +1,6 @@
 .news-item {
   cursor: pointer;
+  text-decoration: none !important;
 
   &:hover {
     .preview-text,
@@ -37,6 +38,18 @@
 
   &-line-wrapper-large {
     width: 615px;
+  }
+
+  .partner-preview-text {
+    font-size: 18px;
+    line-height: 1.41;
+    color: #2a2a2a;
+  }
+
+  .partner-name {
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 11px;
+    color: #b4b4b4;
   }
 }
 

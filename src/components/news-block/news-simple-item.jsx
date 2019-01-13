@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
+import { NewsDateType } from './news-date-type';
 
 export function NewsSimpleItem({ date, type, text, typeLink, previewText, link }) {
   return (
     <Row className="news-simple-item">
-      <Col xs={12} className="py-2">
-        <span className="date text-uppercase">{date}</span>
-        <a href={typeLink} className="type text-uppercase font-weight-500 ml-3">{type}</a>
-      </Col>
+      <NewsDateType date={date} type={type} typeLink={typeLink} />
       <Col xs={12}>
         {
           link ?
