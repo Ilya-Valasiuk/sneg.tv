@@ -22,7 +22,8 @@ export function NewsFeedCollapsed({ isMenuOpened }) {
         </Col>
         {
           NEWS_FEED_DATA.map(({ text, date }, index) => {
-            const shouldShowBanner = index && index % 4 === 0;
+            // TODO: узнать логику работы банеров на макете
+            const shouldShowBanner = index && (index === 4 || index === 12);
 
             return (<Col className={shouldShowBanner ? 'px-0 mb-3 news-feed-banner' : ''} xs={12} key={text + date}>
               {

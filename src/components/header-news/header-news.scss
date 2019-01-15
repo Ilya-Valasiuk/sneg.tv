@@ -1,54 +1,77 @@
-.header-news {
-  height: 51px;
-  position: sticky;
-  top: 51px;
-  // top: 51px !important;
-  z-index: 1;
-  background-color: #ffffff;
-  box-shadow: 0 7px 28px 0 rgba(0, 0, 0, 0.15);
-
-  &-wrapper {
-    width: calc(100% - 100px);
-    overflow-x: auto;
-
-    &::-webkit-scrollbar { 
-      display: none; 
-    }
-  }
-
-  &-navigator {
-    width: 100px;
-    color: #949494;
-  }
-
-  &-shadow {
-    width: 50px;
+.header {
+  &-news {
     height: 51px;
+    position: sticky;
+    top: 51px;
+    // top: 51px !important;
+    z-index: 1;
+    background-color: #ffffff;
+    box-shadow: 0 7px 28px 0 rgba(0, 0, 0, 0.15);
+
+    &-wrapper {
+      width: calc(100% - 100px);
+      overflow-x: auto;
+
+      &::-webkit-scrollbar { 
+        display: none; 
+      }
+    }
+
+    &-navigator {
+      width: 100px;
+      color: #949494;
+    }
+
+    &-shadow {
+      width: 50px;
+      height: 51px;
+      position: absolute;
+      right: 82px;
+      background-position-y: -20px;
+      background-image: url('./../../img/shadows/shade.png');
+    }
+
+    .link {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #949494;
+
+      &:hover,
+      &.active {
+        color: #2A2A2A;
+      }
+
+      &.active {
+        border-bottom: 2px solid #13A5F7;
+      }
+    }
+
+    &-text {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding-left: 20px;
+    }
+  }
+
+  &-loading {
+    display: block;
     position: absolute;
-    right: 82px;
-    background-position-y: -20px;
-    background-image: url('./../../img/shadows/shade.png');
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #13a5f7;
+    transform: translate(-100%);
+    transition: transform 0.2s ease-out;
   }
 
-  .link {
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #949494;
-
-    &:hover,
-    &.active {
-      color: #2A2A2A;
-    }
-
-    &.active {
-      border-bottom: 2px solid #13A5F7;
-    }
-  }
-
-  &-text {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    padding-left: 20px;
+  &-loading-wrapper {
+    overflow: hidden;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
   }
 }

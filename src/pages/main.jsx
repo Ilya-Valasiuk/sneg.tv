@@ -60,7 +60,7 @@ class MainPage extends Component {
 
   onResize = (width) => {
     this.setState({
-      isDesktop: width >= 1440,
+      isDesktop: width >= 1280,
     })
   }
 
@@ -101,13 +101,12 @@ class MainPage extends Component {
             <Col className="snow-col-main">
               <div className={classnames('main', { 'menu-opened': isMenuOpened })}>
                 <Header isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={this.toggleMenu} onSearchToggle={this.toggleSearch} />
-
                 {
                   isMenuOpened ?
                     <Menu /> :
                     <Fragment>
-                      <Route exact path="/" component={() => <Home />} />
-                      <Route path="/inner" component={() => <InnerWrapper />} />
+                      <Route exact path="/" component={Home} />
+                      <Route exact path="/inner" component={InnerWrapper} />
                       <Footer />
                     </Fragment>
                 }
