@@ -55,7 +55,7 @@ const getCurrentTitle = el => {
 const getHeaderData = articles => {
 	const currentVisibleEl = getCurrentVisibleEl(articles);
 	const currentTitle = getCurrentTitle(currentVisibleEl);
-	const scrolledPosition = getScrolledPosition(currentVisibleEl);
+	const scrolledPosition = currentVisibleEl && getScrolledPosition(currentVisibleEl.querySelector('.news-inner'));
 
 	return {
 		title: currentTitle,

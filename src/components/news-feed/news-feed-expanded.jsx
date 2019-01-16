@@ -8,7 +8,7 @@ export function NewsFeedExpanded({ onToggle, isMenuOpened }) {
       <Row className="news-feed-sticky">
         <Col className="px-0">
           <SnowLogo isShort />
-          {!isMenuOpened && <div className="news-feed-add news-feed-add-short d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>}
+          {/* {!isMenuOpened && <div className="news-feed-add news-feed-add-short d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>} */}
         </Col>
       </Row>
       <Row className="news-feed-list pt-4">

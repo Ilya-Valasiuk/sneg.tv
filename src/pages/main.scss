@@ -1,3 +1,4 @@
+@import '../styles/breakpoints';
 .snow {
   .main {
     width: 970px;
@@ -7,6 +8,10 @@
   
     &.menu-opened {
       height: 100%;
+    }
+
+    @media (min-width: $breakpoint-large) {
+      width: 1140px;
     }
   }
 }

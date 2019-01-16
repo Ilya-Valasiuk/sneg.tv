@@ -8,14 +8,15 @@ const bannerMap = {
   primeVideo,
 }
 
-export function AdBanner({ bannerType }) {
+export function AdBanner({ bannerType, className }) {
   const banner = bannerMap[bannerType];
 
   return (
-    <img src={banner} alt="banner" />
+    <img src={banner} alt="banner" className={className} />
   );
 }
 
 AdBanner.defaultProps = {
   bannerType: 'banner1',
+  className: '',
 }

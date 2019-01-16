@@ -1,14 +1,8 @@
 .menu {
-  // position: absolute;
-  // left: 0;
-  // right: 0;
-  // top: 51px;
-  // bottom: 0;
-  // z-index: 2;
   background-color: #333333;
   color: #fff;
   display: none;
-  height: calc(100% - 51px);
+  min-height: calc(100% - 51px);
 
   .menu-opened & {
     display: block;
@@ -89,5 +83,9 @@
     .menu-opened & {
       display: block;
     }
+  }
+
+  .news-more {
+    margin-top: 40px;
   }
 }

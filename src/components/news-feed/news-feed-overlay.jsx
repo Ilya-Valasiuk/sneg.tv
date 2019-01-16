@@ -9,7 +9,7 @@ export function NewsFeedOverlay({ isMenuOpened, isShort, isSearch }) {
       <Row noGutters={isSearch}>
         <Col className="px-0">
           <SnowLogo isShort={isShort} />
-          {(!isShort && !isMenuOpened) && <div className="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>}
+          {/* {(!isShort && !isMenuOpened) && <div className="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>} */}
         </Col>
       </Row>
       <Row noGutters={isSearch}>

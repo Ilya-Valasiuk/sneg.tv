@@ -8,6 +8,8 @@ import { HEADER_NEWS_DATA } from './header-news-data';
 
 import './header-news.scss';
 
+const STEP_LENGHT = 400;
+
 export class HeaderNews extends Component {
   state = {
     selectedIndex: 0,
@@ -20,11 +22,11 @@ export class HeaderNews extends Component {
   }
 
   next = () => {
-    this.scroll.current.scrollLeft += 100;
+    this.scroll.current.scrollLeft += STEP_LENGHT;
   }
 
   prev = () => {
-    this.scroll.current.scrollLeft -= 100;
+    this.scroll.current.scrollLeft -= STEP_LENGHT;
   }
 
   select = id => {
@@ -37,7 +39,7 @@ export class HeaderNews extends Component {
     return (
       <div style={style} className="header-news d-flex align-items-center">
         <div className="header-news-wrapper" ref={this.scroll}>
-          <Row noGutters className="flex-nowrap h-100 font-weight-500 ml-1">
+          <Row noGutters className="header-news-scroll flex-nowrap h-100 font-weight-500 ml-1">
             {HEADER_NEWS_DATA.map(({ title, id, link }, index) =>
               <Col className="px-3" xs="auto" key={id}>
                 <Link onClick={() => this.select(index)} href={link} className={classnames('d-block py-3', { 'active': index === this.state.selectedIndex })} >{title}</Link>

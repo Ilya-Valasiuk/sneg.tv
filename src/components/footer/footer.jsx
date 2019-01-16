@@ -10,7 +10,7 @@ export function Footer({ }) {
       <div className="footer-subscribe d-flex align-items-center flex-column py-5">
         <p className="footer-subscribe-title mb-4">Подпишитесь на рассылку, чтобы быть в курсе первым</p>
         <div className="footer-subscribe-block d-flex">
-          <input className="px-3" type="text" name="subscribe" id="subscribe" placeholder="Введите ваш адресс email" />
+          <input className="px-3" type="text" name="subscribe" id="subscribe" placeholder="Введите ваш email" />
           <span className=""><i className="fab fa-telegram-plane"></i></span>
         </div>
       </div>

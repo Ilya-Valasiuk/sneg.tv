@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import { Links } from './../shared/links/links';
 import { MenuItem } from './menu-item';
+import { More } from './../news-block/more';
 
 import './menu.scss'
 
@@ -13,7 +14,7 @@ export function Menu() {
           <Row className="flex-column">
             <Col xs={12} className="mb-2 size-14 menu-links-title">Темы дня</Col>
             <Col xs={12}>
-              <MenuItem 
+              <MenuItem
                 previewText="Кокорин не пришел в полицию до истечения дедлайна МВД"
                 text="Футболист «Зенита» Александр Кокорин не пришел в полицию в указанный срок — до 18:00. Ранее МВД обещало объявить футболиста в федеральный розыск"
                 type="Жизнь"
@@ -37,6 +38,7 @@ export function Menu() {
                 type="Жизнь"
                 date="10 октября 2018 18:16"
               />
+              <More title="Ещё" className="text-white" />
             </Col>
           </Row>
         </Col>

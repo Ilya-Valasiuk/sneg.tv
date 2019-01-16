@@ -12,12 +12,12 @@ export class Home extends Component {
     return (
       <Fragment>
         <HeaderNews />
-        <AdBanner bannerType="fordBanner" />
+        <AdBanner bannerType="fordBanner" className="w-100" />
         <LifeSection />
         <KnowledgeSection />
         <EmotionSection />
         <div className="mb-5">
-          <AdBanner bannerType="barsRestaurant" />
+          <AdBanner bannerType="barsRestaurant" className="w-100" />
         </div>
         <News />
       </Fragment>

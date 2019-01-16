@@ -21,7 +21,7 @@ export function NewsInner({
       <h2 className="news-inner-title font-weight-900">{title}</h2>
       <p className="news-inner-text font-italic">{previewText}</p>
       <div className="news-inner-img mb-2">
-        <img src={articleImg} className="mb-1" title="Article img" alt="Articlel img" />
+        <img src={articleImg} className="mb-1 w-100" title="Article img" alt="Articlel img" />
         <span className="news-inner-img-signature size-14">{imgSignature}</span>
       </div>
       <div className="news-inner-text" dangerouslySetInnerHTML={{ __html: articleText }}></div>

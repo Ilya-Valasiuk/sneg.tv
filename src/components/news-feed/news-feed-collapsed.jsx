@@ -13,7 +13,7 @@ export function NewsFeedCollapsed({ isMenuOpened }) {
       <Row className="news-feed-sticky">
         <Col className="px-0">
           <SnowLogo />
-          {!isMenuOpened && <div className="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>}
+          {/* {!isMenuOpened && <div className="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>} */}
         </Col>
       </Row>
       <Row className="news-feed-list pt-4">
