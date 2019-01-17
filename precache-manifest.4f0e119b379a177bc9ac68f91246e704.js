@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3a528f425cc484d78ccb79ab6e7ffd68",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.3a528f42.eot"
+    "revision": "2a615283a212836fd6c33bf32bc87ebf",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Medium.2a615283.woff"
   },
   {
-    "revision": "09c020b24e0d723d331d",
-    "url": "/sneg.tv/static/css/main.94fabad2.chunk.css"
+    "revision": "6ecd6f29085e3eaa4c6b",
+    "url": "/sneg.tv/static/css/main.277efd2f.chunk.css"
   },
   {
     "revision": "afe760ffd0c1944072ba8f7c3f47b4d5",
@@ -72,16 +72,12 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/inner.44fea89e.png"
   },
   {
-    "revision": "ae503b13b400cfaea50d767b4b61b810",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Medium.ae503b13.eot"
-  },
-  {
-    "revision": "2a615283a212836fd6c33bf32bc87ebf",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Medium.2a615283.woff"
-  },
-  {
     "revision": "e603c690f754c70654004a753c17b60b",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Medium.e603c690.ttf"
+  },
+  {
+    "revision": "ae503b13b400cfaea50d767b4b61b810",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Medium.ae503b13.eot"
   },
   {
     "revision": "541577dd8a196e3a57bfd23cf37fdec7",
@@ -92,12 +88,12 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Heavy.839fcf54.woff"
   },
   {
-    "revision": "5d3dd852e699da0191d2a0f886417fea",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Heavy.5d3dd852.ttf"
-  },
-  {
     "revision": "e8441de5abd8bcb809de1f1fd7bbbe60",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-HeavyItalic.e8441de5.eot"
+  },
+  {
+    "revision": "5d3dd852e699da0191d2a0f886417fea",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Heavy.5d3dd852.ttf"
   },
   {
     "revision": "9da528920f1601fa5ce203e67bd4bbb7",
@@ -132,20 +128,24 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLightItalic.eddbfc23.ttf"
   },
   {
-    "revision": "09c020b24e0d723d331d",
-    "url": "/sneg.tv/static/js/main.09c020b2.chunk.js"
+    "revision": "3a528f425cc484d78ccb79ab6e7ffd68",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.3a528f42.eot"
+  },
+  {
+    "revision": "6ecd6f29085e3eaa4c6b",
+    "url": "/sneg.tv/static/js/main.6ecd6f29.chunk.js"
   },
   {
     "revision": "e87e87521b5d3a40a6011ddb2156e3a2",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.e87e8752.woff"
   },
   {
-    "revision": "b8b29bfffbfd4a2918fb88a57ab7f619",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.b8b29bff.ttf"
-  },
-  {
     "revision": "6e6845c8bf5e49fcff1ae035c2f016b1",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-ThinItalic.6e6845c8.eot"
+  },
+  {
+    "revision": "b8b29bfffbfd4a2918fb88a57ab7f619",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.b8b29bff.ttf"
   },
   {
     "revision": "35581d71b90dbcfc43d05bf09b254505",
@@ -248,12 +248,12 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Light.e914a2dd.woff"
   },
   {
-    "revision": "307781839e3e303ff49b223dc242baac",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Light.30778183.ttf"
-  },
-  {
     "revision": "9b4d23f4e67b13185db491462417b79e",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.9b4d23f4.eot"
+  },
+  {
+    "revision": "307781839e3e303ff49b223dc242baac",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Light.30778183.ttf"
   },
   {
     "revision": "4609737fa0fb775d05601b04a1d1e839",
@@ -264,7 +264,7 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/css/1.dc931457.chunk.css"
   },
   {
-    "revision": "f2b6512a6fcd39d605c24e566bf20dd5",
+    "revision": "ccdb05158e5ba1e8b0d891e3b3dde5b9",
     "url": "/sneg.tv/index.html"
   }
 ];
