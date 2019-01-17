@@ -7,7 +7,7 @@
   "static/js/1.e5e46c63.chunk.js.map": "/sneg.tv/static/js/1.e5e46c63.chunk.js.map",
   "runtime~main.js": "/sneg.tv/static/js/runtime~main.0dafaa1f.js",
   "runtime~main.js.map": "/sneg.tv/static/js/runtime~main.0dafaa1f.js.map",
-  "static/media/index.scss": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.4609737f.woff",
+  "static/media/index.scss": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.afe760ff.ttf",
   "static/media/banner1.png": "/sneg.tv/static/media/banner1.1d3a7691.png",
   "static/media/bars-restaurant.png": "/sneg.tv/static/media/bars-restaurant.db09215c.png",
   "static/media/prime-video.jpeg": "/sneg.tv/static/media/prime-video.76870ccb.jpeg",
@@ -21,9 +21,9 @@
   "static/media/test1.png": "/sneg.tv/static/media/test1.ff2c3e4e.png",
   "static/media/inner.png": "/sneg.tv/static/media/inner.44fea89e.png",
   "static/media/ford-banner.png": "/sneg.tv/static/media/ford-banner.a4d388a3.png",
-  "static/css/main.8d4ef32f.chunk.css.map": "/sneg.tv/static/css/main.8d4ef32f.chunk.css.map",
   "static/css/1.dc931457.chunk.css.map": "/sneg.tv/static/css/1.dc931457.chunk.css.map",
+  "static/css/main.8d4ef32f.chunk.css.map": "/sneg.tv/static/css/main.8d4ef32f.chunk.css.map",
   "index.html": "/sneg.tv/index.html",
-  "precache-manifest.04cd30aec7c3ceb03c8c9d47007d55cc.js": "/sneg.tv/precache-manifest.04cd30aec7c3ceb03c8c9d47007d55cc.js",
+  "precache-manifest.ca690c973c24489b754490a911e9d298.js": "/sneg.tv/precache-manifest.ca690c973c24489b754490a911e9d298.js",
   "service-worker.js": "/sneg.tv/service-worker.js"
 }
