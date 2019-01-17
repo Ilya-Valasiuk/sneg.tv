@@ -1,19 +1,22 @@
 @import '../../styles/breakpoints';
 
 .news-item {
-  cursor: pointer;
-  text-decoration: none !important;
 
-  &:hover {
-    .preview-text,
-    .article-text {
-      color: #13A5F7 !important;
-    }
+  &:not(.no-link) {
+    cursor: pointer;
+    text-decoration: none !important;
 
-    img {
-      opacity: .9;
+    &:hover {
+      .preview-text {
+        color: #13A5F7 !important;
+      }
+  
+      img {
+        opacity: .9;
+      }
     }
   }
+  
 
   .placeholder {
     left: 20px;
@@ -34,7 +37,8 @@
     overflow: hidden;
 
     @media (min-width: $breakpoint-large) {
-      width: 356.3px;
+      width: 373px;
+      height: 211px;;
     }
   }
 
@@ -42,7 +46,7 @@
     width: 300px;
 
     @media (min-width: $breakpoint-large) {
-      width: 356.3px;
+      width: 373px;
     }
   }
 
@@ -50,7 +54,7 @@
     width: 615px;
 
     @media (min-width: $breakpoint-large) {
-      width: 727.6px;
+      width: 761px;
     }
   }
 

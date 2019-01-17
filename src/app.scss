@@ -6,6 +6,17 @@ html, body {
   margin: 0;
 }
 
+// TODO REMOVE THIS CODE!!!!!!!
+html {
+  min-width: 1024px;
+}
+@media (max-width: $breakpoint-tablet) {
+  .container {
+    max-width: 960px;
+  }
+}
+// TODO REMOVE THIS CODE!!!!!!!
+
 body {
   font-family: HelveticaNeueCyr;
 }
@@ -19,6 +30,7 @@ body {
 .snow-col-feed, .snow-col-main {
   height: 100%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 
   .search-opened & {
     overflow: hidden;
@@ -55,6 +67,7 @@ body {
 
     @media (min-width: $breakpoint-desktop) {
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
 
       .blackout {
         display: none;
@@ -88,4 +101,11 @@ body {
 
 .size-14 {
   font-size: 14px;
+}
+
+
+@media (min-width: $breakpoint-large) {
+  .container {
+    max-width: 1190px;
+  }
 }

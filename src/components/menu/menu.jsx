@@ -38,7 +38,6 @@ export function Menu() {
                 type="Жизнь"
                 date="10 октября 2018 18:16"
               />
-              <More title="Ещё" className="text-white" />
             </Col>
           </Row>
         </Col>
@@ -60,6 +59,11 @@ export function Menu() {
                 { link: '#', title: 'Кокорин и Мамаев' },
                 { link: '#', title: 'Пенсионная реформа' },
               ]} />
+              <Row>
+                <Col xs="auto" className="pt-3">
+                  <More title="Ещё" className="text-white px-5" />
+                </Col>
+              </Row>
             </Col>
             <Col xs={12} className="size-14 mb-5">
               <Links title="О НАС" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[

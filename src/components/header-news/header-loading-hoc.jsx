@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { throttle } from 'lodash';
 
+const HEADER_HEIGHT = 102;
+
 // LEGACY CODE
 // TODO - improve 
 function getCurrentVisibleEl(articles) {
@@ -35,7 +37,7 @@ function isElementVisible(el) {
 const getScrolledPosition = el => {
 	if (el) {
 		const rect = el.getBoundingClientRect();
-		const translatePercent = Math.round(rect.bottom * 100 / rect.height);
+		const translatePercent = Math.round((rect.bottom - HEADER_HEIGHT) * 100 / rect.height);
 
 		return !(translatePercent > 0) ? 100 : translatePercent;
 	}

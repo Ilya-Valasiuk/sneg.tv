@@ -54,66 +54,53 @@ export class Inner extends Component {
                 authorTitle={authorTitle}
                 tags={tags}
               />
-            </Col>
-            <Col className="news-item-line-wrapper">
-              <Row>
-                <Col>
-                  <p className="font-weight-900 pt-3 text-uppercase read-more-text mb-1 size-14">Читайте также</p>
+              <Row noGutters>
+                <Col xs={12}><hr className="my-4" /></Col>
+                <NewsComments />
+                <Col xs={12}><hr className="my-4" /></Col>
+              </Row>
+              <Row noGutters>
+                <Col xs={12} className="partner-title size-14 font-weight-900 text-uppercase"><p className="mb-4">новости партнёров</p></Col>
+                <Col xs="auto" className="news-item-line-wrapper mr-15">
+                  <NewsItemPartner
+                    imgSrc={newsImg1}
+                    imgAlt="newsImg1"
+                    previewText="Глава КС предложил политическую и правовую реформы. Главное"
+                    type="Жизнь"
+                    date="10 октября 2018 18:16"
+                    partnerName="rbc.ru"
+                  />
+                </Col>
+                <Col xs="auto" className="news-item-line-wrapper">
+                  <NewsItemPartner
+                    imgSrc={newsImg2}
+                    imgAlt="newsImg2"
+                    previewText="Реновация для пожилых: как Сбербанк хочет развивать дома престарелых"
+                    type="Жизнь"
+                    date="10 октября 2018 18:16"
+                    partnerName="rbc.ru"
+                  />
                 </Col>
               </Row>
-              <NewsSimpleItem
-                previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
-                type="Жизнь"
-                date="10 октября 2018 18:16"
-              />
-              <hr />
-              <NewsSimpleItem
-                previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
-                type="Жизнь"
-                date="10 октября 2018 18:16"
-              />
-              <hr />
-              <Col className="px-0 pb-4 pt-3">
-                <AdBanner bannerType="primeVideo" />
-              </Col>
             </Col>
-          </Row>
-          <Row noGutters>
-            <Col xs={12}><hr className="my-4" /></Col>
-            <NewsComments />
-            <Col xs={12}><hr className="my-4" /></Col>
-          </Row>
-          <Row noGutters>
-            <Col xs={12} className="partner-title size-14 font-weight-900 text-uppercase"><p className="mb-4">новости партнёров</p></Col>
-            <Col className="news-item-line-wrapper mr-15">
-              <NewsItemPartner
-                imgSrc={newsImg1}
-                imgAlt="newsImg1"
-                previewText="Глава КС предложил политическую и правовую реформы. Главное"
-                type="Жизнь"
-                date="10 октября 2018 18:16"
-                partnerName="rbc.ru"
-              />
-            </Col>
-            <Col className="news-item-line-wrapper mr-15">
-              <NewsItemPartner
-                imgSrc={newsImg2}
-                imgAlt="newsImg2"
-                previewText="Реновация для пожилых: как Сбербанк хочет развивать дома престарелых"
-                type="Жизнь"
-                date="10 октября 2018 18:16"
-                partnerName="rbc.ru"
-              />
-            </Col>
-            <Col className="news-item-line-wrapper">
-              <NewsItemPartner
-                imgSrc={newsImg3}
-                imgAlt="newsImg3"
-                previewText="Новый плацдарм: что известно о переброске российских военных в Ливию"
-                type="Жизнь"
-                date="10 октября 2018 18:16"
-                partnerName="rbc.ru"
-              />
+            <Col className="news-item-line-wrapper sticky-right-col">
+              <div className="sticky-right-col">
+                <Col className="px-0 pb-4 pt-3 text-center">
+                  <AdBanner bannerType="primeVideo" />
+                </Col>
+                <hr />
+                <NewsSimpleItem
+                  previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
+                  type="Жизнь"
+                  date="10 октября 2018 18:16"
+                />
+                <hr />
+                <NewsSimpleItem
+                  previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
+                  type="Жизнь"
+                  date="10 октября 2018 18:16"
+                />
+              </div>
             </Col>
           </Row>
         </Container>

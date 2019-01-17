@@ -8,7 +8,7 @@ import { HEADER_NEWS_DATA } from './header-news-data';
 
 import './header-news.scss';
 
-const STEP_LENGHT = 400;
+const STEP_LENGHT = 800;
 
 export class HeaderNews extends Component {
   state = {

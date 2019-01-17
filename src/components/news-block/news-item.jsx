@@ -18,10 +18,11 @@ export function NewsItem({
   date,
   link,
   text,
-  large
+  large,
+  withoutLink
 }) {
   return (
-    <Row tag={RouterLink} to="/inner" className={`flex-column news-item ${imgPlaceholder ? 'news-item-large' : ''}`}>
+    <Row tag={withoutLink ? 'div' : RouterLink} to="/inner" className={classnames('flex-column news-item', { 'news-item-large': imgPlaceholder, 'no-link': withoutLink })}>
       {header &&
         <Col xs={12}><Link href={link}><p className="news-item-header font-weight-900">{header}</p></Link></Col>
       }
@@ -49,4 +50,5 @@ NewsItem.defaultProps = {
   link: '#',
   typeLink: '#',
   large: false,
+  withoutLink: false,
 };
