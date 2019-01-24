@@ -61,11 +61,25 @@ const getHeaderData = articles => {
 
 	return {
 		title: currentTitle,
-		progress: scrolledPosition,
+		progress: scrolledPosition >= 0 && scrolledPosition <= 100 ? scrolledPosition : 101, // 101 just to check that it's not in main view
 	};
 }
 
-export const withLoadingHeader = WrappedComponent => {
+function fire(progress, title) {
+	const evt = new CustomEvent('header-change', { detail: { progress, title } });
+	document.dispatchEvent(evt);
+}
+
+function fireToggle(isInit) {
+	const evt = new CustomEvent('header-news-toggle', { detail: { isInit } });
+	document.dispatchEvent(evt);
+}
+
+const getInitValue = (progress, title) => {
+	return Boolean(progress >= 0 && progress <= 100 && title);
+}
+
+export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) => {
 	return class HeaderLoadingHOC extends Component {
 
 		constructor(props) {
@@ -81,18 +95,25 @@ export const withLoadingHeader = WrappedComponent => {
 			this.mainCol = null;
 
 			this.scrollHandlerThrottle = throttle(this.scrollHandler, 80);
-			console.log('here');
 		}
 
 		scrollHandler = () => {
-			this.setState(getHeaderData(this.articles));
+			const { title, progress } = getHeaderData(this.articles);
+
+			const newInitValue = getInitValue(progress, title);
+			if (this.prevInitValue !== newInitValue) {
+				fireToggle(newInitValue)
+				this.prevInitValue = newInitValue;
+			}
+
+			fire(progress, title);
 		}
 
 		componentDidMount() {
 			if (this.element.current) {
-				this.articles = this.element.current.querySelectorAll('.news-block');
+				this.articles = this.element.current.querySelectorAll('.scroll-element');
 
-				this.setState(getHeaderData(this.articles));
+				this.scrollHandler();
 
 				if (!this.mainCol) {
 					this.mainCol = document.body.querySelector('.snow-col-main');
@@ -108,11 +129,9 @@ export const withLoadingHeader = WrappedComponent => {
 		}
 
 		render() {
-			const { title, progress } = this.state;
-
 			return (
 				<div ref={this.element}>
-					<WrappedComponent {...this.props} title={title} progress={progress} />
+					<WrappedComponent {...this.props} />
 				</div>
 			);
 		}

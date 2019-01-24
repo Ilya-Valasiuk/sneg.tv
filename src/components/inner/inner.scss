@@ -1,7 +1,26 @@
 .inner {
+
+  .news-iframe {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
   .read-more-text {
     font-weight: 900;
     letter-spacing: 4px;
     color: #2a2a2a;
+  }
+
+  .sticky-right-col-special-h {
+    height: 70%;
   }
 }

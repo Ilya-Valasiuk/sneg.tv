@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
+import classnames from 'classnames';
 import { Container, Row, Col } from 'reactstrap';
 import { AdBanner } from './../ad-banner/ad-baner';
 import { NewsSimpleItem } from './../news-block/news-simple-item';
 import { NewsItemPartner } from './../news-block/news-item-partner';
-import { NewsInner } from './../news-block/news-inner';
+import { NewsInner } from './../news-block/news-inner/news-inner';
 import { NewsComments } from './../news-block/news-comments';
 import {
   newsImg1,
@@ -34,11 +35,22 @@ const authorTitle = 'собственный корреспондент';
 const tags = '«Зенит», Александр Кокорин, Павел Мамаев';
 
 export class Inner extends Component {
+  state = {
+    isCollapsed: this.props.isCollapsed,
+  }
+
+  onExpand = () => {
+    this.setState({ isCollapsed: false })
+  }
+
   render() {
-    const { title } = this.props;
+    const { title, showIframe } = this.props;
+    const { isCollapsed } = this.state;
+
     return (
       <Fragment>
-        <Container className="py-3 news-block inner">
+        <Container className="py-3 news-block scroll-element inner">
+          <div className="header-name-sentient-top" data-title={title}></div>
           <Row noGutters>
             <Col xs='auto' className="news-item-line-wrapper-large mr-15">
               <NewsInner
@@ -47,18 +59,16 @@ export class Inner extends Component {
                 typeLink={typeLink}
                 title={title}
                 previewText={previewText}
-                articleImg={innerImg}
+                imgSrc={innerImg}
                 imgSignature={imgSignature}
                 articleText={articleText}
                 authorName={authorName}
                 authorTitle={authorTitle}
                 tags={tags}
+                isCollapsed={isCollapsed}
+                onExpand={this.onExpand}
+                showIframe={showIframe}
               />
-              <Row noGutters>
-                <Col xs={12}><hr className="my-4" /></Col>
-                <NewsComments />
-                <Col xs={12}><hr className="my-4" /></Col>
-              </Row>
               <Row noGutters>
                 <Col xs={12} className="partner-title size-14 font-weight-900 text-uppercase"><p className="mb-4">новости партнёров</p></Col>
                 <Col xs="auto" className="news-item-line-wrapper mr-15">
@@ -84,27 +94,44 @@ export class Inner extends Component {
               </Row>
             </Col>
             <Col className="news-item-line-wrapper sticky-right-col">
+              <div className={classnames({ 'sticky-right-col-special-h': !isCollapsed, 'h-100': isCollapsed })}>
+                <div className="sticky-right-col">
+                  <Col className="px-0 pb-4 pt-3 text-center">
+                    <AdBanner bannerType="primeVideo" />
+                  </Col>
+                </div>
+              </div>
               <div className="sticky-right-col">
-                <Col className="px-0 pb-4 pt-3 text-center">
-                  <AdBanner bannerType="primeVideo" />
-                </Col>
-                <hr />
-                <NewsSimpleItem
-                  previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
-                  type="Жизнь"
-                  date="10 октября 2018 18:16"
-                />
-                <hr />
-                <NewsSimpleItem
-                  previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
-                  type="Жизнь"
-                  date="10 октября 2018 18:16"
-                />
+                  {
+                    !isCollapsed &&
+                    <Fragment>
+                      <hr />
+                      <Row>
+                        <Col>
+                          <p className="font-weight-900 pt-3 text-uppercase read-more-text mb-1 size-14">Читайте также</p>
+                        </Col>
+                      </Row>
+                      <div>
+                        <NewsSimpleItem
+                          previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
+                          type="Жизнь"
+                          date="10 октября 2018 18:16"
+                        />
+                        <hr />
+                        <NewsSimpleItem
+                          previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
+                          type="Жизнь"
+                          date="10 октября 2018 18:16"
+                        />
+                      </div>
+                    </Fragment>
+                  }
               </div>
             </Col>
           </Row>
+          <div className="header-name-sentient-bottom" data-title={title}></div>
         </Container>
-      </Fragment>
+      </Fragment >
     );
   }
 }

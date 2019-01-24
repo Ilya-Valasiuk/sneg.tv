@@ -5,13 +5,16 @@ import { LifeSection } from './../news-block/sections/life-section';
 import { KnowledgeSection } from './../news-block/sections/knowledge-section';
 import { EmotionSection } from './../news-block/sections/emotion-section';
 import { News } from './../news-block/news';
+import { withLoadingHeader } from './../header-news/header-loading-hoc';
 
-export class Home extends Component {
 
+export class HomeUI extends Component {
   render() {
+    const { headerTitle, progress } = this.props;
+
     return (
       <Fragment>
-        <HeaderNews />
+        <HeaderNews title={headerTitle} progress={progress} />
         <AdBanner bannerType="fordBanner" className="w-100" />
         <LifeSection />
         <KnowledgeSection />
@@ -21,7 +24,8 @@ export class Home extends Component {
         </div>
         <News />
       </Fragment>
-
     );
   }
 }
+
+export const Home = withLoadingHeader(HomeUI, true);

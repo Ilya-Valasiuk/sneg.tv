@@ -1,62 +1,34 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
-import classnames from 'classnames';
-import { Link } from '../shared/link/link';
-
-// STUB DATA
-import { HEADER_NEWS_DATA } from './header-news-data';
-
-import './header-news.scss';
-
-const STEP_LENGHT = 800;
+import React, { Component, Fragment } from 'react';
+import { HeaderNewsSingle } from './header-news-single';
+import { HeaderNewsGenerall } from './header-news-generall';
 
 export class HeaderNews extends Component {
   state = {
-    selectedIndex: 0,
+    isSingleHeaderNews: false,
   }
 
-  constructor(props) {
-    super(props);
-
-    this.scroll = React.createRef();
+  onHeaderToggleHandler = e => {
+    this.setState({ isSingleHeaderNews: e.detail.isInit });
   }
 
-  next = () => {
-    this.scroll.current.scrollLeft += STEP_LENGHT;
+  componentDidMount() {
+    document.addEventListener('header-news-toggle', this.onHeaderToggleHandler);
   }
 
-  prev = () => {
-    this.scroll.current.scrollLeft -= STEP_LENGHT;
-  }
-
-  select = id => {
-    this.setState({ selectedIndex: id });
+  componentWillUnmount() {
+    document.removeEventListener('header-news-toggle', this.onHeaderToggleHandler);
   }
 
   render() {
-    const { style } = this.props;
-
+    const { headerTitle, progress } = this.props;
+    
     return (
-      <div style={style} className="header-news d-flex align-items-center">
-        <div className="header-news-wrapper" ref={this.scroll}>
-          <Row noGutters className="header-news-scroll flex-nowrap h-100 font-weight-500 ml-1">
-            {HEADER_NEWS_DATA.map(({ title, id, link }, index) =>
-              <Col className="px-3" xs="auto" key={id}>
-                <Link onClick={() => this.select(index)} href={link} className={classnames('d-block py-3', { 'active': index === this.state.selectedIndex })} >{title}</Link>
-              </Col>
-            )}
-          </Row>
-        </div>
-        <div className="header-news-shadow"></div>
-        <Row className="header-news-navigator px-1 h-100 align-items-center" noGutters>
-          <Col className="text-center size-14 pointer px" xs={6} onClick={this.prev}>
-            <i className="fas fa-chevron-left"></i>
-          </Col>
-          <Col className="text-center size-14 pointer px" xs={6} onClick={this.next}>
-            <i className="fas fa-chevron-right"></i>
-          </Col>
-        </Row>
-      </div>
-    );
+      <Fragment>
+        {
+          this.state.isSingleHeaderNews ?
+            <HeaderNewsSingle title={headerTitle} progress={progress} hideCloseIcon /> : <HeaderNewsGenerall />
+        }
+      </Fragment>
+    )
   }
-};
+}

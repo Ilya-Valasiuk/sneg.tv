@@ -124,7 +124,7 @@ export function LifeSection({ }) {
       </Row>
       <Row>
         <Col className="pt-3">
-          <More title="Больше о жизни" className="font-weight-bold" />
+          <More title="Больше жизни" className="font-weight-bold" />
         </Col>
       </Row>
     </Container>

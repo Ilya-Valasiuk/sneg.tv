@@ -7,10 +7,10 @@ const comments = [{ avatartImg: '', userName: 'useless_mouth', time: '15 мин�
 export function NewsComments({ }) {
   return (
     <div className="news-comments">
-      <div className="news-comments-title size-14 text-uppercase mb-4">комментарии <span className="news-comments-count">{count}</span></div>
+      <div className="news-comments-title size-14 text-uppercase mb-4">комментарии</div>
       {comments.map(comment => <Comment {...comment} />)}
       <div className="news-comments-buttons">
-        <Button color="link">Читать все</Button>
+        <Button color="link">Читать все ({count})</Button>
         <Button color="link" className="ml-2">Комментировать</Button>
       </div>
     </div>

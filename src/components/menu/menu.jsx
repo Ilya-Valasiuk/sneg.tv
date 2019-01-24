@@ -44,14 +44,14 @@ export function Menu() {
         <Col xs={4}>
           <Row>
             <Col xs={12} className="size-14 mb-5">
-              <Links title="РУБРИКИ" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
+              <Links title="РАЗДЕЛЫ" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
                 { link: '#', title: 'Жизнь' },
                 { link: '#', title: 'Знания' },
                 { link: '#', title: 'Эмоции' },
               ]} />
             </Col>
             <Col xs={12} className="size-14 mb-5">
-              <Links title="ТЕМЫ" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
+              <Links title="РУБРИКИ" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
                 { link: '#', title: 'Дедолларизация' },
                 { link: '#', title: 'Отставки губернаторов' },
                 { link: '#', title: 'Новые санкции США' },
@@ -60,8 +60,8 @@ export function Menu() {
                 { link: '#', title: 'Пенсионная реформа' },
               ]} />
               <Row>
-                <Col xs="auto" className="pt-3">
-                  <More title="Ещё" className="text-white px-5" />
+                <Col xs="auto" className="pt-2">
+                  <More title="Ещё" className="text-white px-3 py-1" />
                 </Col>
               </Row>
             </Col>
