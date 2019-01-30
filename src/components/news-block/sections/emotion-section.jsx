@@ -11,11 +11,11 @@ import {
   test1,
 } from './../../../img/news';
 
-import { NewsItem } from './../news-item';
+import { NewsItem } from './../news-item/news-item';
 import { More } from './../more';
 
 import './../news-block.scss';
-import { TestBlock } from '../test-block';
+import { NewsTestItem } from '../news-test-item/news-test-item';
 
 const type = 'Эмоции';
 
@@ -42,7 +42,7 @@ export function EmotionSection({ }) {
           />
         </Col>
         <Col className="news-item-line-wrapper">
-          <TestBlock
+          <NewsTestItem
             imgSrc={test1}
             type={type}
             date="10 октября 2018 18:16"

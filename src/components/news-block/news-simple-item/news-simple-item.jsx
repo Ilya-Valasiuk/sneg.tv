@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
+import classnames from 'classnames';
 import { Row, Col } from 'reactstrap';
-import { NewsDateType } from './news-date-type';
+import { NewsDateType } from './../news-date-type/news-date-type';
 
-export function NewsSimpleItem({ date, type, text, typeLink, previewText, link }) {
+import './news-simple-item.scss';
+
+export function NewsSimpleItem({ date, type, text, typeLink, previewText, link, className, dateTypeClassName }) {
   return (
-    <Row className="news-simple-item">
-      <NewsDateType date={date} type={type} typeLink={typeLink} />
+    <Row className={classnames('news-simple-item', className)}>
+      <NewsDateType date={date} type={type} typeLink={typeLink} className={dateTypeClassName} />
       <Col xs={12}>
         {
           link ?
@@ -26,4 +29,5 @@ export function NewsSimpleItem({ date, type, text, typeLink, previewText, link }
 NewsSimpleItem.defaultProps = {
   link: '#',
   typeLink: '#',
+  className: '',
 };

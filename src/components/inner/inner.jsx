@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react';
 import classnames from 'classnames';
 import { Container, Row, Col } from 'reactstrap';
 import { AdBanner } from './../ad-banner/ad-baner';
-import { NewsSimpleItem } from './../news-block/news-simple-item';
+import { NewsSimpleItem } from './../news-block/news-simple-item/news-simple-item';
 import { NewsItemPartner } from './../news-block/news-item-partner';
-import { NewsInner } from './../news-block/news-inner/news-inner';
+import { NewsInner } from './../news-block/news/news-inner';
 import { NewsComments } from './../news-block/news-comments';
 import {
   newsImg1,

@@ -10,10 +10,10 @@ const STUB_HEADER_TITLE3 = 'Ещё один тестовый заголовок'
 
 class InnerWrapperUI extends Component {
   render() {
-    const { progress, headerTitle } = this.props;
+    const { progress, headerTitle, isMobile } = this.props;
     return (
       <Fragment>
-        <HeaderNewsSingle title={headerTitle} progress={progress} />
+        {!isMobile && <HeaderNewsSingle title={headerTitle} progress={progress} />}
         <Inner title={STUB_HEADER_TITLE} showIframe />
         <hr />
         <Inner title={STUB_HEADER_TITLE1} isCollapsed />

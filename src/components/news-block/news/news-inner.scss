@@ -1,0 +1,46 @@
+.news-inner {
+  &-title {
+    font-size: 27px;
+  }
+
+  &-text,
+  .content-collapse-button {
+    font-family: 'Georgia';
+    color: #2a2a2a;
+  }
+
+  &-text {
+    font-size: 18px;
+  }
+
+  .content-collapse-button {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &-img-signature {
+    font-family: 'HelveticaNeueCyr-Roman';
+    color: #b4b4b4;
+    line-height: 1.64;
+  }
+  
+  &-caption {
+    font-family: HelveticaNeueCyr-Roman;
+
+    &-header {
+      font-size: 11px;
+      color: #b4b4b4;
+    }
+
+    &-text {
+      font-size: 16px;
+      color: #2a2a2a;
+    }
+  }
+
+  .styled {
+    color: #13a5f7;
+    cursor: pointer;
+  }
+}

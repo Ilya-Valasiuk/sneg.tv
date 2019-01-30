@@ -16,47 +16,22 @@
       color: #13a5f7;
     }
   }
-}
 
-.news-block .title {
-  letter-spacing: 7px;
-  color: #2A2A2A;
-}
+  .title {
+    letter-spacing: 7px;
+    color: #2A2A2A;
+  }
 
-.news-block .date {
-  line-height: 19px;
-  font-size: 11px;
-  color: #B4B4B4;
-} 
+  .link {
+    &:hover .preview-text {
+      color: #13A5F7;
+    }
+  }
 
-.news-block .type {
-  line-height: 16px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #13A5F7;
-}
-
-.news-block .preview-text {
-  line-height: 24px;
-  font-size: 22px;
-  color: #2A2A2A;
-}
-
-.news-block .article-text {
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 26px;
-  font-size: 18px;
-  color: #2A2A2A;
-}
-
-.news-block .title-line {
-  border-bottom: 1px solid #EFEFEF;
-}
-
-.news-block .link:hover .preview-text {
-  color: #13A5F7;
+  .without-margins {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 .news-block .editor-choise {
@@ -71,64 +46,7 @@
   color: #2A2A2A;
 }
 
-.news-block .test-btn {
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #FFFFFF;
-  background: #13A5F7;
-  border-color: #13A5F7;
-  border-radius: 3px;
-}
-
 .news-block {
-  .news-inner {
-    &-title {
-      font-size: 27px;
-    }
-
-    &-text,
-    .content-collapse-button {
-      font-family: 'Georgia';
-      color: #2a2a2a;
-    }
-
-    &-text {
-      font-size: 18px;
-    }
-
-    .content-collapse-button {
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    &-img-signature {
-      font-family: 'HelveticaNeueCyr-Roman';
-      color: #b4b4b4;
-      line-height: 1.64;
-    }
-    
-    &-caption {
-      font-family: HelveticaNeueCyr-Roman;
-
-      &-header {
-        font-size: 11px;
-        color: #b4b4b4;
-      }
-
-      &-text {
-        font-size: 16px;
-        color: #2a2a2a;
-      }
-    }
-
-    .styled {
-      color: #13a5f7;
-      cursor: pointer;
-    }
-  }
-
   .news-comments {
     &-title {
       font-weight: 900;

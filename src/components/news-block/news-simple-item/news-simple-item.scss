@@ -1,0 +1,35 @@
+@import './../../../styles/breakpoints';
+
+.news-simple-item {
+  .preview-text {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.29;
+    color: #2a2a2a;
+
+    .news-item-line-wrapper-large & {
+      font-size: 22px;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      line-height: 24px;
+      font-size: 22px;
+    }
+  }
+
+  .article-text {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 26px;
+    font-size: 18px;
+    color: #2A2A2A;
+  }
+
+  &.mobile-large {
+    .preview-text {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+}

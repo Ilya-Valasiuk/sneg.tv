@@ -1,0 +1,45 @@
+.news-test-item {
+  position: relative;
+
+  .test-btn {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #13A5F7;
+    border-color: #13A5F7;
+    border-radius: 3px;
+  }
+
+  .placeholder-text {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 20px;
+
+    .date {
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 11px;
+      line-height: 1.73;
+    }
+
+    .type {
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .title-text {
+      font-size: 22px;
+      line-height: 1.18;
+    }
+  }
+
+  &-mobile {
+    height: 345px;
+    background-size: cover;
+    background-position: center;
+  }
+}

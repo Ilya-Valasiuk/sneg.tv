@@ -1,0 +1,24 @@
+.news-item-main {
+  &:not(.no-link) {
+    cursor: pointer;
+    text-decoration: none !important;
+
+    &:hover {
+      .preview-text {
+        color: #13A5F7 !important;
+      }
+  
+      img {
+        opacity: .9;
+      }
+    }
+  }
+  
+
+  .placeholder {
+    left: 20px;
+    bottom: 20px;
+    line-height: 32px;
+    font-size: 27px;
+  }
+}

@@ -3,14 +3,14 @@ import { Container, Row, Col } from 'reactstrap';
 import {
   largeBlockImg,
   newsImg1,
-} from './../../img/news';
-import { More } from './more';
-import { NewsInner } from './news-inner/news-inner';
+} from './../../../img/news';
+import { More } from './../more';
+import { NewsInner } from './../news/news-inner';
 
-import { AdBanner } from './../ad-banner/ad-baner';
-import { NewsItem } from './news-item';
+import { AdBanner } from './../../ad-banner/ad-baner';
+import { NewsItem } from './../news-item/news-item';
 
-import './news-block.scss';
+import './../news-block.scss';
 
 const type = 'Знания';
 

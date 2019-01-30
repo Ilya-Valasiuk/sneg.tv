@@ -5,8 +5,9 @@ import ReactResizeDetector from 'react-resize-detector';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { NewsFeed } from './../components/news-feed/news-feed';
-import { NewsFeedCollapsed } from './../components/news-feed/news-feed-collapsed';
+import { NewsFeedMobile } from './../components/news-feed/news-feed-mobile';
 import { Header } from '../components/header/header';
+import { HeaderMobile } from '../components/header/header-mobile';
 import { Search } from './../components/search/search';
 import { Home } from './../components/home/home';
 import { InnerWrapper } from './../components/inner/inner-wrapper';
@@ -22,8 +23,10 @@ class MainPage extends Component {
     this.state = {
       isFeedOpened: false,
       isMenuOpened: false,
+      isMobileFeedOpened: false,
       isSearchOpened: false,
       isDesktop: true,
+      isMobile: false,
     };
 
     this.containerRef = React.createRef();
@@ -39,6 +42,10 @@ class MainPage extends Component {
 
   toggleFeedPanel = () => {
     this.setState(({ isFeedOpened }) => ({ isFeedOpened: !isFeedOpened }));
+  }
+
+  toggleMobileFeedPanel = () => {
+    this.setState(({ isMobileFeedOpened }) => ({ isMobileFeedOpened: !isMobileFeedOpened, isMenuOpened: false, isSearchOpened: false }));
   }
 
   onKeyDownHandler = (event) => {
@@ -59,8 +66,10 @@ class MainPage extends Component {
   }
 
   onResize = (width) => {
+    console.log(width);
     this.setState({
       isDesktop: width >= 1280,
+      isMobile: width < 768,
     })
   }
 
@@ -89,24 +98,30 @@ class MainPage extends Component {
   }
 
   render() {
-    const { isDesktop, isFeedOpened, isMenuOpened, isSearchOpened } = this.state;
+    const { isDesktop, isMobile, isFeedOpened, isMenuOpened, isSearchOpened, isMobileFeedOpened } = this.state;
 
     return (
       <div ref={this.containerRef}>
         <Container className="snow p-0" fluid onKeyDown={this.onKeyDownHandler} tabIndex={0}>
-          <Row className={classnames('snow-col', { 'feed-opened': isFeedOpened, 'menu-opened': isMenuOpened, 'search-opened': isSearchOpened })} noGutters>
+          <Row className={classnames('snow-col', { 'feed-opened': isFeedOpened, 'menu-opened': isMenuOpened, 'search-opened': isSearchOpened, 'feed-mobile-opened': isMobileFeedOpened })} noGutters>
             <Col className="snow-col-feed" xs='auto'>
               <NewsFeed isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} isFeedOpened={isDesktop || isFeedOpened} onFeedPanelOpen={this.toggleFeedPanel} />
             </Col>
             <Col className="snow-col-main">
               <div className={classnames('main', { 'menu-opened': isMenuOpened })}>
-                <Header isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={this.toggleMenu} onSearchToggle={this.toggleSearch} />
+                {
+                  isMobile ? <HeaderMobile isMenuOpened={isMenuOpened} onMenuToggle={this.toggleMenu} onFeedPanelToggle={this.toggleMobileFeedPanel} isFeedPanelOpened={isMobileFeedOpened} /> : <Header isMenuOpened={isMenuOpened} isSearchOpened={isSearchOpened} onMenuToggle={this.toggleMenu} onSearchToggle={this.toggleSearch} />
+                }
                 {
                   isMenuOpened ?
                     <Menu /> :
                     <Fragment>
-                      <Route exact path="/" component={Home} />
-                      <Route exact path="/inner" component={InnerWrapper} />
+                      <Route exact path="/" render={props => (
+                        <Home {...props} isMobile={isMobile} />
+                      )} />
+                      <Route exact path="/inner" render={props => (
+                        <InnerWrapper {...props} isMobile={isMobile} />
+                      )} />
                       <Footer />
                     </Fragment>
                 }
@@ -116,6 +131,7 @@ class MainPage extends Component {
                   isSearchOpened && <Search />
                 }
               </div>
+              {isMobileFeedOpened && <NewsFeedMobile onFeedPanelToggle={this.toggleMobileFeedPanel} />}
             </Col>
           </Row>
           <ReactResizeDetector handleWidth onResize={this.onResize} />

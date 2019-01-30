@@ -1,8 +1,10 @@
 import React from 'react';
 import { Row, Col, Button } from 'reactstrap';
-import { NewsSimpleItem } from './news-simple-item';
+import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 
-export function TestBlock({ imgSrc, imgAlt, date, type, typeLink, previewText, handler }) {
+import './news-test-item.scss';
+
+export function NewsTestItem({ imgSrc, imgAlt, date, type, typeLink, previewText, handler }) {
   return (
     <Row noGutters className="news-item">
       <Col xs={12}>

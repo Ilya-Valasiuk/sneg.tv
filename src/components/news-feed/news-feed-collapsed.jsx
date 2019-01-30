@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
-import { AdBanner } from '../ad-banner/ad-baner';
 import { SnowLogo } from '../snow-logo/snow-logo';
-import { NewsFeedItem } from './news-feed-item';
+import { NewsFeedList } from './news-feed-list';
 
 // STUB DATA
 import { NEWS_FEED_DATA } from './news-feed-data';
@@ -16,24 +15,7 @@ export function NewsFeedCollapsed({ isMenuOpened }) {
           {/* {!isMenuOpened && <div className="news-feed-add d-flex align-items-center justify-content-center rounded-circle"><i className="fas fa-plus"></i></div>} */}
         </Col>
       </Row>
-      <Row className="news-feed-list pt-4">
-        <Col>
-          <p className="news-feed-title mb-3 pt-2">ЛЕНТА НОВОСТЕЙ</p>
-        </Col>
-        {
-          NEWS_FEED_DATA.map(({ text, date }, index) => {
-            // TODO: узнать логику работы банеров на макете
-            const shouldShowBanner = index && (index === 2 || index === 12);
-
-            return (<Col className={shouldShowBanner ? 'px-0 mb-3 news-feed-banner' : ''} xs={12} key={text + date}>
-              {
-                shouldShowBanner ? <AdBanner /> : <NewsFeedItem text={text} date={date} />
-              }
-            </Col>
-            )
-          })
-        }
-      </Row>
+      <NewsFeedList data={NEWS_FEED_DATA} className="pt-4" />
     </Fragment>
   );
 }

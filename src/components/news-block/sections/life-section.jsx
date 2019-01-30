@@ -1,22 +1,19 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import {
-  largeBlockImg,
-  newsImg1,
-  newsImg2,
-  newsImg3,
-  newsImg4,
-  newsImg5,
-  newsImg6,
-} from './../../../img/news';
+import { cloneDeep } from 'lodash';
 
-import { NewsItem } from './../news-item';
-import { NewsSimpleItem } from './../news-simple-item';
+import { NewsItem } from './../news-item/news-item';
+import { NewsItemMain } from './../news-item-main/news-item-main';
+import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 import { More } from './../more';
+import { STUB_DATA } from './stub-data'; 
 
 import './../news-block.scss';
 
-export function LifeSection({ }) {
+
+export function LifeSection({ isMobile }) {
+  const NEWS_DATA = cloneDeep(STUB_DATA);
+
   return (
     <Container className="py-3 news-block">
       <Row className="align-items-center mb-2">
@@ -28,13 +25,8 @@ export function LifeSection({ }) {
 
       <Row noGutters>
         <Col xs='auto' className="news-item-line-wrapper-large mr-15">
-          <NewsItem
-            imgSrc={largeBlockImg}
-            imgAlt="Кокорин"
-            imgPlaceholder="Кокорин не пришёл в полицию до истечение дедлайна МВД"
-            previewText="Футболист «Зенита» Александр Кокорин не пришел в полицию в указанный срок — до 18:00. Ранее МВД обещало объявить футболиста в федеральный розыск"
-            type="Жизнь"
-            date="10 октября 2018 18:16"
+          <NewsItemMain
+            {...NEWS_DATA[1]}
             large
           />
         </Col>
@@ -64,29 +56,17 @@ export function LifeSection({ }) {
       <Row noGutters>
         <Col className="news-item-line-wrapper mr-15">
           <NewsItem
-            imgSrc={newsImg1}
-            imgAlt="newsImg1"
-            previewText="Глава КС предложил политическую и правовую реформы. Главное"
-            type="Жизнь"
-            date="10 октября 2018 18:16"
+            {...NEWS_DATA[2]}
           />
         </Col>
         <Col className="news-item-line-wrapper mr-15">
           <NewsItem
-            imgSrc={newsImg2}
-            imgAlt="newsImg2"
-            previewText="Реновация для пожилых: как Сбербанк хочет развивать дома престарелых"
-            type="Жизнь"
-            date="10 октября 2018 18:16"
+            {...NEWS_DATA[3]}
           />
         </Col>
         <Col className="news-item-line-wrapper">
           <NewsItem
-            imgSrc={newsImg3}
-            imgAlt="newsImg3"
-            previewText="Новый плацдарм: что известно о переброске российских военных в Ливию"
-            type="Жизнь"
-            date="10 октября 2018 18:16"
+            {...NEWS_DATA[4]}
           />
         </Col>
       </Row>
@@ -96,29 +76,17 @@ export function LifeSection({ }) {
       <Row noGutters>
         <Col className="news-item-line-wrapper mr-15">
           <NewsItem
-            imgSrc={newsImg4}
-            imgAlt="newsImg4"
-            previewText="Молодая россиянка спасла из горящего дома 12 человек"
-            type="Жизнь"
-            date="10 октября 2018 18:16"
+            {...NEWS_DATA[5]}
           />
         </Col>
         <Col className="news-item-line-wrapper mr-15">
           <NewsItem
-            imgSrc={newsImg5}
-            imgAlt="newsImg5"
-            previewText="На Кокорина и Мамаева завели уголовное дело"
-            type="Жизнь"
-            date="10 октября 2018 18:16"
+            {...NEWS_DATA[6]}
           />
         </Col>
         <Col className="news-item-line-wrapper">
           <NewsItem
-            imgSrc={newsImg6}
-            imgAlt="newsImg6"
-            previewText="Семен Слепаков – Песня о солсберецком шпиле"
-            type="Жизнь"
-            date="10 октября 2018 18:16"
+            {...NEWS_DATA[7]}
           />
         </Col>
       </Row>

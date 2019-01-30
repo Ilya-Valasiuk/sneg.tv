@@ -1,0 +1,25 @@
+@import '../../../styles/breakpoints';
+
+.news-date-type {
+  .date {
+    line-height: 19px;
+    font-size: 10px;
+    color: #B4B4B4;
+    font-family: HelveticaNeueCyr-Roman;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 11px;
+    }
+  } 
+
+  .type {
+    line-height: 16px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #13A5F7;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 11px;
+    }
+  }
+}

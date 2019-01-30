@@ -6730,7 +6730,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@>=15.5.10, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -7025,6 +7025,12 @@ react-scripts@2.1.1:
     workbox-webpack-plugin "3.6.3"
   optionalDependencies:
     fsevents "1.2.4"
+
+react-sticky-el@^1.0.20:
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/react-sticky-el/-/react-sticky-el-1.0.20.tgz#b3c5e7128218633f440dc67aec239d1cd078342d"
+  dependencies:
+    prop-types ">=15.5.10"
 
 react-sticky@^6.0.3:
   version "6.0.3"

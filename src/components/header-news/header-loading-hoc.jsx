@@ -84,6 +84,7 @@ export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) 
 
 		constructor(props) {
 			super(props);
+			console.log(props);
 
 			this.state = {
 				title: '',

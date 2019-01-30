@@ -10,8 +10,8 @@ import {
   newsImg6,
 } from './../../../img/news';
 
-import { NewsItem } from './../news-item';
-import { NewsSimpleItem } from './../news-simple-item';
+import { NewsItem } from './../news-item/news-item';
+import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 import { More } from './../more';
 
 import './../news-block.scss';

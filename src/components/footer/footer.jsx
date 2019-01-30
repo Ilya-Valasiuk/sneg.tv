@@ -8,7 +8,7 @@ export function Footer({ }) {
   return (
     <footer className="footer">
       <div className="footer-subscribe d-flex align-items-center flex-column py-5">
-        <p className="footer-subscribe-title mb-4">Подпишитесь на рассылку, чтобы быть в курсе первым</p>
+        <p className="footer-subscribe-title mb-4 px-2">Подпишитесь на рассылку, чтобы быть в курсе первым</p>
         <div className="footer-subscribe-block d-flex">
           <input className="px-3" type="text" name="subscribe" id="subscribe" placeholder="Введите ваш email" />
           <span className=""><i className="fab fa-telegram-plane"></i></span>
@@ -16,7 +16,7 @@ export function Footer({ }) {
       </div>
       <div className="footer-info">
         <Row noGutters className="p-3">
-          <Col xs={6} className="footer-info-text pr-2">
+          <Col xs={12} md={6} className="footer-info-text pr-2">
             <p className="footer-logo text-white">снег.<span className="text-blue">tv</span></p>
             <p>© 2018 Интернет-газета «Sneg»</p>
             <p>
@@ -29,7 +29,7 @@ export function Footer({ }) {
               Нашли опечатку? Выделите слово и нажмите <span className="text-white">Ctrl+Enter</span>
             </p>
           </Col>
-          <Col xs='auto' className="size-14 footer-large-block">
+          <Col xs='auto' className="size-14 footer-large-block d-none d-md-block">
             <FooterLinks title="ТЕМЫ" items={[
               { link: '#', title: 'Дедолларизация' },
               { link: '#', title: 'Отставки губернаторов' },
@@ -39,14 +39,14 @@ export function Footer({ }) {
               { link: '#', title: 'Пенсионная реформа' },
             ]} />
           </Col>
-          <Col xs='auto' className="size-14 footer-small-block">
+          <Col xs='auto' className="size-14 footer-small-block d-none d-md-block">
             <FooterLinks title="РУБРИКИ" items={[
               { link: '#', title: 'Жизнь' },
               { link: '#', title: 'Знания' },
               { link: '#', title: 'Эмоции' },
             ]} />
           </Col>
-          <Col xs='auto' className="size-14 footer-medium-block">
+          <Col xs='auto' className="size-14 footer-medium-block d-none d-md-block">
             <FooterLinks title="О НАС" items={[
               { link: '#', title: 'Контакты' },
               { link: '#', title: 'Редакция' },

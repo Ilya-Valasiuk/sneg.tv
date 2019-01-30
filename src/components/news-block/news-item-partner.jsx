@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
 
-import './news-item.scss';
+// import './news-item.scss';
 
 export function NewsItemPartner({
   imgSrc,

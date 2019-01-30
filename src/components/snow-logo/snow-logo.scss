@@ -1,14 +1,20 @@
+@import './../../styles/breakpoints';
 @import './../../styles/shared';
 
 .snow-logo {
-  height: 102px;
-  width: 240px;
+  height: 51px;
+  background-position: center;
   line-height: 20px;
   font-size: 35px;
   background-image: url('./../../img/logobg.png');
   text-decoration: none !important;
 
-  &-short {
-    width: 54px;
+  @media (min-width: $breakpoint-tablet) {
+    height: 102px;
+    width: 240px;
+
+    &-short {
+      width: 54px;
+    }
   }
 }

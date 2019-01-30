@@ -1,0 +1,18 @@
+.news-home-mobile {
+  &-title {
+    font-size: 14px;
+    color: #2a2a2a;
+  }
+
+  &-text,
+  .content-collapse-button {
+    font-family: 'Georgia';
+    font-size: 14px;
+  }
+
+  .content-collapse-button {
+    font-style: italic;
+    line-height: 1.76;
+    color: #13a5f7;
+  }
+}

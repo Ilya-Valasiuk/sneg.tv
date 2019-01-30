@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
 import { ContentCollapse } from './../../shared/content-collapse/content-collapse';
 import { NewsComments } from './../../news-block/news-comments';
-import { NewsDateType } from './../news-date-type';
+import { NewsDateType } from './../news-date-type/news-date-type';
+
+import './news-inner.scss';
 
 export class NewsInner extends Component {
   getContent() {
@@ -21,7 +23,7 @@ export class NewsInner extends Component {
         {showIframe && <div className="py-3">
           <div className="news-iframe  text-center">
             <iframe id="ytplayer" type="text/html" class="video"
-              src="http://www.youtube.com/embed/RMxsaTWOVhw?autoplay=0&origin=https://www.youtube.com/watch?v=RMxsaTWOVhw"
+              src="https://www.youtube.com/embed/RMxsaTWOVhw?autoplay=0&origin=https://www.youtube.com/watch?v=RMxsaTWOVhw"
               frameborder="0" />
           </div>
         </div>

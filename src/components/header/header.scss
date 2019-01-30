@@ -1,9 +1,19 @@
+@import './../../styles/breakpoints';
 @import './../../styles/shared';
 
 .header {
   z-index: 1;
   position: sticky;
   top: 0;
+
+  &-mobile {
+    z-index: 10;
+    position: relative;
+
+    &.sticky {
+      background-color: #2A2A2A;
+    }
+  }
 }
 
 .header-main {
@@ -45,7 +55,10 @@
   justify-content: center;
   cursor: pointer;
   color: #ffffff;
-  border-left: 1px solid #464646;
+
+  @media (min-width: $breakpoint-tablet) {
+    border-left: 1px solid #464646;
+  }
 }
 
 .header-hamburger:hover svg path,
