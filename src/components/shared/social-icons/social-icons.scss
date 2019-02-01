@@ -1,0 +1,21 @@
+.social-icons {
+  font-size: 14px;
+  color: #B4B4B4;
+
+  &-item {
+    display: inline-flex;
+    align-items: center;
+    /* height: 30px; */
+    padding: 8px 0;
+    width: 30px;
+    border-radius: 50%;
+    color: #B4B4B4;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #333333;
+      cursor: pointer;
+      color: #4dabf7;
+    }
+  }
+}

@@ -12,6 +12,7 @@ import { Search } from './../components/search/search';
 import { Home } from './../components/home/home';
 import { InnerWrapper } from './../components/inner/inner-wrapper';
 import { Menu } from './../components/menu/menu';
+import { MenuMobile } from './../components/menu/menu-mobile';
 import { Footer } from './../components/footer/footer';
 
 import './main.scss';
@@ -99,6 +100,7 @@ class MainPage extends Component {
 
   render() {
     const { isDesktop, isMobile, isFeedOpened, isMenuOpened, isSearchOpened, isMobileFeedOpened } = this.state;
+    const MenuComponent = isMobile ? MenuMobile : Menu;
 
     return (
       <div ref={this.containerRef}>
@@ -114,7 +116,7 @@ class MainPage extends Component {
                 }
                 {
                   isMenuOpened ?
-                    <Menu /> :
+                    <MenuComponent /> :
                     <Fragment>
                       <Route exact path="/" render={props => (
                         <Home {...props} isMobile={isMobile} />

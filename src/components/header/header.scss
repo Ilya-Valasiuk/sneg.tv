@@ -13,6 +13,39 @@
     &.sticky {
       background-color: #2A2A2A;
     }
+
+    .menu-opened & {
+      background-color: #2A2A2A; 
+    }
+
+    &-inner {
+      background-color: #2A2A2A;
+
+      .snow-logo {
+        font-size: 24px;
+      }
+
+      &-default {
+        .sticky & {
+          display: none;
+        }
+      }
+
+      &-social-icons {
+        display: none;
+        height: 51px;
+        box-shadow: 0 7px 28px 0 rgba(0, 0, 0, 0.15);
+        background-color: #ffffff;
+
+        .social-icons-item {
+          color: #3c3c3c;
+        }
+
+        .sticky & {
+          display: block;
+        }
+      }
+    }
   }
 }
 
@@ -24,29 +57,10 @@
   color: #B4B4B4;
 }
 
-.header-social {
-  font-size: 14px;
-  color: #B4B4B4;
-}
-
-.header-social-item {
-  display: inline-flex;
-  align-items: center;
-  /* height: 30px; */
-  padding: 8px 0;
-  width: 30px;
-  border-radius: 50%;
-  color: #B4B4B4;
-}
-
-.header-social-item:hover {
-  text-decoration: none;
-  background-color: #333333;
-  cursor: pointer;
-  color: #4dabf7;
-}
-
-.header-hamburger, .header-search {
+.header-hamburger,
+.header-search,
+.header-back,
+.header-share {
   font-size: 18px;
   height: 51px;
   width: 50px;
@@ -62,7 +76,9 @@
 }
 
 .header-hamburger:hover svg path,
-.header-search:hover svg path {
+.header-search:hover svg path,
+.header-back:hover svg path,
+.header-share:hover svg path {
   stroke: #4dabf7;
 }
 

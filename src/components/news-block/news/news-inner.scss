@@ -1,6 +1,12 @@
+@import '../../../styles/breakpoints';
+
 .news-inner {
   &-title {
-    font-size: 27px;
+    font-size: 25px;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 27px;
+    }
   }
 
   &-text,
@@ -34,13 +40,23 @@
     }
 
     &-text {
-      font-size: 16px;
+      font-size: 11px;
       color: #2a2a2a;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 16px;
+      }
     }
   }
 
   .styled {
     color: #13a5f7;
     cursor: pointer;
+  }
+
+  .comments-btn {
+    color: #13a5f7;
+    border-color: #efefef;
+    height: 48px;
   }
 }

@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { MenuIcon } from './../icons/menu';
 import { CloseIcon } from './../icons/close';
 import { SearchIcon } from './../icons/search';
+import { SocialIcons } from './../shared/social-icons/social-icons';
 
 import './header.scss';
 
@@ -23,36 +24,7 @@ export class Header extends PureComponent {
             <span className="text-white">$</span> 76.31 <i className="fas fa-caret-down caret-red" />
           </Col>
           <Col></Col>
-          <Col xs='auto' className="px-1">
-            <a href="#" className="header-social-item justify-content-center size-14">
-              <i className="fab fa-vk"></i>
-            </a>
-          </Col>
-          <Col xs='auto' className="px-1">
-            <a href="#" className="header-social-item justify-content-center size-14">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-          </Col>
-          <Col xs='auto' className="px-1">
-            <a href="#" className="header-social-item justify-content-center size-14">
-              <i className="fab fa-odnoklassniki"></i>
-            </a>
-          </Col>
-          <Col xs='auto' className="px-1">
-            <a href="#" className="header-social-item justify-content-center size-14">
-              <i className="fab fa-twitter"></i>
-            </a>
-          </Col>
-          <Col xs='auto' className="px-1">
-            <a href="#" className="header-social-item justify-content-center size-14">
-              <i className="fab fa-viber"></i>
-            </a>
-          </Col>
-          <Col xs='auto' className="px-1 mr-2">
-            <a href="#" className="header-social-item justify-content-center size-14">
-              <i className="fab fa-telegram-plane"></i>
-            </a>
-          </Col>
+          <SocialIcons />
 
           <Col xs='auto'>
             <div className="header-hamburger px-3" onClick={onMenuToggle}>

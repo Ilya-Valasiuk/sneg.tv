@@ -31,6 +31,15 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     color: #2A2A2A;
+
+    &-sticky {
+      height: 51px;
+
+      .sticky & {
+        box-shadow: 0 7px 28px 0 rgba(0, 0, 0, 0.15);
+        background-color: #ffffff;
+      }
+    }
   }
 
   &-list {
@@ -90,11 +99,11 @@
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 
-    .close-icon-wrapper {
-      position: absolute;
-      top: 15px;
-      right: 15px;
+    .sticky {
       z-index: 1;
+    }
+
+    .close-icon-wrapper {
       path {
         stroke: #3c3c3c;
       }

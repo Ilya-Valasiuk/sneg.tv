@@ -1,15 +1,26 @@
 import React from 'react';
+import Sticky from 'react-sticky-el';
 import classnames from 'classnames';
 import { Row, Col } from 'reactstrap';
 import { AdBanner } from '../ad-banner/ad-baner';
 import { NewsFeedItem } from './news-feed-item';
+import { CloseIcon } from './../icons/close';
 
-
-export function NewsFeedList({ data, isMobile, className }) {
+export function NewsFeedList({ data, isMobile, onFeedPanelToggle, className }) {
   return (
     <Row className={classnames('news-feed-list', className)}>
       <Col>
-        <p className="news-feed-title font-weight-900 mb-3 pt-2">ЛЕНТА НОВОСТЕЙ</p>
+        {isMobile ?
+          <Sticky scrollElement=".news-feed-mobile">
+            <Row className="news-feed-title-sticky align-items-center">
+              <Col>
+                <p className="news-feed-title font-weight-900 mb-0">ЛЕНТА НОВОСТЕЙ</p>
+              </Col>
+              <Col xs="auto" className="close-icon-wrapper" onClick={onFeedPanelToggle}><CloseIcon /></Col>
+            </Row>
+          </Sticky> :
+          <p className="news-feed-title font-weight-900 mb-3 pt-2">ЛЕНТА НОВОСТЕЙ</p>
+        }
       </Col>
       {
         data.map(({ text, date }, index) => {

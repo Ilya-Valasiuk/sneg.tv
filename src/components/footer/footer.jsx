@@ -1,5 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
+import { Subscribe } from './../shared/subscribe/subscribe';
+import { InfoText } from './../shared/info-text/info-text';
 import { FooterLinks } from './footer-links';
 
 import './footer.scss'
@@ -7,27 +9,11 @@ import './footer.scss'
 export function Footer({ }) {
   return (
     <footer className="footer">
-      <div className="footer-subscribe d-flex align-items-center flex-column py-5">
-        <p className="footer-subscribe-title mb-4 px-2">Подпишитесь на рассылку, чтобы быть в курсе первым</p>
-        <div className="footer-subscribe-block d-flex">
-          <input className="px-3" type="text" name="subscribe" id="subscribe" placeholder="Введите ваш email" />
-          <span className=""><i className="fab fa-telegram-plane"></i></span>
-        </div>
-      </div>
+      <Subscribe className="py-5 px-3" />
       <div className="footer-info">
         <Row noGutters className="p-3">
-          <Col xs={12} md={6} className="footer-info-text pr-2">
-            <p className="footer-logo text-white">снег.<span className="text-blue">tv</span></p>
-            <p>© 2018 Интернет-газета «Sneg»</p>
-            <p>
-              Исключительные права на фото- и иные материалы принадлежат авторам. Любое размещение материалов на сторонних ресурсах необходимо согласовывать с правообладателями.
-              <br />
-              <br />
-              По всем вопросам обращайтесь на <a className="text-white" href="mailto:info@sneg.tv">info@sneg.tv</a>
-              <br />
-              <br />
-              Нашли опечатку? Выделите слово и нажмите <span className="text-white">Ctrl+Enter</span>
-            </p>
+          <Col xs={12} md={6} className="pr-2">
+            <InfoText />
           </Col>
           <Col xs='auto' className="size-14 footer-large-block d-none d-md-block">
             <FooterLinks title="ТЕМЫ" items={[
