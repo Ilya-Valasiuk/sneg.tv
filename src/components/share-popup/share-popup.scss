@@ -1,0 +1,23 @@
+.share-popup {
+  position: absolute;
+  top: 51px;
+  left: 0;
+  background-color: #333333;
+  padding-left: 25px;
+  list-style: none;
+
+  &-icon {
+    width: 18px;
+    margin-right: 18px;
+    color: #b4b4b4;
+  }
+
+  li {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 3.29;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase
+  }
+}

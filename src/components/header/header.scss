@@ -25,11 +25,11 @@
         font-size: 24px;
       }
 
-      &-default {
-        .sticky & {
-          display: none;
-        }
-      }
+      // &-default {
+      //   .sticky & {
+      //     display: none;
+      //   }
+      // }
 
       &-social-icons {
         display: none;
@@ -41,9 +41,9 @@
           color: #3c3c3c;
         }
 
-        .sticky & {
-          display: block;
-        }
+        // .sticky & {
+        //   display: block;
+        // }
       }
     }
   }

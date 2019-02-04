@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Row, Col, Button } from 'reactstrap';
 import { ContentCollapse } from './../../shared/content-collapse/content-collapse';
-import { NewsComments } from './../../news-block/news-comments';
 import { NewsDateType } from './../news-date-type/news-date-type';
 import { NewsSimpleItem } from '../news-simple-item/news-simple-item';
 import { AdPlaceholder } from './../../shared/ad-placeholder/ad-placeholder';
@@ -9,6 +8,7 @@ import { AdPlaceholder } from './../../shared/ad-placeholder/ad-placeholder';
 import './news-inner.scss';
 
 export class NewsInnerMobile extends Component {
+
   getContent() {
     const {
       articleText,
@@ -17,6 +17,7 @@ export class NewsInnerMobile extends Component {
       tags,
       isSeparatorHidden,
       showIframe,
+      onToggleCommentsPopup,
     } = this.props;
 
     return (
@@ -71,8 +72,7 @@ export class NewsInnerMobile extends Component {
           </Row>
         </div>
         <Row noGutters>
-          <Button className="comments-btn w-100" outline>Обсудить</Button>
-          {/* <NewsComments /> */}
+          <Button className="comments-btn w-100" outline onClick={onToggleCommentsPopup}>Обсудить</Button>
         </Row>
         <AdPlaceholder />
       </Fragment>

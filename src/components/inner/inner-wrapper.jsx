@@ -11,18 +11,18 @@ const STUB_HEADER_TITLE3 = 'Ещё один тестовый заголовок'
 
 class InnerWrapperUI extends Component {
   render() {
-    const { progress, headerTitle, isMobile } = this.props;
+    const { progress, headerTitle, isMobile, onToggleCommentsPopup } = this.props;
     const InnerComponent = isMobile ? InnerMobile : Inner;
     return (
       <Fragment>
         {!isMobile && <HeaderNewsSingle title={headerTitle} progress={progress} />}
-        <InnerComponent title={STUB_HEADER_TITLE} showIframe />
+        <InnerComponent title={STUB_HEADER_TITLE} onToggleCommentsPopup={onToggleCommentsPopup} showIframe />
         <hr />
-        <InnerComponent title={STUB_HEADER_TITLE1} isCollapsed />
+        <InnerComponent title={STUB_HEADER_TITLE1} onToggleCommentsPopup={onToggleCommentsPopup} isCollapsed />
         <hr />
-        <InnerComponent title={STUB_HEADER_TITLE2} isCollapsed />
+        <InnerComponent title={STUB_HEADER_TITLE2} onToggleCommentsPopup={onToggleCommentsPopup} isCollapsed />
         <hr />
-        <InnerComponent title={STUB_HEADER_TITLE3} isCollapsed />
+        <InnerComponent title={STUB_HEADER_TITLE3} onToggleCommentsPopup={onToggleCommentsPopup} isCollapsed />
       </Fragment>
     );
   }

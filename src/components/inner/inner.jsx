@@ -5,7 +5,6 @@ import { AdBanner } from './../ad-banner/ad-baner';
 import { NewsSimpleItem } from './../news-block/news-simple-item/news-simple-item';
 import { NewsItemPartner } from './../news-block/news-item-partner';
 import { NewsInner } from './../news-block/news/news-inner';
-import { NewsComments } from './../news-block/news-comments';
 import {
   newsImg1,
   newsImg2,

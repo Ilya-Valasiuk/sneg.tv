@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Row, Col } from 'reactstrap';
 import { ContentCollapse } from './../../shared/content-collapse/content-collapse';
-import { NewsComments } from './../../news-block/news-comments';
 import { NewsDateType } from './../news-date-type/news-date-type';
 
 import './news-home-mobile.scss';
@@ -10,11 +8,6 @@ export class NewsHomeMobile extends Component {
   getContent() {
     const {
       articleText,
-      authorName,
-      authorTitle,
-      tags,
-      isSeparatorHidden,
-      showIframe,
     } = this.props;
 
     return (
@@ -44,7 +37,7 @@ export class NewsHomeMobile extends Component {
           <NewsDateType date={date} type={type} typeLink={typeLink} className="pl-0 align-items-center" />
         </div>
         <p className="news-home-mobile-text">{previewText}</p>
-        
+
         {
           isCollapsed ?
             <ContentCollapse

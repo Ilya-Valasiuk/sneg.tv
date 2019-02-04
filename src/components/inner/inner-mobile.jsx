@@ -1,21 +1,12 @@
 import React, { Component, Fragment } from 'react';
-import classnames from 'classnames';
 import { Container, Row, Col } from 'reactstrap';
-import { AdBanner } from './../ad-banner/ad-baner';
-import { NewsSimpleItem } from './../news-block/news-simple-item/news-simple-item';
-import { NewsItemPartner } from './../news-block/news-item-partner';
 import { NewsInnerMobile } from './../news-block/news/news-inner-mobile';
-import { NewsComments } from './../news-block/news-comments';
 import {
-  newsImg1,
-  newsImg2,
-  newsImg3,
   inner as innerImg,
 } from './../../img/news';
 
 import './inner.scss';
 
-const STUB_HEADER_TITLE = '«Зенит» попросил суд отпустить Кокорина из-под стражи';
 const type = 'Знания';
 const date = '10 октября 2018, 18:16';
 const typeLink = '#';
@@ -44,12 +35,12 @@ export class InnerMobile extends Component {
   }
 
   render() {
-    const { title, showIframe } = this.props;
+    const { title, showIframe, onToggleCommentsPopup } = this.props;
     const { isCollapsed } = this.state;
 
     return (
       <Fragment>
-        <Container className="py-3 news-block inner">
+        <Container className="py-3 news-block inner scroll-element">
           <Row noGutters>
             <Col xs={12} className="">
               <NewsInnerMobile
@@ -67,6 +58,7 @@ export class InnerMobile extends Component {
                 isCollapsed={isCollapsed}
                 onExpand={this.onExpand}
                 showIframe={showIframe}
+                onToggleCommentsPopup={onToggleCommentsPopup}
               />
             </Col>
           </Row>

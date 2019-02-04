@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { throttle } from 'lodash';
 
 const HEADER_HEIGHT = 102;
+const HEADER_HEIGHT_MOBILE = 51;
 
 // LEGACY CODE
 // TODO - improve 
@@ -37,7 +38,7 @@ function isElementVisible(el) {
 const getScrolledPosition = el => {
 	if (el) {
 		const rect = el.getBoundingClientRect();
-		const translatePercent = Math.round((rect.bottom - HEADER_HEIGHT) * 100 / rect.height);
+		const translatePercent = Math.round((rect.bottom - (document.body.clientWidth < 768 ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT)) * 100 / rect.height);
 
 		return !(translatePercent > 0) ? 100 : translatePercent;
 	}
@@ -110,6 +111,15 @@ export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) 
 			fire(progress, title);
 		}
 
+		reset = () => {
+			console.log(this.element);
+			if (this.element.current) {
+				this.articles = this.element.current.querySelectorAll('.scroll-element');
+			}
+
+			this.scrollHandler();
+		}
+
 		componentDidMount() {
 			if (this.element.current) {
 				this.articles = this.element.current.querySelectorAll('.scroll-element');
@@ -121,12 +131,16 @@ export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) 
 				}
 				this.mainCol.addEventListener('scroll', this.scrollHandlerThrottle);
 			}
+
+			document.addEventListener('mobile-change', this.reset);
 		}
 
 		componentWillUnmount() {
 			if (this.mainCol) {
 				this.mainCol.removeEventListener('scroll', this.scrollHandlerThrottle);
 			}
+
+			document.removeEventListener('mobile-change', this.reset);
 		}
 
 		render() {
