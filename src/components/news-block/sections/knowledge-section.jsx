@@ -42,7 +42,7 @@ export function KnowledgeSection({ }) {
         </Col>
         <Col className="news-item-line-wrapper">
           <Row noGutters>
-            <Col className="editor-choise py-3 px-4">
+            <Col className="editor-choise py-2 py-lg-3 px-3 px-lg-4">
               <Row>
                 <Col>
                   <p className="editor-choise-title font-weight-900 pt-3">Выбор редакции</p>

@@ -17,8 +17,6 @@ export class HomeUI extends Component {
   render() {
     const { isMobile } = this.props;
 
-    console.log(this.props)
-
     return (
       <Fragment>
         {!isMobile && <HeaderNews />}

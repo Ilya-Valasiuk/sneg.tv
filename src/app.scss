@@ -21,6 +21,12 @@ body {
   font-family: HelveticaNeueCyr;
 }
 
+@media (max-width: $breakpoint-tablet-sm) {
+  .container {
+    max-width: 100%;
+  }
+}
+
 #root, #root > div, .snow, .snow-col {
   height: 100%;
 }
@@ -43,7 +49,7 @@ body {
   z-index: 1;
   display: none;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-tablet-sm) {
     display: block;
   }
 
@@ -55,7 +61,7 @@ body {
 .snow-col-main {
   position: fixed;
   background-color: #efefef;
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-tablet-sm) {
     margin-left: 54px;
     width: calc(100% - 54px);  
   }

@@ -1,3 +1,5 @@
+@import '../../../styles/breakpoints';
+
 .news-item-main {
   &:not(.no-link) {
     cursor: pointer;
@@ -16,9 +18,13 @@
   
 
   .placeholder {
+    font-size: 24px;
     left: 20px;
     bottom: 20px;
     line-height: 32px;
-    font-size: 27px;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 27px;
+    }
   }
 }

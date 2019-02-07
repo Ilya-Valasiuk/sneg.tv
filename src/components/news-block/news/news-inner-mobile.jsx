@@ -4,6 +4,7 @@ import { ContentCollapse } from './../../shared/content-collapse/content-collaps
 import { NewsDateType } from './../news-date-type/news-date-type';
 import { NewsSimpleItem } from '../news-simple-item/news-simple-item';
 import { AdPlaceholder } from './../../shared/ad-placeholder/ad-placeholder';
+import { ArticlePoll } from '../../shared/article-poll/article-poll';
 
 import './news-inner.scss';
 
@@ -54,6 +55,7 @@ export class NewsInnerMobile extends Component {
           </div>
         </div>
         }
+        <ArticlePoll />
         <h2 className="subtitle">Подзаголовок</h2>
         <p className="font-weight-bold">жирный текс</p>
         <p className="font-italic">курсив</p>

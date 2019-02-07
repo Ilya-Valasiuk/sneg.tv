@@ -72,7 +72,7 @@ export class NewsInner extends Component {
     } = this.props;
     return (
       <div className="news-inner">
-        <NewsDateType date={date} type={type} typeLink={typeLink} className="pl-0" />
+        <NewsDateType date={date} type={type} typeLink={typeLink} className="pl-0 align-items-center" />
         <h1 className="news-inner-title font-weight-900">{title}</h1>
         <p className="news-inner-text font-italic">{previewText}</p>
         <div className="news-inner-img mb-2">

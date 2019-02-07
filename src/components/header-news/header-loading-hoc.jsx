@@ -85,7 +85,6 @@ export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) 
 
 		constructor(props) {
 			super(props);
-			console.log(props);
 
 			this.state = {
 				title: '',
@@ -112,7 +111,6 @@ export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) 
 		}
 
 		reset = () => {
-			console.log(this.element);
 			if (this.element.current) {
 				this.articles = this.element.current.querySelectorAll('.scroll-element');
 			}

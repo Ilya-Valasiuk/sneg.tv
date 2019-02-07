@@ -6,8 +6,6 @@ import './mobile-news.scss';
 export function MobileNews(props) {
   const { imgSrc, imgPlaceholder, type, date } = props;
 
-  console.log(props)
-
   return (
     <div className="mobile-news w-100">
       <img src={imgSrc} className="w-100" />

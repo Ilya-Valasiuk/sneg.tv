@@ -83,8 +83,12 @@
 
     .preview-text {
       line-height: 32px;
-      font-size: 27px;
+      font-size: 24px;
       font-weight: 900;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 27px;
+      }
     }
 
     .article-text {
@@ -92,7 +96,11 @@
       font-style: normal;
       font-weight: normal;
       line-height: 26px;
-      font-size: 18px;
+      font-size: 16px;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 18px;
+      }
     }
 
     &-info {

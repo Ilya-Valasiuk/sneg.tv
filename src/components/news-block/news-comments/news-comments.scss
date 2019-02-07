@@ -1,3 +1,5 @@
+@import '../../../styles/breakpoints';
+
 .news-comments {
   &-title,
   &-popup-title {
@@ -46,6 +48,7 @@
       font-family: HelveticaNeueCyr-Roman;
       font-style: normal;
       color: #b4b4b4;
+      font-size: 14px;
     }
   }
 
@@ -62,9 +65,13 @@
 
     .btn-link {
       font-family: HelveticaNeueCyr-Roman;
-      font-size: 16px;
+      font-size: 14px;
       color: #13a5f7;
       text-decoration: none !important;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 16px;
+      }
     }
   }
 

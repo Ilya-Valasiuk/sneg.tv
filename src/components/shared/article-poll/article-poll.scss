@@ -1,0 +1,90 @@
+.article-poll {
+  background-color: #f8f8f8;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 25px 15px;
+
+  &-title {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #2a2a2a;
+  }
+
+  &-voted {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2;
+    color: #b4b4b4;
+  }
+  
+  &-results-item {
+    p {
+      font-family: Georgia;
+      font-size: 16px;
+      color: #2a2a2a;
+    }
+
+    .results {
+
+      &-bar {
+        height: 10px;
+        display: inline-block;
+        border-radius: 1px;
+        background-color: #13a5f7;
+        max-width: calc(100% - 65px);
+      }
+
+      &-text {
+        font-size: 12px;
+        font-weight: 500;
+        color: #000000;
+        width: 60px;
+      }
+    }
+  }
+
+  .custom-control-label {
+    font-family: Georgia;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #2a2a2a;
+    padding-left: 5px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+      border: solid 1px #13a5f7;
+      background-color: #f8f8f8;
+      border-radius: 50%;
+    } 
+  }
+
+  .custom-control-input {
+    &:checked ~ .custom-control-label {
+
+      &::before {
+        background-color: white;
+      }
+
+      &::after {
+        border-radius: 50%;
+        left: -21px;
+        top: 7px;
+        width: 14px;
+        height: 14px;
+        background-color: #13a5f7;
+        background-image: none;
+      }
+    }
+  }
+
+  button {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 3px;
+    background-color: #13a5f7;
+    border: 0;
+  }
+}

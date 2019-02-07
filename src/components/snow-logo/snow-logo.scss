@@ -9,7 +9,7 @@
   background-image: url('./../../img/logobg.png');
   text-decoration: none !important;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-tablet-sm) {
     height: 102px;
     width: 240px;
 
