@@ -47,7 +47,7 @@ export class NewsInnerMobile extends Component {
             <hr />
           </div>
         </div>
-        {showIframe && <div className="py-3">
+        {showIframe && <div className="py-3 without-margins">
           <div className="news-iframe  text-center">
             <iframe id="ytplayer" type="text/html" class="video"
               src="https://www.youtube.com/embed/RMxsaTWOVhw?autoplay=0&origin=https://www.youtube.com/watch?v=RMxsaTWOVhw"
@@ -95,13 +95,14 @@ export class NewsInnerMobile extends Component {
     } = this.props;
     return (
       <div className="news-inner">
-        <NewsDateType date={date} type={type} typeLink={typeLink} className="pl-0" />
+        <NewsDateType date={date} type={type} typeLink={typeLink} className="pl-0 align-items-center" />
         <h1 className="news-inner-title font-weight-900">{title}</h1>
         <p className="news-inner-text font-italic">{previewText}</p>
-        <div className="news-inner-img mb-2">
-          <img src={imgSrc} className="mb-1 img-fluid" title="Article img" alt="Articlel img" />
-          <span className="news-inner-img-signature size-14">{imgSignature}</span>
+        <div className="news-inner-img without-margins">
+          <img src={imgSrc} className="mb-1 w-100" title="Article img" alt="Articlel img" />
         </div>
+        <div className="news-inner-img-signature size-14 mb-2 ">{imgSignature}</div>
+
         {
           isCollapsed ?
             <ContentCollapse

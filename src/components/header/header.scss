@@ -8,7 +8,8 @@
 
   &-mobile {
     z-index: 10;
-    position: relative;
+    position: fixed;
+    width: 100%;
 
     &.sticky {
       background-color: #2A2A2A;

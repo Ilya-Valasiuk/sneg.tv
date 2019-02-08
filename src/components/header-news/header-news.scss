@@ -1,3 +1,5 @@
+@import './../../styles/breakpoints';
+
 .header {
   &-news {
     height: 51px;
@@ -83,7 +85,15 @@
     position: absolute;
     height: 3px;
     width: 100%;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      bottom: 0;
+    }
+
+    .menu-opened & {
+      display: none;
+    }
   }
 }

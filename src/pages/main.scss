@@ -5,10 +5,6 @@
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.05);
     background-color: #fff;
 
-    @media (min-width: $breakpoint-tablet-sm) {
-      width: 714px;
-    }
-
     @media (min-width: $breakpoint-tablet) {
       width: 970px;
     }

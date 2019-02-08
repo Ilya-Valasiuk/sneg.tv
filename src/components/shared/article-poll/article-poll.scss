@@ -57,6 +57,7 @@
       border: solid 1px #13a5f7;
       background-color: #f8f8f8;
       border-radius: 50%;
+      top: 1px;
     } 
   }
 
@@ -70,7 +71,7 @@
       &::after {
         border-radius: 50%;
         left: -21px;
-        top: 7px;
+        top: 4px;
         width: 14px;
         height: 14px;
         background-color: #13a5f7;

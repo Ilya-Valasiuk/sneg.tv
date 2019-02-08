@@ -30,7 +30,10 @@
   .content-collapse-button {
     font-size: 16px;
     font-weight: bold;
-    text-decoration: underline;
+
+    .control-text {
+      border-bottom: 1px solid #13a5f7;
+    }
   }
 
   &-img-signature {
@@ -66,5 +69,10 @@
     color: #13a5f7;
     border-color: #efefef;
     height: 48px;
+  }
+
+  .without-margins {
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }

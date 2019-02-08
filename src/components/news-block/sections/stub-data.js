@@ -19,7 +19,7 @@ export const STUB_DATA = [
     date: '10 октября 2018 18:16',
   },
   {
-    imgSrc: newsImg1,
+    imgSrc: largeBlockImg,
     imgAlt: 'newsImg1',
     imgPlaceholder: 'Кокорин не пришёл в полицию до истечение дедлайна МВД',
     previewText: 'Глава КС предложил политическую и правовую реформы. Главное',

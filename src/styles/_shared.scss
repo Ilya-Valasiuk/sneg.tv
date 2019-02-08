@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'breakpoints';
 
 .text-blue {
   color: #13A5F7;
@@ -35,7 +36,13 @@
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 24px;
+}
+
+@media (min-width: $breakpoint-tablet-sm) {
+  .subtitle {
+    font-size: 20px;
+  }
 }
 
 

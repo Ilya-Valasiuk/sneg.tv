@@ -6,32 +6,36 @@ html, body {
   margin: 0;
 }
 
-// TODO REMOVE THIS CODE!!!!!!!
-// html {
-//   min-width: 1024px;
-// }
-// @media (max-width: $breakpoint-tablet) {
-//   .container {
-//     max-width: 960px;
-//   }
-// }
-// TODO REMOVE THIS CODE!!!!!!!
-
 body {
   font-family: HelveticaNeueCyr;
 }
 
-@media (max-width: $breakpoint-tablet-sm) {
+#root,
+  #root > div,
+  .snow,
+  .snow-col {
+    height: 100%;
+  }
+
+@media (max-width: $breakpoint-tablet) {
   .container {
     max-width: 100%;
   }
 }
 
-#root, #root > div, .snow, .snow-col {
-  height: 100%;
-}
+// @media (min-width: $breakpoint-tablet-sm) {
+//   html, body {
+//     height: 100%;
+//     overflow: hidden;
+//   }
 
-
+//   #root,
+//   #root > div,
+//   .snow,
+//   .snow-col {
+//     height: 100%;
+//   }
+// }
 
 .snow-col-feed, .snow-col-main {
   height: 100%;
@@ -59,26 +63,31 @@ body {
 }
 
 .snow-col-main {
-  position: fixed;
+  height: 100%;
   background-color: #efefef;
+
   @media (min-width: $breakpoint-tablet-sm) {
-    margin-left: 54px;
     width: calc(100% - 54px);  
   }
 
   @media (min-width: $breakpoint-desktop) {
-    margin-left: 240px;
     width: calc(100% - 240px);
   }
 
   .feed-opened & {
     overflow-y: hidden;
+    position: fixed;
 
     .blackout {
       display: block;
     }
 
+    @media (min-width: $breakpoint-tablet-sm) {
+      margin-left: 54px;
+    }
+
     @media (min-width: $breakpoint-desktop) {
+      margin-left: 240px;
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
 
@@ -115,7 +124,6 @@ body {
 .size-14 {
   font-size: 14px;
 }
-
 
 @media (min-width: $breakpoint-large) {
   .container {

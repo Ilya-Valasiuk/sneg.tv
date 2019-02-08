@@ -68,9 +68,9 @@ export class Inner extends Component {
                 onExpand={this.onExpand}
                 showIframe={showIframe}
               />
-              <Row noGutters>
+              <Row>
                 <Col xs={12} className="partner-title size-14 font-weight-900 text-uppercase"><p className="mb-4">новости партнёров</p></Col>
-                <Col xs="auto" className="news-item-line-wrapper mr-15">
+                <Col xs={6}>
                   <NewsItemPartner
                     imgSrc={newsImg1}
                     imgAlt="newsImg1"
@@ -78,9 +78,10 @@ export class Inner extends Component {
                     type="Жизнь"
                     date="10 октября 2018 18:16"
                     partnerName="rbc.ru"
+                    // className="pr-2"
                   />
                 </Col>
-                <Col xs="auto" className="news-item-line-wrapper">
+                <Col xs={6}>
                   <NewsItemPartner
                     imgSrc={newsImg2}
                     imgAlt="newsImg2"
@@ -88,6 +89,7 @@ export class Inner extends Component {
                     type="Жизнь"
                     date="10 октября 2018 18:16"
                     partnerName="rbc.ru"
+                    // className="pl-2"
                   />
                 </Col>
               </Row>

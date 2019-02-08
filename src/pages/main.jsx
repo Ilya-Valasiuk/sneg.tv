@@ -19,6 +19,12 @@ import { CommentCreatorPopup } from '../components/news-block/news-comments/comm
 
 import './main.scss';
 
+const scrollToTop = () => {
+  const scrollCol = document.body.querySelector('.snow-col-main');
+
+  if (scrollCol) scrollCol.scrollTo(0, 0);
+}
+
 class MainPage extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +45,11 @@ class MainPage extends Component {
   }
 
   toggleMenu = () => {
-    this.setState(({ isMenuOpened }) => ({ isMenuOpened: !isMenuOpened, isSearchOpened: false }));
+    this.setState(({ isMenuOpened }) => ({ isMenuOpened: !isMenuOpened, isSearchOpened: false }), () => {
+      if (this.state.isMobile) {
+        scrollToTop()
+      }
+    });
   }
 
   toggleSearch = () => {
@@ -51,7 +61,9 @@ class MainPage extends Component {
   }
 
   toggleMobileFeedPanel = () => {
-    this.setState(({ isMobileFeedOpened }) => ({ isMobileFeedOpened: !isMobileFeedOpened, isMenuOpened: false, isSearchOpened: false }));
+    this.setState(({ isMobileFeedOpened }) => ({ isMobileFeedOpened: !isMobileFeedOpened, isMenuOpened: false, isSearchOpened: false }), () => {
+      scrollToTop()
+    });
   }
 
   toggleShare = () => {
