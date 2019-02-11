@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Sticky from 'react-sticky-el';
 import { Link as RouterLink } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 import { SnowLogo } from '../snow-logo/snow-logo';
 import { SocialIcons } from './../shared/social-icons/social-icons';
 import { HeaderLoading } from './../header-news/header-loading';
@@ -21,9 +22,9 @@ export class InnerHeaderMobile extends Component {
   };
 
   changeHeaderHandler = e => {
-    const [progress] = [e.detail.progress];
+    const [progress, isViewedAll] = [e.detail.progress, e.detail.isViewedAll];
 
-    this.setState({ progress });
+    this.setState({ progress, isViewedAll });
   }
 
   componentDidMount() {
@@ -36,12 +37,14 @@ export class InnerHeaderMobile extends Component {
 
   render() {
     const { isMenuOpened, onMenuToggle, isFeedPanelOpened, onFeedPanelToggle, isShareOpened, onShareToggle } = this.props;
-    const { progress } = this.state;
+    const { progress, isViewedAll } = this.state;
+
+    const shouldShowIcons = progress > 0 && progress < 30 && isViewedAll;
 
     return (
       <Sticky scrollElement=".snow-col-main" className="header-mobile header-mobile-inner">
         <header className="header">
-          <Row className="justify-content-between header-mobile-inner-default" noGutters>
+          <Row className={classnames('justify-content-between header-mobile-inner-default', { 'd-none': shouldShowIcons })} noGutters>
             {!isShareOpened &&
               <Col xs="auto" className="px-0">
                 <RouterLink className="header-back px-3" to="/">
@@ -70,7 +73,7 @@ export class InnerHeaderMobile extends Component {
             </Col>
             <HeaderLoading progress={progress} />
           </Row>
-          <Row className="justify-content-between header-mobile-inner-social-icons" noGutters>
+          <Row className={classnames('justify-content-between header-mobile-inner-social-icons', { 'd-none': !shouldShowIcons })} noGutters>
             <Col xs="auto" className="pl-2 h-100">
               <SocialIcons className="h-100" />
             </Col>
@@ -78,7 +81,7 @@ export class InnerHeaderMobile extends Component {
           </Row>
           {isShareOpened && <SharePopup />}
         </header>
-      </Sticky>
+      </Sticky >
     );
   }
 }

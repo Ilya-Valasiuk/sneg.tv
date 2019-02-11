@@ -14,11 +14,11 @@ import './../news-block.scss';
 
 const type = 'Знания';
 
-export function News({ }) {
+export function News({ isTabletSm }) {
   return (
     <Container className="py-3 news-block">
       <Row noGutters className="mb-3">
-        <Col xs='auto' className="news-item-line-wrapper-large mr-15 scroll-element">
+        <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15 scroll-element">
           <NewsInner
             date="10 октября 2018 18:16"
             type={type}
@@ -35,33 +35,36 @@ export function News({ }) {
             isSeparatorHidden
           />
         </Col>
-        <Col className="news-item-line-wrapper sticky-right-col pt-2">
-          <div className="sticky-right-col">
-            <Row className="align-items-center">
-              <Col xs='auto'>
-                <p className="editor-choise-title font-weight-900 pt-2">Популярное</p>
-              </Col>
-              <Col className="pl-0">
-                <hr />
-              </Col>
-            </Row>
-            <NewsItem
-              imgSrc={newsImg1}
-              imgAlt="newsImg1"
-              previewText="Глава КС предложил политическую и правовую реформы. Главное"
-              type={type}
-              date="10 октября 2018 18:16"
-            />
-            <hr />
-            <NewsItem
-              imgSrc={newsImg1}
-              imgAlt="newsImg1"
-              previewText="Глава КС предложил политическую и правовую реформы. Главное"
-              type={type}
-              date="10 октября 2018 18:16"
-            />
-          </div>
-        </Col>
+        {
+          !isTabletSm &&
+          <Col className="news-item-line-wrapper sticky-right-col pt-2">
+            <div className="sticky-right-col">
+              <Row className="align-items-center">
+                <Col xs='auto'>
+                  <p className="editor-choise-title font-weight-900 pt-2">Популярное</p>
+                </Col>
+                <Col className="pl-0">
+                  <hr />
+                </Col>
+              </Row>
+              <NewsItem
+                imgSrc={newsImg1}
+                imgAlt="newsImg1"
+                previewText="Глава КС предложил политическую и правовую реформы. Главное"
+                type={type}
+                date="10 октября 2018 18:16"
+              />
+              <hr />
+              <NewsItem
+                imgSrc={newsImg1}
+                imgAlt="newsImg1"
+                previewText="Глава КС предложил политическую и правовую реформы. Главное"
+                type={type}
+                date="10 октября 2018 18:16"
+              />
+            </div>
+          </Col>
+        }
       </Row>
 
       <Row noGutters>
@@ -69,7 +72,7 @@ export function News({ }) {
       </Row>
 
       <Row noGutters>
-        <Col xs='auto' className="news-item-line-wrapper-large mr-15 scroll-element">
+        <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15 scroll-element">
           <NewsInner
             date="10 октября 2018 18:16"
             type={type}
@@ -86,15 +89,18 @@ export function News({ }) {
             isSeparatorHidden
           />
         </Col>
-        <Col className="news-item-line-wrapper sticky-right-col pt-2">
-          <div className="sticky-right-col">
-            <Row noGutters>
-              <Col className="px-0 pb-4 text-center">
-                <AdBanner bannerType="primeVideo" />
-              </Col>
-            </Row>
-          </div>
-        </Col>
+        {
+          !isTabletSm &&
+          <Col className="news-item-line-wrapper sticky-right-col pt-2">
+            <div className="sticky-right-col">
+              <Row noGutters>
+                <Col className="px-0 pb-4 text-center">
+                  <AdBanner bannerType="primeVideo" />
+                </Col>
+              </Row>
+            </div>
+          </Col>
+        }
       </Row>
 
       <Row noGutters>
@@ -102,7 +108,7 @@ export function News({ }) {
       </Row>
 
       <Row noGutters>
-        <Col xs='auto' className="news-item-line-wrapper-large mr-15 scroll-element">
+        <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15 scroll-element">
           <NewsInner
             date="10 октября 2018 18:16"
             type={type}
@@ -119,25 +125,28 @@ export function News({ }) {
             isSeparatorHidden
           />
         </Col>
-        <Col className="news-item-line-wrapper sticky-right-col pt-2">
-          <div className="sticky-right-col">
-            <NewsItem
-              imgSrc={newsImg1}
-              imgAlt="newsImg1"
-              previewText="Глава КС предложил политическую и правовую реформы. Главное"
-              type={type}
-              date="10 октября 2018 18:16"
-            />
-            <hr />
-            <NewsItem
-              imgSrc={newsImg1}
-              imgAlt="newsImg1"
-              previewText="Глава КС предложил политическую и правовую реформы. Главное"
-              type={type}
-              date="10 октября 2018 18:16"
-            />
-          </div>
-        </Col>
+        {
+          !isTabletSm &&
+          <Col className="news-item-line-wrapper sticky-right-col pt-2">
+            <div className="sticky-right-col">
+              <NewsItem
+                imgSrc={newsImg1}
+                imgAlt="newsImg1"
+                previewText="Глава КС предложил политическую и правовую реформы. Главное"
+                type={type}
+                date="10 октября 2018 18:16"
+              />
+              <hr />
+              <NewsItem
+                imgSrc={newsImg1}
+                imgAlt="newsImg1"
+                previewText="Глава КС предложил политическую и правовую реформы. Главное"
+                type={type}
+                date="10 октября 2018 18:16"
+              />
+            </div>
+          </Col>
+        }
       </Row>
       <Row className="my-4" noGutters>
         <Col xs='auto' className="news-item-line-wrapper-large mr-15">

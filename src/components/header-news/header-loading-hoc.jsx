@@ -58,16 +58,20 @@ const getCurrentTitle = el => {
 const getHeaderData = articles => {
 	const currentVisibleEl = getCurrentVisibleEl(articles);
 	const currentTitle = getCurrentTitle(currentVisibleEl);
-	const scrolledPosition = currentVisibleEl && getScrolledPosition(currentVisibleEl.querySelector('.news-inner'));
+	const currentNewsInner = currentVisibleEl && currentVisibleEl.querySelector('.news-inner');
+	const scrolledPosition = getScrolledPosition(currentNewsInner);
+	const isViewedAll = !Boolean(currentNewsInner && currentNewsInner.querySelector('.content-collapse-button'));
+	
 
 	return {
 		title: currentTitle,
 		progress: scrolledPosition >= 0 && scrolledPosition <= 100 ? scrolledPosition : 101, // 101 just to check that it's not in main view
+		isViewedAll: isViewedAll,
 	};
 }
 
-function fire(progress, title) {
-	const evt = new CustomEvent('header-change', { detail: { progress, title } });
+function fire(progress, title, isViewedAll) {
+	const evt = new CustomEvent('header-change', { detail: { progress, title, isViewedAll } });
 	document.dispatchEvent(evt);
 }
 
@@ -99,7 +103,7 @@ export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) 
 		}
 
 		scrollHandler = () => {
-			const { title, progress } = getHeaderData(this.articles);
+			const { title, progress, isViewedAll } = getHeaderData(this.articles);
 
 			const newInitValue = getInitValue(progress, title);
 			if (this.prevInitValue !== newInitValue) {
@@ -107,7 +111,7 @@ export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) 
 				this.prevInitValue = newInitValue;
 			}
 
-			fire(progress, title);
+			fire(progress, title, isViewedAll);
 		}
 
 		reset = () => {

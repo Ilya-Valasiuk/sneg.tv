@@ -84,7 +84,11 @@
 
     .title {
       font-family: Georgia;
-      font-size: 14px;
+      font-size: 16px;
+
+      @media (min-width: $breakpoint-tablet-sm) {
+        font-size: 14px;
+      }
     }
   }
 

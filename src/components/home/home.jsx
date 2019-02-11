@@ -15,7 +15,7 @@ import { MobileNews } from './../news-block/mobile-news';
 
 export class HomeUI extends Component {
   render() {
-    const { isMobile } = this.props;
+    const { isMobile, isTabletSm } = this.props;
 
     return (
       <Fragment>
@@ -36,7 +36,7 @@ export class HomeUI extends Component {
               <div className="mb-5">
                 <AdBanner bannerType="barsRestaurant" className="w-100" />
               </div>
-              <News />
+              <News isTabletSm={isTabletSm} />
             </Fragment>
         }
       </Fragment>

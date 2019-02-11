@@ -43,15 +43,14 @@ export class Inner extends Component {
   }
 
   render() {
-    const { title, showIframe } = this.props;
+    const { title, showIframe, isTabletSm } = this.props;
     const { isCollapsed } = this.state;
 
     return (
       <Fragment>
         <Container className="py-3 news-block scroll-element inner">
-          <div className="header-name-sentient-top" data-title={title}></div>
           <Row noGutters>
-            <Col xs='auto' className="news-item-line-wrapper-large mr-15">
+            <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15">
               <NewsInner
                 date={date}
                 type={type}
@@ -78,7 +77,6 @@ export class Inner extends Component {
                     type="Жизнь"
                     date="10 октября 2018 18:16"
                     partnerName="rbc.ru"
-                    // className="pr-2"
                   />
                 </Col>
                 <Col xs={6}>
@@ -89,20 +87,20 @@ export class Inner extends Component {
                     type="Жизнь"
                     date="10 октября 2018 18:16"
                     partnerName="rbc.ru"
-                    // className="pl-2"
                   />
                 </Col>
               </Row>
             </Col>
-            <Col className="news-item-line-wrapper sticky-right-col">
-              <div className={classnames({ 'sticky-right-col-special-h': !isCollapsed, 'h-100': isCollapsed })}>
-                <div className="sticky-right-col">
-                  <Col className="px-0 pb-4 pt-3 text-center">
-                    <AdBanner bannerType="primeVideo" />
-                  </Col>
+            {!isTabletSm &&
+              <Col className="news-item-line-wrapper sticky-right-col">
+                <div className={classnames({ 'sticky-right-col-special-h': !isCollapsed, 'h-100': isCollapsed })}>
+                  <div className="sticky-right-col">
+                    <Col className="px-0 pb-4 pt-3 text-center">
+                      <AdBanner bannerType="primeVideo" />
+                    </Col>
+                  </div>
                 </div>
-              </div>
-              <div className="sticky-right-col">
+                <div className="sticky-right-col">
                   {
                     !isCollapsed &&
                     <Fragment>
@@ -127,10 +125,9 @@ export class Inner extends Component {
                       </div>
                     </Fragment>
                   }
-              </div>
-            </Col>
+                </div>
+              </Col>}
           </Row>
-          <div className="header-name-sentient-bottom" data-title={title}></div>
         </Container>
       </Fragment >
     );

@@ -39,6 +39,7 @@ class MainPage extends Component {
       shouldShowCommnetCreatorPopup: false,
       isDesktop: true,
       isMobile: false,
+      isTabletSm: false,
     };
 
     this.containerRef = React.createRef();
@@ -101,6 +102,7 @@ class MainPage extends Component {
 
     this.setState({
       isDesktop: width >= 1280,
+      isTabletSm: width >=768 && width < 1024,
       isMobile,
     }, () => {
       if (prevMobileState !== this.state.isMobile) {
@@ -135,7 +137,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const { isDesktop, isMobile, isFeedOpened, isMenuOpened, isSearchOpened, isMobileFeedOpened, isShareOpened, shouldShowCommnetsPopup, shouldShowCommnetCreatorPopup } = this.state;
+    const { isDesktop, isMobile, isTabletSm, isFeedOpened, isMenuOpened, isSearchOpened, isMobileFeedOpened, isShareOpened, shouldShowCommnetsPopup, shouldShowCommnetCreatorPopup } = this.state;
     const MenuComponent = isMobile ? MenuMobile : Menu;
 
     return (
@@ -174,10 +176,10 @@ class MainPage extends Component {
                     <MenuComponent /> :
                     <Fragment>
                       <Route exact path="/" render={props => (
-                        <Home {...props} isMobile={isMobile} />
+                        <Home {...props} isMobile={isMobile} isTabletSm={isTabletSm} />
                       )} />
                       <Route exact path="/inner" render={props => (
-                        <InnerWrapper {...props} isMobile={isMobile} onToggleCommentsPopup={this.toggleCommentsPopup} />
+                        <InnerWrapper {...props} isMobile={isMobile} isTabletSm={isTabletSm} onToggleCommentsPopup={this.toggleCommentsPopup} />
                       )} />
                       <Footer />
                     </Fragment>

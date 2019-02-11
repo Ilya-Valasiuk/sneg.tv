@@ -16,7 +16,7 @@ export class CommentCreatorPopup extends Component {
           </Col>
         </Row>
         <Row className="news-comments-popup-scroller px-0" noGutters>
-          <FormGroup className="w-100 mb-0">
+          <FormGroup className="h-100 w-100 mb-0">
             <Input type="textarea" name="text" className="h-100" />
           </FormGroup>
         </Row>
