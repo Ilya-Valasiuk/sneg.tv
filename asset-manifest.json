@@ -1,10 +1,10 @@
 {
   "main.css": "/sneg.tv/static/css/main.52502ceb.chunk.css",
-  "main.js": "/sneg.tv/static/js/main.a8010de3.chunk.js",
-  "main.js.map": "/sneg.tv/static/js/main.a8010de3.chunk.js.map",
+  "main.js": "/sneg.tv/static/js/main.946f8aa8.chunk.js",
+  "main.js.map": "/sneg.tv/static/js/main.946f8aa8.chunk.js.map",
   "static/css/1.5e4d9842.chunk.css": "/sneg.tv/static/css/1.5e4d9842.chunk.css",
-  "static/js/1.8374f95f.chunk.js": "/sneg.tv/static/js/1.8374f95f.chunk.js",
-  "static/js/1.8374f95f.chunk.js.map": "/sneg.tv/static/js/1.8374f95f.chunk.js.map",
+  "static/js/1.289e6f4b.chunk.js": "/sneg.tv/static/js/1.289e6f4b.chunk.js",
+  "static/js/1.289e6f4b.chunk.js.map": "/sneg.tv/static/js/1.289e6f4b.chunk.js.map",
   "runtime~main.js": "/sneg.tv/static/js/runtime~main.0dafaa1f.js",
   "runtime~main.js.map": "/sneg.tv/static/js/runtime~main.0dafaa1f.js.map",
   "static/media/index.scss": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.afe760ff.ttf",
@@ -25,6 +25,6 @@
   "static/css/main.52502ceb.chunk.css.map": "/sneg.tv/static/css/main.52502ceb.chunk.css.map",
   "static/css/1.5e4d9842.chunk.css.map": "/sneg.tv/static/css/1.5e4d9842.chunk.css.map",
   "index.html": "/sneg.tv/index.html",
-  "precache-manifest.aebba9fef20711268c04395a9f69e8a8.js": "/sneg.tv/precache-manifest.aebba9fef20711268c04395a9f69e8a8.js",
+  "precache-manifest.db35b7cf4d3be36684262d7192d1a827.js": "/sneg.tv/precache-manifest.db35b7cf4d3be36684262d7192d1a827.js",
   "service-worker.js": "/sneg.tv/service-worker.js"
 }
