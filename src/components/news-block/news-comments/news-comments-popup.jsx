@@ -12,15 +12,15 @@ export class NewsCommentsPopup extends Component {
     const { onToggleCommentsPopup, onToggleCommentCreatorPopup } = this.props;
     return (
       <Container className="news-comments news-comments-popup p-0">
-        <Row className="news-comments-popup-title size-14 text-uppercase mb-4 align-items-center" noGutters>
+        <Row className="news-comments-popup-title size-14 text-uppercase mb-0 align-items-center" noGutters>
           <Col className="title">комментарии <span className="count">{STUB_COMMENTS.length}</span></Col>
           <Col xs="auto" className="close" onClick={onToggleCommentsPopup}>
             <CloseIcon />
           </Col>
         </Row>
-        <Row className="news-comments-popup-scroller">
-          {STUB_COMMENTS.map(comment => (
-            <Col xs={12} className="mb-2">
+        <Row className="news-comments-popup-scroller pt-4">
+          {STUB_COMMENTS.map(({isThread, ...comment}) => (
+            <Col xs={isThread ? { size: 10, offset: 2 } : 12} className="mb-2">
               <NewsComment {...comment} />
               <div className="news-comments-buttons">
                 <Button color="link" className="ml-md-2">Ответить</Button>
