@@ -1,13 +1,13 @@
 {
   "main.css": "/sneg.tv/static/css/main.52502ceb.chunk.css",
-  "main.js": "/sneg.tv/static/js/main.b49b0be5.chunk.js",
-  "main.js.map": "/sneg.tv/static/js/main.b49b0be5.chunk.js.map",
+  "main.js": "/sneg.tv/static/js/main.a8010de3.chunk.js",
+  "main.js.map": "/sneg.tv/static/js/main.a8010de3.chunk.js.map",
   "static/css/1.5e4d9842.chunk.css": "/sneg.tv/static/css/1.5e4d9842.chunk.css",
   "static/js/1.8374f95f.chunk.js": "/sneg.tv/static/js/1.8374f95f.chunk.js",
   "static/js/1.8374f95f.chunk.js.map": "/sneg.tv/static/js/1.8374f95f.chunk.js.map",
   "runtime~main.js": "/sneg.tv/static/js/runtime~main.0dafaa1f.js",
   "runtime~main.js.map": "/sneg.tv/static/js/runtime~main.0dafaa1f.js.map",
-  "static/media/index.scss": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.4609737f.woff",
+  "static/media/index.scss": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.afe760ff.ttf",
   "static/media/banner1.png": "/sneg.tv/static/media/banner1.1d3a7691.png",
   "static/media/bars-restaurant.png": "/sneg.tv/static/media/bars-restaurant.db09215c.png",
   "static/media/prime-video.jpeg": "/sneg.tv/static/media/prime-video.76870ccb.jpeg",
@@ -25,6 +25,6 @@
   "static/css/main.52502ceb.chunk.css.map": "/sneg.tv/static/css/main.52502ceb.chunk.css.map",
   "static/css/1.5e4d9842.chunk.css.map": "/sneg.tv/static/css/1.5e4d9842.chunk.css.map",
   "index.html": "/sneg.tv/index.html",
-  "precache-manifest.f57d5883fe447881f620abef90ab207a.js": "/sneg.tv/precache-manifest.f57d5883fe447881f620abef90ab207a.js",
+  "precache-manifest.aebba9fef20711268c04395a9f69e8a8.js": "/sneg.tv/precache-manifest.aebba9fef20711268c04395a9f69e8a8.js",
   "service-worker.js": "/sneg.tv/service-worker.js"
 }
