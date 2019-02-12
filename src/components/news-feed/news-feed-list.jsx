@@ -11,7 +11,7 @@ export function NewsFeedList({ data, isMobile, onFeedPanelToggle, className }) {
     <Row className={classnames('news-feed-list', className)}>
       <Col>
         {isMobile ?
-          <Sticky scrollElement=".news-feed-mobile">
+          <Sticky scrollElement=".snow-col-main">
             <Row className="news-feed-title-sticky align-items-center">
               <Col>
                 <p className="news-feed-title font-weight-900 mb-0">ЛЕНТА НОВОСТЕЙ</p>

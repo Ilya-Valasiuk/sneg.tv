@@ -149,7 +149,7 @@ export function News({ isTabletSm }) {
         }
       </Row>
       <Row className="my-4" noGutters>
-        <Col xs='auto' className="news-item-line-wrapper-large mr-15">
+        <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15">
           <More title="..." className="more-dots font-weight-bold" />
         </Col>
       </Row>
