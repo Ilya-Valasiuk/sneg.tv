@@ -9,6 +9,13 @@ import { ArticlePoll } from '../../shared/article-poll/article-poll';
 import './news-inner.scss';
 
 export class NewsInnerMobile extends Component {
+  state = {
+    isCollapsed: this.props.isCollapsed,
+  }
+
+  onExpand = () => {
+    this.setState({ isCollapsed: false })
+  }
 
   getContent() {
     const {
@@ -74,7 +81,7 @@ export class NewsInnerMobile extends Component {
           </Row>
         </div>
         <Row noGutters>
-          <Button className="comments-btn w-100" outline onClick={onToggleCommentsPopup}>Обсудить</Button>
+          <Button className="comments-btn w-100" outline onClick={onToggleCommentsPopup}>Обсудить (4)</Button>
         </Row>
         <AdPlaceholder />
       </Fragment>
@@ -90,9 +97,8 @@ export class NewsInnerMobile extends Component {
       previewText,
       imgSrc,
       imgSignature,
-      isCollapsed,
-      onExpand
     } = this.props;
+    const { isCollapsed } = this.state;
     return (
       <div className="news-inner">
         <NewsDateType date={date} type={type} typeLink={typeLink} className="pl-0 align-items-center" />
@@ -110,7 +116,7 @@ export class NewsInnerMobile extends Component {
               textClosed="Продолжить чтение"
               textOpen="Свернуть"
               btnClasses="ml-2 mt-2 mb-3"
-              onToggle={onExpand}
+              onToggle={this.onExpand}
             >{this.getContent()}
             </ContentCollapse> :
             <Fragment>

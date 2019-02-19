@@ -26,17 +26,8 @@ const authorTitle = 'собственный корреспондент';
 const tags = '«Зенит», Александр Кокорин, Павел Мамаев';
 
 export class InnerMobile extends Component {
-  state = {
-    isCollapsed: this.props.isCollapsed,
-  }
-
-  onExpand = () => {
-    this.setState({ isCollapsed: false })
-  }
-
   render() {
-    const { title, showIframe, onToggleCommentsPopup } = this.props;
-    const { isCollapsed } = this.state;
+    const { title, showIframe, onToggleCommentsPopup, isCollapsed } = this.props;
 
     return (
       <Fragment>

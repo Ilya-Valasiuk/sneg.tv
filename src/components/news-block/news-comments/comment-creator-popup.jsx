@@ -8,8 +8,8 @@ export class CommentCreatorPopup extends Component {
   render() {
     const { onToggleCommentCreatorPopup } = this.props;
     return (
-      <Container className="news-comments news-comments-popup p-0">
-        <Row className="news-comments-popup-title sticky size-14 text-uppercase p-0 align-items-center" noGutters>
+      <Container className="news-comments news-comments-popup">
+        <Row className="news-comments-popup-title sticky size-14 text-uppercase align-items-center" noGutters>
           <Col className="d-flex align-items-center h-100 bg-white title">Ваш комментарий</Col>
           <Col xs="auto" className="close" onClick={onToggleCommentCreatorPopup}>
             <CloseIcon />

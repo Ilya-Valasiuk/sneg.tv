@@ -18,7 +18,7 @@ class InnerWrapperUI extends Component {
         {!isMobile && <HeaderNewsSingle title={headerTitle} progress={progress} />}
         <InnerComponent isTabletSm={isTabletSm} title={STUB_HEADER_TITLE} onToggleCommentsPopup={onToggleCommentsPopup} showIframe />
         <hr />
-        <InnerComponent isTabletSm={isTabletSm} title={STUB_HEADER_TITLE1} onToggleCommentsPopup={onToggleCommentsPopup} isCollapsed />
+        <InnerComponent isTabletSm={isTabletSm} title={STUB_HEADER_TITLE1} onToggleCommentsPopup={onToggleCommentsPopup} isCollapsed emptyComments />
         <hr />
         <InnerComponent isTabletSm={isTabletSm} title={STUB_HEADER_TITLE2} onToggleCommentsPopup={onToggleCommentsPopup} isCollapsed />
         <hr />

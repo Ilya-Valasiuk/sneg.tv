@@ -185,7 +185,6 @@ class MainPage extends Component {
                     </Fragment>
                 }
 
-                <div className="blackout " />
                 {
                   isSearchOpened && <Search />
                 }
@@ -193,6 +192,7 @@ class MainPage extends Component {
               {isMobileFeedOpened && <NewsFeedMobile onFeedPanelToggle={this.toggleMobileFeedPanel} />}
               {shouldShowCommnetsPopup && <NewsCommentsPopup onToggleCommentCreatorPopup={this.toggleCommentCreatorPopup} onToggleCommentsPopup={this.toggleCommentsPopup} />}
               {shouldShowCommnetCreatorPopup && <CommentCreatorPopup onToggleCommentCreatorPopup={this.toggleCommentCreatorPopup} />}
+              <div className="blackout " />
             </Col>
           </Row>
           <ReactResizeDetector handleWidth onResize={this.onResize} />

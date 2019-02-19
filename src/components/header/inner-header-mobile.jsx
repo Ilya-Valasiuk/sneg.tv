@@ -75,7 +75,7 @@ export class InnerHeaderMobile extends Component {
           </Row>
           <Row className={classnames('justify-content-between header-mobile-inner-social-icons', { 'd-none': !shouldShowIcons })} noGutters>
             <Col xs="auto" className="pl-2 h-100">
-              <SocialIcons className="h-100" />
+              <SocialIcons className="h-100" large />
             </Col>
             <HeaderLoading progress={progress} />
           </Row>

@@ -49,33 +49,32 @@
 
 blockquote {
   display: block;
-    font-style: italic;
-    margin-bottom: 20px;
-    position: relative;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  font-style: italic;
+  margin-bottom: 20px;
+  position: relative;
   box-sizing: border-box;
-    padding: 12px 23px 12px 54px;
-    text-align: justify;
-    background: #ededed;
-    font-weight: 300;
-    font-style: italic;
-
+  padding: 12px 23px 12px 54px;
+  text-align: justify;
+  background-color: #d2efff;
+  font-family: Georgia;
+  font-size: 18px;
+  color: #2a2a2a;
 }
 blockquote:before {
   position: absolute;
-    width: 50px;
-    height: 0px;
-    text-align: center;
-    font-size: 78px;
-    font-style: normal;
-    font-weight: bold;
-    color: #b7b7b7;
+  width: 50px;
+  height: 0px;
+  text-align: center;
+  font-size: 78px;
+  font-style: normal;
+  font-weight: bold;
+  color: #75ceff;
 }
 blockquote:before {
     content: "\201C";
     left: 2px;
     top: -9px;
+    font-family: HelveticaNeueCyr;
 }
 
 blockquote b,
@@ -84,7 +83,7 @@ blockquote cite {
   text-align: right;
   font-style: normal;
   margin-top: 10px;
-  font-size: 15px;
   color: #4d4d4d;
   font-weight: bold;
+  font-family: HelveticaNeueCyr;
 }

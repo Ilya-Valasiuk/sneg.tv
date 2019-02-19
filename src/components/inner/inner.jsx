@@ -43,7 +43,7 @@ export class Inner extends Component {
   }
 
   render() {
-    const { title, showIframe, isTabletSm } = this.props;
+    const { title, showIframe, isTabletSm, onToggleCommentsPopup, emptyComments } = this.props;
     const { isCollapsed } = this.state;
 
     return (
@@ -66,6 +66,8 @@ export class Inner extends Component {
                 isCollapsed={isCollapsed}
                 onExpand={this.onExpand}
                 showIframe={showIframe}
+                onToggleCommentsPopup={onToggleCommentsPopup}
+                emptyComments={emptyComments}
               />
               <Row>
                 <Col xs={12} className="partner-title size-14 font-weight-900 text-uppercase"><p className="mb-4">новости партнёров</p></Col>

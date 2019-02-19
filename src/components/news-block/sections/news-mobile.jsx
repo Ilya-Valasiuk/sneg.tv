@@ -5,7 +5,7 @@ import {
   newsImg1,
 } from './../../../img/news';
 import { More } from './../more';
-import { NewsHomeMobile } from './../news/news-home-mobile';
+import { NewsInnerMobile } from './../news/news-inner-mobile';
 
 import { AdBanner } from './../../ad-banner/ad-baner';
 import { NewsItem } from './../news-item/news-item';
@@ -19,7 +19,7 @@ export function NewsMobile({ }) {
     <Container className="py-3 news-block">
       <Row noGutters>
         <Col>
-          <NewsHomeMobile
+          <NewsInnerMobile
             date="10 октября 2018 18:16"
             type={type}
             typeLink="/test"
@@ -43,7 +43,7 @@ export function NewsMobile({ }) {
 
       <Row noGutters>
         <Col>
-          <NewsHomeMobile
+          <NewsInnerMobile
             date="10 октября 2018 18:16"
             type={type}
             typeLink="/test"
@@ -67,7 +67,7 @@ export function NewsMobile({ }) {
 
       <Row noGutters>
         <Col>
-          <NewsHomeMobile
+          <NewsInnerMobile
             date="10 октября 2018 18:16"
             type={type}
             typeLink="/test"

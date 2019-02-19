@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
 import { ContentCollapse } from './../../shared/content-collapse/content-collapse';
 import { NewsComments } from './../../news-block/news-comments/news-comments';
+import { STUB_COMMENTS } from './../../news-block/news-comments/stub-data';
 import { NewsDateType } from './../news-date-type/news-date-type';
 
 import './news-inner.scss';
@@ -15,6 +16,7 @@ export class NewsInner extends Component {
       tags,
       isSeparatorHidden,
       showIframe,
+      emptyComments,
     } = this.props;
 
     return (
@@ -51,7 +53,7 @@ export class NewsInner extends Component {
         </div>
         <Row noGutters>
           <Col xs={12}><hr className="my-4" /></Col>
-          <NewsComments />
+          <NewsComments data={emptyComments ? [] : STUB_COMMENTS} onToggleCommentsPopup={this.props.onToggleCommentsPopup} />
           {!isSeparatorHidden && <Col xs={12}><hr className="my-4" /></Col>}
         </Row>
       </Fragment>
