@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'reactstrap';
+import {
+  withRouter
+} from "react-router-dom";
 
 import './search.scss';
 
-export class Search extends Component {
+export class SearchUI extends Component {
   constructor(props) {
     super(props);
 
@@ -11,6 +14,10 @@ export class Search extends Component {
   }
   componentDidMount() {
     this.inputRef.current.focus();
+  }
+
+  search = () => {
+    this.props.history.push(`/search?${this.inputRef.current.value}`);
   }
 
   render() {
@@ -22,7 +29,7 @@ export class Search extends Component {
             <input className="search-input text-white pr-3 h-100 w-100" type="text" ref={this.inputRef} />
           </Col>
           <Col xs={3} className="text-right">
-            <Button className="search-find text-white pt-2" color="primary">НАЙТИ</Button>
+            <Button className="search-find text-white pt-2" color="primary" onClick={this.search}>НАЙТИ</Button>
           </Col>
           <Col xs={12}><hr className="search-separator" /></Col>
         </Row>
@@ -30,3 +37,5 @@ export class Search extends Component {
     );
   }
 }
+
+export const Search = withRouter(SearchUI);

@@ -19,9 +19,9 @@ export class NewsCommentsPopup extends Component {
     }
   }
 
-  startAddingComment = () => {
-    this.setState({ isAdding: true }, () => {
-      if (this.inputRef.current) {
+  toggleAddingComment = () => {
+    this.setState(prevState => ({ isAdding: !prevState.isAdding }), () => {
+      if (this.state.isAdding && this.inputRef.current) {
         this.inputRef.current.focus();
       }
     });
@@ -57,15 +57,16 @@ export class NewsCommentsPopup extends Component {
         <div className="news-comments-popup-button d-none d-md-block text-left">
           {
             isAdding ?
-              <Row>
+              <Row className="align-items-baseline">
                 <Col>
                   <input ref={this.inputRef} className="comment-input form-control" placeholder="Введите текс комментария" />
                 </Col>
                 <Col xs="auto">
                   <Button color="primary" onClick={onToggleCommentsPopup}>Ответить</Button>
                 </Col>
+                <Col xs="auto" className="close" onClick={this.toggleAddingComment}><CloseIcon /></Col>
               </Row> :
-              <Button color="primary" onClick={this.startAddingComment}>Добавить комментарий</Button>
+              <Button color="primary" onClick={this.toggleAddingComment}>Добавить комментарий</Button>
           }
         </div>
       </Container>

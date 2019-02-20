@@ -72,7 +72,14 @@ class MainPage extends Component {
   }
 
   toggleCommentsPopup = () => {
-    this.setState(({ shouldShowCommnetsPopup }) => ({ shouldShowCommnetsPopup: !shouldShowCommnetsPopup }));
+    if (!this.state.shouldShowCommnetsPopup) {
+      this.prevSrollState = window.document.querySelector('.snow-col-main').scrollTop;
+    }
+    this.setState(({ shouldShowCommnetsPopup }) => ({ shouldShowCommnetsPopup: !shouldShowCommnetsPopup }), () => {
+      if (!this.state.shouldShowCommnetsPopup) {
+        window.document.querySelector('.snow-col-main').scrollTop = this.prevSrollState;
+      }
+    });
   }
 
   toggleCommentCreatorPopup = () => {
@@ -180,6 +187,9 @@ class MainPage extends Component {
                       )} />
                       <Route exact path="/inner" render={props => (
                         <InnerWrapper {...props} isMobile={isMobile} isTabletSm={isTabletSm} onToggleCommentsPopup={this.toggleCommentsPopup} />
+                      )} />
+                      <Route exact path="/search" render={props => (
+                        <div>Search component Here</div>
                       )} />
                       <Footer />
                     </Fragment>

@@ -5,33 +5,8 @@ import { AdBanner } from './../ad-banner/ad-baner';
 import { NewsSimpleItem } from './../news-block/news-simple-item/news-simple-item';
 import { NewsItemPartner } from './../news-block/news-item-partner';
 import { NewsInner } from './../news-block/news/news-inner';
-import {
-  newsImg1,
-  newsImg2,
-  newsImg3,
-  inner as innerImg,
-} from './../../img/news';
 
 import './inner.scss';
-
-const STUB_HEADER_TITLE = '«Зенит» попросил суд отпустить Кокорина из-под стражи';
-const type = 'Знания';
-const date = '10 октября 2018, 18:16';
-const typeLink = '#';
-const previewText = 'ФК «Зенит» обратился в суд с просьбой изменить меру пресечения для футболиста Александра Кокорина, арестованного после избиения чиновника Минпромторга';
-const imgSignature = 'Рассмотрение апелляции на арест Александра Кокорина (Фото: Владимир Астапкович / РИА Новости)';
-const articleText = `Футбольный клуб «Зенит» попросил суд изменить меру пресечения для футболиста Александра Кокорина. Об этом во время заседания сообщила судья, передает «Интерфакс». <br><br>
-«В адрес Московского городского суда поступило письмо за подписью президента футбольного клуба «Зенит» Сергея Фурсенко с просьбой изменить меру пресечения», — сказала судья.По ее словам, клуб попросил изменить меру пресечения для Кокорина на не связанную с содержанием под стражей.<br><br>
-Кроме того, по словам судьи, клуб представил суду характеристику на Кокорина, в которой говорится, что такое поведение ему не свойственно.<br><br>
-Судья отметила, что согласно процессуальному кодексу президент футбольного клуба не относится к числу тех, кто имеет право заявлять ходатайства.«Но мнение и характеристика будут учтены», — добавила она. <br><br>
-О том, что в клубе рассчитывают на возвращение футболиста, заявил также главный тренер «Зенита» Сергей Семак.«Не рассчитывали, а рассчитываем[на возвращение Кокорина]», — сказал он, отвечая на вопрос, заданный журналистами во время пресс - конференции перед игрой «Зенита» с «Динамо».<br><br>
-Семак также отметил, что «ошибки бывают у всех» и за них придется нести наказание, «в том числе и со стороны клуба».Он выразил надежду, что наказание, которому подвергнется Кокорин, будет соразмерным проступку.<br><br>
-Суд арестовал нападающего «Зенита» Александра Кокорина, его брата Кирилла и футболиста «Краснодара» Павла Мамаева 11 октября.В отношении них возбуждены уголовные дела по ст. 116 УК РФ(побои) и ч. 2 ст. 213 УК РФ(хулиганство организованной группой).<br><br>
-Обвинения футболистам были предъявлены, после того как вместе с компанией других молодых людей они совершили <span class="styled">нападение</span> на директора департамента Минпромторга Дениса Пака и руководителя НАМИ Сергея Гайсина в кафе в центре Москвы, а также <span class="styled">избили</span> водителя ведущей «Первого канала» Ольги Ушаковой.<br><br>
-Кокорин и Мамаев находятся в московском СИЗО «Бутырка».Оба подали прошение об изменении меры пресечения на домашний арест, Мамаеву суд в этом уже <span class="styled">отказал</span>.`;
-const authorName = 'Анна Лаврова';
-const authorTitle = 'собственный корреспондент';
-const tags = '«Зенит», Александр Кокорин, Павел Мамаев';
 
 export class Inner extends Component {
   state = {
@@ -43,7 +18,8 @@ export class Inner extends Component {
   }
 
   render() {
-    const { title, showIframe, isTabletSm, onToggleCommentsPopup, emptyComments } = this.props;
+    const { data, partnerData, showIframe, isTabletSm, onToggleCommentsPopup, emptyComments } = this.props;
+    const { title, type, date, typeLink, previewText, imgSignature, articleText, authorName, authorTitle, tags, imgSrc } = data;
     const { isCollapsed } = this.state;
 
     return (
@@ -57,7 +33,7 @@ export class Inner extends Component {
                 typeLink={typeLink}
                 title={title}
                 previewText={previewText}
-                imgSrc={innerImg}
+                imgSrc={imgSrc}
                 imgSignature={imgSignature}
                 articleText={articleText}
                 authorName={authorName}
@@ -72,24 +48,10 @@ export class Inner extends Component {
               <Row>
                 <Col xs={12} className="partner-title size-14 font-weight-900 text-uppercase"><p className="mb-4">новости партнёров</p></Col>
                 <Col xs={6}>
-                  <NewsItemPartner
-                    imgSrc={newsImg1}
-                    imgAlt="newsImg1"
-                    previewText="Глава КС предложил политическую и правовую реформы. Главное"
-                    type="Жизнь"
-                    date="10 октября 2018 18:16"
-                    partnerName="rbc.ru"
-                  />
+                  <NewsItemPartner {...partnerData[0]} />
                 </Col>
                 <Col xs={6}>
-                  <NewsItemPartner
-                    imgSrc={newsImg2}
-                    imgAlt="newsImg2"
-                    previewText="Реновация для пожилых: как Сбербанк хочет развивать дома престарелых"
-                    type="Жизнь"
-                    date="10 октября 2018 18:16"
-                    partnerName="rbc.ru"
-                  />
+                  <NewsItemPartner {...partnerData[1]} />
                 </Col>
               </Row>
             </Col>
