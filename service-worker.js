@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/sneg.tv/precache-manifest.00705db28bf9084e14e8a0c68b8cf477.js"
+  "/sneg.tv/precache-manifest.f0b32cd56e068b6f050bba353974bb8a.js"
 );
 
 workbox.clientsClaim();
