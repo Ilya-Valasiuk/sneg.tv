@@ -1,0 +1,31 @@
+.search-results {
+  &-count {
+    font-family: "HelveticaNeueCyr-Roman";
+    font-size: 14px;
+    color: #2a2a2a;
+
+    b {
+      font-family: HelveticaNeueCyr;
+    }
+  }
+
+  &-item {
+    &-header {
+      font-size: 20px;
+      font-weight: 900;
+      color: #2a2a2a;
+      line-height: 1.2;
+    }
+
+    &-text {
+      font-family: Georgia;
+      font-size: 18px;
+      line-height: 1.44;
+      color: #2a2a2a;
+    }
+
+    .selected {
+      background-color: rgba(19, 165, 247, 0.2);
+    }
+  }
+}

@@ -4,7 +4,7 @@ import {
   largeBlockImg,
   newsImg1,
 } from './../../../img/news';
-import { More } from './../more';
+import { More } from './../../shared/more/more';
 import { NewsInnerMobile } from './../news/news-inner-mobile';
 
 import { AdBanner } from './../../ad-banner/ad-baner';
@@ -16,7 +16,7 @@ const type = 'Знания';
 
 export function NewsMobile({ }) {
   return (
-    <Container className="py-3 news-block">
+    <Container className="py-3 news-block padding-x-20">
       <Row noGutters>
         <Col>
           <NewsInnerMobile

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { cloneDeep } from 'lodash';
 import { NewsItem } from './../news-item/news-item';
-import { More } from './../more';
+import { More } from './../../shared/more/more';
 import { NewsTestItemMobile } from '../news-test-item/news-test-item-mobile';
 import {
   test1,
@@ -17,7 +17,7 @@ export function EmotionSectionMobile({ }) {
   const NEWS_DATA = cloneDeep(STUB_DATA);
 
   return (
-    <Container className="py-3 news-block">
+    <Container className="py-3 news-block padding-x-20">
       <Row className="align-items-center mb-3">
         <Col xs="auto"><p className="title size-14 text-uppercase font-weight-900 mb-0">{type}</p></Col>
         <Col className="pl-0">

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
+import './more.scss';
+
 export function More({ title, link, className }) {
   return (
-    <div className="news-more text-center border rounded">
+    <div className="more text-center border rounded">
       <Button
         tag="a"
         href={link}

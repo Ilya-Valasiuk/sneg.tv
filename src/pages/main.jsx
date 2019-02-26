@@ -16,6 +16,8 @@ import { MenuMobile } from './../components/menu/menu-mobile';
 import { Footer } from './../components/footer/footer';
 import { NewsCommentsPopup } from '../components/news-block/news-comments/news-comments-popup';
 import { CommentCreatorPopup } from '../components/news-block/news-comments/comment-creator-popup';
+import { HeaderNews } from '../components/header-news/header-news';
+import { SearchResults } from '../components/search-results/search-results';
 
 import './main.scss';
 
@@ -82,8 +84,25 @@ class MainPage extends Component {
     });
   }
 
+  resetAllFlags = () => {
+    this.setState({
+      isFeedOpened: false,
+      isMenuOpened: false,
+      isMobileFeedOpened: false,
+      isSearchOpened: false,
+      isShareOpened: false,
+      shouldShowCommnetsPopup: false,
+      shouldShowCommnetCreatorPopup: false,
+    })
+  }
+
   toggleCommentCreatorPopup = () => {
     this.setState(({ shouldShowCommnetCreatorPopup }) => ({ shouldShowCommnetCreatorPopup: !shouldShowCommnetCreatorPopup }));
+  }
+
+  search = (searchValue) => {
+    this.resetAllFlags();
+    this.props.history.push(`/search?value=${searchValue}`);
   }
 
   onKeyDownHandler = (event) => {
@@ -109,7 +128,7 @@ class MainPage extends Component {
 
     this.setState({
       isDesktop: width >= 1280,
-      isTabletSm: width >=768 && width < 1024,
+      isTabletSm: width >= 768 && width < 1024,
       isMobile,
     }, () => {
       if (prevMobileState !== this.state.isMobile) {
@@ -180,7 +199,7 @@ class MainPage extends Component {
                 }
                 {
                   isMenuOpened ?
-                    <MenuComponent /> :
+                    <MenuComponent onSearch={this.search} /> :
                     <Fragment>
                       <Route exact path="/" render={props => (
                         <Home {...props} isMobile={isMobile} isTabletSm={isTabletSm} />
@@ -189,14 +208,17 @@ class MainPage extends Component {
                         <InnerWrapper {...props} isMobile={isMobile} isTabletSm={isTabletSm} onToggleCommentsPopup={this.toggleCommentsPopup} />
                       )} />
                       <Route exact path="/search" render={props => (
-                        <div>Search component Here</div>
+                        <Fragment>
+                          {!isMobile && <HeaderNews />}
+                          <SearchResults onSearch={this.search} isMobile={isMobile} />
+                        </Fragment>
                       )} />
                       <Footer />
                     </Fragment>
                 }
 
                 {
-                  isSearchOpened && <Search />
+                  isSearchOpened && <Search onSearch={this.search} />
                 }
               </div>
               {isMobileFeedOpened && <NewsFeedMobile onFeedPanelToggle={this.toggleMobileFeedPanel} />}

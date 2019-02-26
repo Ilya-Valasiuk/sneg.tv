@@ -6,12 +6,15 @@ import { InnerHeaderMobile } from './inner-header-mobile';
 export function HeaderMobile(headerProps) {
   return (
     <Fragment>
-    <Route exact path="/" render={props => (
-      <HomeHeaderMobile {...headerProps} />
-    )} />
-    <Route exact path="/inner" render={props => (
-      <InnerHeaderMobile {...headerProps} />
-    )} />
-  </Fragment>
+      <Route exact path="/" render={props => (
+        <HomeHeaderMobile {...headerProps} />
+      )} />
+      <Route exact path="/inner" render={props => (
+        <InnerHeaderMobile {...headerProps} />
+      )} />
+      <Route exact path="/search" render={props => (
+        <InnerHeaderMobile {...headerProps} />
+      )} />
+    </Fragment>
   );
 }

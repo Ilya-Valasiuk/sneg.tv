@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'reactstrap';
-import {
-  withRouter
-} from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 
 import './search.scss';
 
@@ -12,12 +10,13 @@ export class SearchUI extends Component {
 
     this.inputRef = React.createRef();
   }
+  
   componentDidMount() {
     this.inputRef.current.focus();
   }
 
   search = () => {
-    this.props.history.push(`/search?${this.inputRef.current.value}`);
+    this.props.onSearch(this.inputRef.current.value);
   }
 
   render() {

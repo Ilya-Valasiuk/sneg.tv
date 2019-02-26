@@ -12,7 +12,7 @@ import {
 } from './../../../img/news';
 
 import { NewsItem } from './../news-item/news-item';
-import { More } from './../more';
+import { More } from './../../shared/more/more';
 
 import './../news-block.scss';
 import { NewsTestItem } from '../news-test-item/news-test-item';
@@ -21,7 +21,7 @@ const type = 'Эмоции';
 
 export function EmotionSection({ }) {
   return (
-    <Container className="py-3 news-block">
+    <Container className="py-3 news-block padding-x-20">
       <Row className="align-items-center mb-2">
         <Col xs="auto"><p className="title size-14 text-uppercase font-weight-900 mb-0">{type}</p></Col>
         <Col className="pl-0">

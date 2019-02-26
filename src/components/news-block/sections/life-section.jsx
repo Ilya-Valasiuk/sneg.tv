@@ -5,7 +5,7 @@ import { cloneDeep } from 'lodash';
 import { NewsItem } from './../news-item/news-item';
 import { NewsItemMain } from './../news-item-main/news-item-main';
 import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
-import { More } from './../more';
+import { More } from './../../shared/more/more';
 import { STUB_DATA } from './stub-data'; 
 
 import './../news-block.scss';
@@ -15,7 +15,7 @@ export function LifeSection({ isMobile }) {
   const NEWS_DATA = cloneDeep(STUB_DATA);
 
   return (
-    <Container className="py-3 news-block">
+    <Container className="py-3 news-block padding-x-20">
       <Row className="align-items-center mb-2">
         <Col xs="auto"><p className="title size-14 text-uppercase font-weight-900 mb-0">Жизнь</p></Col>
         <Col className="pl-0">

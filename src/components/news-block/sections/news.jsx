@@ -4,7 +4,7 @@ import {
   largeBlockImg,
   newsImg1,
 } from './../../../img/news';
-import { More } from './../more';
+import { More } from './../../shared/more/more';
 import { NewsInner } from './../news/news-inner';
 
 import { AdBanner } from './../../ad-banner/ad-baner';
@@ -16,7 +16,7 @@ const type = 'Знания';
 
 export function News({ isTabletSm }) {
   return (
-    <Container className="py-3 news-block">
+    <Container className="py-3 news-block padding-x-20">
       <Row noGutters className="mb-3">
         <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15 scroll-element">
           <NewsInner

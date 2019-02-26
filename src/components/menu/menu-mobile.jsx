@@ -8,7 +8,7 @@ import { SocialIcons } from './../shared/social-icons/social-icons';
 
 import './menu.scss'
 
-export function MenuMobile() {
+export function MenuMobile({ onSearch }) {
   return (
     <div className="menu menu-mobile px-3 pb-3">
       <Row className="">
@@ -18,7 +18,10 @@ export function MenuMobile() {
           <span className="text-white ml-3">$</span> 76.31 <i className="fas fa-caret-down caret-red" />
         </Col>
         <Col xs={12}>
-          <Find className="py-4" />
+          <div className="menu-find d-flex flex-column py-4">
+            <p className="menu-find-title mb-2">Поиск по сайту</p>
+            <Find className="py-4" onSearch={onSearch} />
+          </div>
         </Col>
         <Col className="mb-3"><hr className="separator without-margins" /></Col>
         <Col xs={12} className="size-14 mb-5">

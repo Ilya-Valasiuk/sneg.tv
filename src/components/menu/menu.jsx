@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from 'reactstrap';
 import { Links } from './../shared/links/links';
 import { MenuItem } from './menu-item';
-import { More } from './../news-block/more';
+import { More } from './../shared/more/more';
 
 import './menu.scss'
 
