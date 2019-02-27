@@ -1,4 +1,4 @@
-@import '../styles/breakpoints';
+@import "../styles/breakpoints";
 .snow {
   .main {
     position: relative;
@@ -8,22 +8,22 @@
     @media (min-width: $breakpoint-tablet) {
       width: 970px;
     }
-  
-    &.menu-opened {
-      height: 100%;
-    }
 
     @media (min-width: $breakpoint-large) {
       width: 1190px;
     }
   }
 
-  .mobile-popup-opened {
+  .menu-opened {
+    .snow-col-main-content,
+    .footer {
+      display: none;
+    }
+  }
+
+  .popup-opened {
     .main {
       display: none;
     }
-    // .snow-col-main {
-    //   overflow-y: hidden;
-    // }
   }
 }

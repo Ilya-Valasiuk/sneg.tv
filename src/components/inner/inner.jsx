@@ -1,32 +1,54 @@
-import React, { Component, Fragment } from 'react';
-import classnames from 'classnames';
-import { Container, Row, Col } from 'reactstrap';
-import { AdBanner } from './../ad-banner/ad-baner';
-import { NewsSimpleItem } from './../news-block/news-simple-item/news-simple-item';
-import { NewsItemPartner } from './../news-block/news-item-partner';
-import { NewsInner } from './../news-block/news/news-inner';
+import React, { Component, Fragment } from "react";
+import classnames from "classnames";
+import { Container, Row, Col } from "reactstrap";
+import { AdBanner } from "./../ad-banner/ad-baner";
+import { NewsSimpleItem } from "./../news-block/news-simple-item/news-simple-item";
+import { NewsItemPartner } from "./../news-block/news-item-partner";
+import { NewsInner } from "./../news-block/news/news-inner";
 
-import './inner.scss';
+import "./inner.scss";
 
 export class Inner extends Component {
   state = {
-    isCollapsed: this.props.isCollapsed,
-  }
+    isCollapsed: this.props.isCollapsed
+  };
 
   onExpand = () => {
-    this.setState({ isCollapsed: false })
-  }
+    this.setState({ isCollapsed: false });
+  };
 
   render() {
-    const { data, partnerData, showIframe, isTabletSm, onToggleCommentsPopup, emptyComments } = this.props;
-    const { title, type, date, typeLink, previewText, imgSignature, articleText, authorName, authorTitle, tags, imgSrc } = data;
+    const {
+      data,
+      partnerData,
+      showIframe,
+      onToggleCommentsPopup,
+      emptyComments
+    } = this.props;
+    const {
+      title,
+      type,
+      date,
+      typeLink,
+      previewText,
+      imgSignature,
+      articleText,
+      authorName,
+      authorTitle,
+      tags,
+      imgSrc
+    } = data;
     const { isCollapsed } = this.state;
 
     return (
       <Fragment>
         <Container className="py-3 news-block scroll-element inner">
           <Row noGutters>
-            <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15">
+            <Col
+              xs={12}
+              lg="auto"
+              className="news-item-line-wrapper-large mr-15"
+            >
               <NewsInner
                 date={date}
                 type={type}
@@ -46,7 +68,12 @@ export class Inner extends Component {
                 emptyComments={emptyComments}
               />
               <Row>
-                <Col xs={12} className="partner-title size-14 font-weight-900 text-uppercase"><p className="mb-4">новости партнёров</p></Col>
+                <Col
+                  xs={12}
+                  className="partner-title size-14 font-weight-900 text-uppercase"
+                >
+                  <p className="mb-4">новости партнёров</p>
+                </Col>
                 <Col xs={6}>
                   <NewsItemPartner {...partnerData[0]} />
                 </Col>
@@ -55,45 +82,50 @@ export class Inner extends Component {
                 </Col>
               </Row>
             </Col>
-            {!isTabletSm &&
-              <Col className="news-item-line-wrapper sticky-right-col">
-                <div className={classnames({ 'sticky-right-col-special-h': !isCollapsed, 'h-100': isCollapsed })}>
-                  <div className="sticky-right-col">
-                    <Col className="px-0 pb-4 pt-3 text-center">
-                      <AdBanner bannerType="primeVideo" />
-                    </Col>
-                  </div>
-                </div>
+            <Col className="news-item-line-wrapper sticky-right-col d-none d-lg-block">
+              <div
+                className={classnames({
+                  "sticky-right-col-special-h": !isCollapsed,
+                  "h-100": isCollapsed
+                })}
+              >
                 <div className="sticky-right-col">
-                  {
-                    !isCollapsed &&
-                    <Fragment>
-                      <hr />
-                      <Row>
-                        <Col>
-                          <p className="font-weight-900 pt-3 text-uppercase read-more-text mb-1 size-14">Читайте также</p>
-                        </Col>
-                      </Row>
-                      <div>
-                        <NewsSimpleItem
-                          previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
-                          type="Жизнь"
-                          date="10 октября 2018 18:16"
-                        />
-                        <hr />
-                        <NewsSimpleItem
-                          previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
-                          type="Жизнь"
-                          date="10 октября 2018 18:16"
-                        />
-                      </div>
-                    </Fragment>
-                  }
+                  <Col className="px-0 pb-4 pt-3 text-center">
+                    <AdBanner bannerType="primeVideo" />
+                  </Col>
                 </div>
-              </Col>}
+              </div>
+              <div className="sticky-right-col">
+                {!isCollapsed && (
+                  <Fragment>
+                    <hr />
+                    <Row>
+                      <Col>
+                        <p className="font-weight-900 pt-3 text-uppercase read-more-text mb-1 size-14">
+                          Читайте также
+                        </p>
+                      </Col>
+                    </Row>
+                    <div>
+                      <NewsSimpleItem
+                        previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
+                        type="Жизнь"
+                        date="10 октября 2018 18:16"
+                      />
+                      <hr />
+                      <NewsSimpleItem
+                        previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
+                        type="Жизнь"
+                        date="10 октября 2018 18:16"
+                      />
+                    </div>
+                  </Fragment>
+                )}
+              </div>
+            </Col>
           </Row>
         </Container>
-      </Fragment >
+      </Fragment>
     );
   }
 }

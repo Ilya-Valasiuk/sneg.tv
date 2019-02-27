@@ -1,16 +1,15 @@
 import React, { Component, Fragment } from 'react';
-import { HeaderNews } from '../header-news/header-news';
-import { AdBanner } from './../ad-banner/ad-baner';
-import { LifeSection } from './../news-block/sections/life-section';
-import { LifeSectionMobile } from './../news-block/sections/life-section-mobile';
-import { KnowledgeSection } from './../news-block/sections/knowledge-section';
-import { KnowledgeSectionMobile } from './../news-block/sections/knowledge-section-mobile';
-import { EmotionSection } from './../news-block/sections/emotion-section';
-import { EmotionSectionMobile } from './../news-block/sections/emotion-section-mobile';
-import { News } from './../news-block/sections/news';
-import { NewsMobile } from './../news-block/sections/news-mobile';
-import { withLoadingHeader } from './../header-news/header-loading-hoc';
-import { MobileNews } from './../news-block/mobile-news';
+import { HeaderNews } from 'components/header-news/header-news';
+import { AdBanner } from 'components/ad-banner/ad-baner';
+import { LifeSection } from 'components/news-block/sections/life-section';
+import { LifeSectionMobile } from 'components/news-block/sections/life-section-mobile';
+import { KnowledgeSection } from 'components/news-block/sections/knowledge-section';
+import { KnowledgeSectionMobile } from 'components/news-block/sections/knowledge-section-mobile';
+import { EmotionSection } from 'components/news-block/sections/emotion-section';
+import { EmotionSectionMobile } from 'components/news-block/sections/emotion-section-mobile';
+import { News } from 'components/news-block/sections/news';
+import { NewsMobile } from 'components/news-block/sections/news-mobile';
+import { withLoadingHeader } from 'components/header-news/header-loading-hoc';
 
 
 export class HomeUI extends Component {

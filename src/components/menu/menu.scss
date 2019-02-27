@@ -1,9 +1,23 @@
-@import '../../styles/breakpoints';
+@import "../../styles/breakpoints";
 .menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 51px;
   background-color: #333333;
   color: #fff;
-  display: none;
-  min-height: calc(100% - 51px);
+
+  @media (min-width: $breakpoint-tablet-sm) {
+    bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 970px;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    width: 1190px;
+  }
 
   .menu-opened & {
     display: block;
@@ -25,7 +39,7 @@
       color: #b4b4b4;
       background-color: #3c3c3c;
     }
-    
+
     &-links-item {
       font-size: 14px;
       letter-spacing: 1px;
@@ -35,15 +49,14 @@
     }
 
     .caret-green {
-      color: #0B9000;
+      color: #0b9000;
     }
-    
+
     .caret-red {
-      color: #FF0000;
+      color: #ff0000;
     }
 
     .separator {
-
     }
   }
 
@@ -67,9 +80,9 @@
       line-height: 19px;
       font-size: 11px;
       text-transform: uppercase;
-      color: #7C7C7C;
+      color: #7c7c7c;
     }
-    
+
     .type {
       line-height: 16px;
       font-size: 11px;
@@ -78,7 +91,7 @@
     }
 
     .type.link {
-      color: #13A5F7;
+      color: #13a5f7;
     }
 
     .preview-text {

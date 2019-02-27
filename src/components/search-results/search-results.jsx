@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
-import { Find } from './../shared/find/find';
-import { DropdownFilter } from '../shared/dropdown-filter/dropdown-filter';
-import { SearchResultsItem } from './search-results-item';
-import { AdBanner } from './../ad-banner/ad-baner';
-import { More } from './../shared/more/more';
-import { STUB_RESULT_DATA } from './stub-data';
+import { Find } from 'components/shared/find/find';
+import { DropdownFilter } from 'components/shared/dropdown-filter/dropdown-filter';
+import { SearchResultsItem } from 'components/search-results/search-results-item';
+import { AdBanner } from 'components/ad-banner/ad-baner';
+import { More } from 'components/shared/more/more';
 
 import './search-results.scss';
 
@@ -33,7 +32,7 @@ export class SearchResultsUI extends Component {
 
     return (
       <Container className="py-3 search-results padding-x-20">
-        <Row>
+        <Row noGutters>
           <Col xs={12} md="auto" className="news-item-line-wrapper-large mr-15">
             <Row className="align-items-center">
               <Col xs={12} className="mb-3 mb-md-2">
@@ -71,7 +70,7 @@ export class SearchResultsUI extends Component {
               </Col>
             </Row>
           </Col>
-          <Col md="auto" className="news-item-line-wrapper d-none d-md-block">
+          <Col className="news-item-line-wrapper d-none d-md-block">
             <div className="sticky-right-col">
               <Row noGutters>
                 <Col className="px-0 pb-4 text-center">
@@ -85,9 +84,5 @@ export class SearchResultsUI extends Component {
     );
   }
 }
-
-SearchResultsUI.defaultProps = {
-  results: STUB_RESULT_DATA,
-};
 
 export const SearchResults = withRouter(SearchResultsUI);
