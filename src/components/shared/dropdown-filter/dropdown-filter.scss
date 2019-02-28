@@ -3,16 +3,129 @@
   color: #2a2a2a;
   font-family: "HelveticaNeueCyr-Roman";
 
+  button {
+    &:focus {
+      outline: none;
+    }
+  }
+
   .toggle-btn {
     border: 0;
     font-size: 14px;
     color: #2a2a2a;
     font-weight: 400;
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover {
+      color: #2a2a2a;
+      background-color: transparent;
+    }
   }
 
   &-arrow {
     path {
       stroke: #949494;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 25px 0;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.25);
+    top: 10px !important;
+    left: 25px !important;
+
+    position: relative;
+    border: 1px solid #fff;
+
+    &:after,
+    &:before {
+      bottom: 100%;
+      right: 29px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-color: rgba(136, 183, 213, 0);
+      border-bottom-color: #fff;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+
+    &:before {
+      border-color: rgba(194, 225, 245, 0);
+      border-bottom-color: #fff;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+
+    .dropdown-header {}
+
+    .dropdown-item {
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 14px;
+      line-height: 1.14;
+      color: #2a2a2a;
+      margin-bottom: 10px;
+
+      &.active {
+        color: #13a5f7;
+        background-color: #fff;
+        font-family: HelveticaNeueCyr;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-menu {
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 11;
+    left: 0;
+    right: 0;
+    padding: 20px;
+
+    .close-icon {
+      path {
+        stroke: #3c3c3c;
+      }
+    }
+
+    &-header {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #2a2a2a;
+      text-transform: uppercase;
+    }
+
+    &-items {
+      max-height: 200px;
+      padding: 0;
+      overflow-y: auto;
+      list-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &-item {
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 14px;
+      line-height: 1.14;
+      padding: 15px 0;
+      color: #2a2a2a;
+
+      &.selected {
+        color: #13a5f7;
+      }
     }
   }
 }

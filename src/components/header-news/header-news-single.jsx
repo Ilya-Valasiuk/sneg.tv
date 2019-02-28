@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import { HeaderLoading } from './header-loading';
 import { Link as RouterLink } from "react-router-dom";
-import { CloseIcon } from './../icons/close';
+import { CloseIcon } from 'components/icons/close';
 
 import './header-news.scss';
 

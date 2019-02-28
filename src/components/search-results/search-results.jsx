@@ -20,15 +20,19 @@ const SEACTION_FILTER_DATA = {
 const TIME_FILTER_DATA = {
   initialFilterValue: { value: 'За всё время', id: 0 },
   filters: [
-    { value: 'За последний час', id: 0 },
-    { value: 'За последний день', id: 1 },
-    { value: 'За последний месяц', id: 2 },
+    { value: 'За всё время', id: 0 },
+    { value: 'За последний час', id: 1 },
+    { value: 'За последний день', id: 2 },
+    { value: 'За последнюю неделю', id: 3 },
+    { value: 'За последний месяц', id: 4 },
+    { value: 'За последний год', id: 5 },
+    { value: 'За последнее столетие', id: 6 },
   ],
 };
 
 export class SearchResultsUI extends Component {
   render() {
-    const { results, onSearch } = this.props;
+    const { results, onSearch, isMobile } = this.props;
 
     return (
       <Container className="py-3 search-results padding-x-20">
@@ -47,8 +51,8 @@ export class SearchResultsUI extends Component {
                 <p className="search-results-count mb-md-0">Найдено <b>{results.length}</b> материалов</p>
               </Col>
               <Col xs={12} md="auto" className="d-flex">
-                <DropdownFilter className="mr-3" data={SEACTION_FILTER_DATA} />
-                <DropdownFilter data={TIME_FILTER_DATA} />
+                <DropdownFilter className="mr-3" data={SEACTION_FILTER_DATA} isMobile={isMobile} />
+                <DropdownFilter data={TIME_FILTER_DATA} isMobile={isMobile} />
               </Col>
             </Row>
             <Row>

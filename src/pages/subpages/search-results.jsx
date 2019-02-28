@@ -7,7 +7,7 @@ export function SearchResults({ onSearch, isMobile }) {
   return (
     <Fragment>
       {!isMobile && <HeaderNews />}
-      <SearchresultsComponent onSearch={onSearch} results={STUB_RESULT_DATA} />
+      <SearchresultsComponent onSearch={onSearch} results={STUB_RESULT_DATA} isMobile={isMobile} />
     </Fragment>
   );
 }
