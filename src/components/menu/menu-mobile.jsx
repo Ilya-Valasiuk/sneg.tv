@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import { Links } from 'components/shared/links/links';
 import { Subscribe } from 'components/shared/subscribe/subscribe';
 import { Find } from 'components/shared/find/find';
@@ -9,7 +9,7 @@ import { UserIcon } from 'components/icons/user';
 
 import './menu.scss'
 
-export function MenuMobile({ onSearch }) {
+export function MenuMobile({ onSearch, toggleLoginView }) {
   return (
     <div className="menu menu-mobile px-3 pb-3">
       <Row className="">
@@ -18,7 +18,7 @@ export function MenuMobile({ onSearch }) {
           <span className="text-white">$</span> 65.90 <i className="fas fa-caret-up caret-green" />
           <span className="text-white ml-3">$</span> 76.31 <i className="fas fa-caret-down caret-red" />
         </Col>
-        <Col xs={12} className="pt-4 pb-2 menu-user">
+        <Col xs={12} className="pt-4 pb-2 menu-user" onClick={toggleLoginView}>
           <span className="mr-3"><UserIcon /></span> Личный кабинет
         </Col>
         <Col className="mb-3"><hr className="separator without-margins" /></Col>

@@ -1,0 +1,90 @@
+.authentication {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 15;
+  padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &-title {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+
+    .close-icon {
+      path {
+        stroke: #2a2a2a;
+      }
+    }
+  }
+
+  &-socials {
+  }
+
+  &-form {
+    &-title {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #2a2a2a;
+      text-transform: uppercase;
+    }
+
+    &-enter {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #13a5f7;
+      border: 0;
+    }
+
+    &-registration {
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 16px;
+      color: #13a5f7;
+      border: 0;
+    }
+
+    input {
+      padding: 15px 20px;
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 14px;
+      line-height: 1.14;
+      color: #b4b4b4;
+    }
+  }
+
+  &-info {
+    font-family: Georgia;
+    font-size: 14px;
+    color: #2a2a2a;
+
+    &-title {
+      font-family: HelveticaNeueCyr;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 25px;
+
+      li {
+        &::before {
+          content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: #13a5f7; /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 1em; /* Also needed for space (tweak if needed) */
+          margin-left: -1em; /* Also needed for space (tweak if needed) */
+        }
+      }
+    }
+  }
+}

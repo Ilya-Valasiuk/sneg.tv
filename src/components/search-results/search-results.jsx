@@ -10,11 +10,12 @@ import { More } from 'components/shared/more/more';
 import './search-results.scss';
 
 const SEACTION_FILTER_DATA = {
-  initialFilterValue: { value: 'Все рублики', id: 0 },
+  initialFilterValue: { value: 'Все рубрики', id: 0 },
   filters: [
     { value: 'Все рубрики', id: 0 },
-    { value: 'О Жизни', id: 1 },
-    { value: 'О Здоровье', id: 2 },
+    { value: 'Жизнь', id: 1 },
+    { value: 'Знания', id: 2 },
+    { value: 'Эмоции', id: 3 },
   ],
 };
 const TIME_FILTER_DATA = {

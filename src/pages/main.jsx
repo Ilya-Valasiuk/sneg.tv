@@ -1,19 +1,20 @@
-import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap";
-import classnames from "classnames";
-import ReactResizeDetector from "react-resize-detector";
-import { Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
+import ReactResizeDetector from 'react-resize-detector';
+import { Route } from 'react-router-dom';
 
-import { NewsFeed } from "components/news-feed/news-feed";
-import { NewsFeedMobile } from "components/news-feed/news-feed-mobile";
-import { Header } from "components/header/header";
-import { HeaderMobile } from "components/header/header-mobile";
-import { Search } from "components/search/search";
-import { Menu } from "components/menu/menu";
-import { MenuMobile } from "components/menu/menu-mobile";
-import { Footer } from "components/footer/footer";
-import { NewsCommentsPopup } from "components/news-block/news-comments/news-comments-popup";
-import { CommentCreatorPopup } from "components/news-block/news-comments/comment-creator-popup";
+import { NewsFeed } from 'components/news-feed/news-feed';
+import { NewsFeedMobile } from 'components/news-feed/news-feed-mobile';
+import { Header } from 'components/header/header';
+import { HeaderMobile } from 'components/header/header-mobile';
+import { Search } from 'components/search/search';
+import { Menu } from 'components/menu/menu';
+import { MenuMobile } from 'components/menu/menu-mobile';
+import { Footer } from 'components/footer/footer';
+import { NewsCommentsPopup } from 'components/news-block/news-comments/news-comments-popup';
+import { CommentCreatorPopup } from 'components/news-block/news-comments/comment-creator-popup';
+import { AuthenticationView } from 'components/authentication/authentication';
 
 import { Home } from "pages/subpages/home";
 import { Inner } from "pages/subpages/inner";
@@ -39,6 +40,7 @@ class MainPage extends Component {
       isShareOpened: false,
       shouldShowCommnetsPopup: false,
       shouldShowCommnetCreatorPopup: false,
+      shouldShowLogin: false,
       isDesktop: true,
       isMobile: false,
       isTabletSm: false
@@ -113,6 +115,13 @@ class MainPage extends Component {
       }
     );
   };
+
+  toggleLogin = () => {
+    this.setState({
+      shouldShowLogin: !this.state.shouldShowLogin,
+      isMenuOpened: false,
+    })
+  }
 
   resetAllFlags = () => {
     this.setState({
@@ -210,7 +219,8 @@ class MainPage extends Component {
       isMobileFeedOpened,
       isShareOpened,
       shouldShowCommnetsPopup,
-      shouldShowCommnetCreatorPopup
+      shouldShowCommnetCreatorPopup,
+      shouldShowLogin,
     } = this.state;
     const MenuComponent = isMobile ? MenuMobile : Menu;
 
@@ -292,7 +302,7 @@ class MainPage extends Component {
                 <Footer />
                 {isSearchOpened && <Search onSearch={this.search} />}
               </div>
-              {isMenuOpened && <MenuComponent onSearch={this.search} />}
+              {isMenuOpened && <MenuComponent onSearch={this.search} toggleLoginView={this.toggleLogin} />}
               {isMobileFeedOpened && (
                 <NewsFeedMobile
                   onFeedPanelToggle={this.toggleMobileFeedPanel}
@@ -308,6 +318,9 @@ class MainPage extends Component {
                 <CommentCreatorPopup
                   onToggleCommentCreatorPopup={this.toggleCommentCreatorPopup}
                 />
+              )}
+              {shouldShowLogin && (
+                <AuthenticationView onClose={this.toggleLogin} />
               )}
               <div className="blackout " />
             </Col>

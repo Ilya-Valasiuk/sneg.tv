@@ -46,7 +46,7 @@ export class Find extends Component {
           type="text"
           name="find"
           id="find"
-          placeholder="Текс для поиска"
+          placeholder="Текст для поиска"
           value={searchValue}
           onChange={this.onChange}
         />
