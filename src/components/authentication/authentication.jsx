@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import classnames from 'classnames';
 import { Input, Button } from 'reactstrap';
 import { CloseIcon } from 'components/icons/close';
 import { VkIcon } from 'components/icons/socials/vk-icon';
@@ -21,39 +22,45 @@ export class AuthenticationView extends Component {
     const { isRegistration } = this.state;
 
     return (
-      <div className="authentication">
-        <div className="authentication-title d-flex justify-content-between mb-4">
-          <span>{isRegistration ? 'Регистрация' : 'Вход на сайт'}</span>
-          <span onClick={onClose}><CloseIcon /></span>
-        </div>
-        <div className="authentication-socials d-flex mb-4">
-          <div className="authentication-socials-item mr-3">
-            <VkIcon />
+      <div className={classnames('authentication', { 'authentication-registration': isRegistration })}>
+        <div className="authentication-main">
+          <div className="authentication-title d-flex justify-content-between mb-4">
+            <span>{isRegistration ? 'Регистрация' : 'Вход на сайт'}</span>
+            <span onClick={onClose}><CloseIcon /></span>
           </div>
-          <div className="authentication-socials-item mr-3">
-            <FBIcon />
-          </div>
-          <div className="authentication-socials-item">
-            <TwitterIcon />
-          </div>
-        </div>
-        <div className="authentication-form">
-          <div className="authentication-form-title mb-4">или через email</div>
-          {
-            isRegistration ?
-              <Fragment>
-                <Input placeholder="Email" className="mb-3" />
-                <Input placeholder="Пароль" className="mb-3" />
-                <Input placeholder="Пароль" className="mb-3" />
-              </Fragment> :
-              <Fragment>
-                <Input placeholder="Email" className="mb-3" />
-                <Input placeholder="Пароль" className="mb-3" />
-              </Fragment>
+          {!isRegistration &&
+            <Fragment>
+              <div className="authentication-socials d-flex mb-4">
+                <div className="authentication-socials-item mr-3">
+                  <VkIcon />
+                </div>
+                <div className="authentication-socials-item mr-3">
+                  <FBIcon />
+                </div>
+                <div className="authentication-socials-item">
+                  <TwitterIcon />
+                </div>
+              </div>
+            </Fragment>
           }
-          <div className="d-flex flex-column">
-            <Button color="primary" className="authentication-form-enter mb-3" onClick={onClose}>Войти</Button>
-            <Button className="authentication-form-registration" onClick={this.toggleForm} outline>Регистрация</Button>
+          <div className="authentication-form">
+            {
+              isRegistration ?
+                <Fragment>
+                  <Input placeholder="Email" className="mb-3" />
+                  <Input placeholder="Пароль" className="mb-3" />
+                  <Input placeholder="Пароль" className="mb-3" />
+                </Fragment> :
+                <Fragment>
+                  <div className="authentication-form-title mb-4">или через email</div>
+                  <Input placeholder="Email" className="mb-3" />
+                  <Input placeholder="Пароль" className="mb-3" />
+                </Fragment>
+            }
+            <div className="d-flex flex-column">
+              <Button color="primary" className="authentication-form-enter mb-3" onClick={onClose}>{isRegistration ? 'Зарегестрироваться' : 'Войти'}</Button>
+              <Button className="authentication-form-registration" onClick={this.toggleForm} outline>{!isRegistration ? 'Регистрация' : 'Вход на сайт'}</Button>
+            </div>
           </div>
         </div>
         <hr />

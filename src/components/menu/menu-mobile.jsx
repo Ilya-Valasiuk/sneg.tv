@@ -18,6 +18,12 @@ export function MenuMobile({ onSearch, toggleLoginView }) {
           <span className="text-white">$</span> 65.90 <i className="fas fa-caret-up caret-green" />
           <span className="text-white ml-3">$</span> 76.31 <i className="fas fa-caret-down caret-red" />
         </Col>
+        <Col xs={12} className="pt-4">
+          <div className="menu-find d-flex flex-column">
+            <p className="menu-find-title mb-2">Поиск по сайту</p>
+            <Find className="py-4" onSearch={onSearch} />
+          </div>
+        </Col>
         <Col xs={12} className="pt-4 pb-2 menu-user" onClick={toggleLoginView}>
           <span className="mr-3"><UserIcon /></span> Личный кабинет
         </Col>
@@ -47,13 +53,6 @@ export function MenuMobile({ onSearch, toggleLoginView }) {
           ]} />
         </Col>
         <Col xs={12} className="mb-2"><hr className="separator without-margins" /></Col>
-        <Col xs={12}>
-          <div className="menu-find d-flex flex-column">
-            <p className="menu-find-title mb-2">Поиск по сайту</p>
-            <Find className="py-4" onSearch={onSearch} />
-          </div>
-        </Col>
-        <Col xs={12} className="mt-2"><hr className="separator without-margins" /></Col>
         <Col xs={12}>
           <SocialIcons />
         </Col>

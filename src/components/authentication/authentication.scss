@@ -1,3 +1,5 @@
+@import './../../styles/breakpoints';
+
 .authentication {
   position: fixed;
   left: 0;
@@ -9,6 +11,52 @@
   padding: 20px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+
+  .close-icon {
+    cursor: pointer;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    position: absolute;
+    width: 615px;
+    max-height: 408px;
+    left: calc(50% - 308px);
+    top: calc(50% - 204px);
+    background-color: #f9f9f9;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row-reverse;
+
+    &-registration {
+      max-height: 356px;
+      top: calc(50% - 178px);
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+
+    &-main,
+    &-info {
+      width: 50%;
+      padding: 16px;
+    }
+
+    &-main {
+      padding-left: 36px;
+    }
+
+    &-info {
+      padding-right: 36px;
+    }
+
+    hr {
+      border: none;
+      border-left: 1px solid #efefef;
+      height: calc(100% + 40px);
+      width: 1px;
+      margin: -20px 0;
+    }
+  }
 
   &-title {
     font-size: 14px;
@@ -24,8 +72,7 @@
     }
   }
 
-  &-socials {
-  }
+  &-socials {}
 
   &-form {
     &-title {
@@ -77,12 +124,18 @@
 
       li {
         &::before {
-          content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-          color: #13a5f7; /* Change the color */
-          font-weight: bold; /* If you want it to be bold */
-          display: inline-block; /* Needed to add space between the bullet and the text */
-          width: 1em; /* Also needed for space (tweak if needed) */
-          margin-left: -1em; /* Also needed for space (tweak if needed) */
+          content: "\2022";
+          /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: #13a5f7;
+          /* Change the color */
+          font-weight: bold;
+          /* If you want it to be bold */
+          display: inline-block;
+          /* Needed to add space between the bullet and the text */
+          width: 1em;
+          /* Also needed for space (tweak if needed) */
+          margin-left: -1em;
+          /* Also needed for space (tweak if needed) */
         }
       }
     }

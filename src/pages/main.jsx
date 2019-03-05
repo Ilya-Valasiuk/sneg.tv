@@ -189,6 +189,10 @@ class MainPage extends Component {
       if (event.target.closest(".snow-col-main")) {
         this.toggleFeedPanel();
       }
+    } else if (this.state.shouldShowLogin) {
+      if (!event.target.closest(".authentication") && event.target.closest(".snow")) {
+        this.toggleLogin();
+      }
     }
   };
 
@@ -227,7 +231,7 @@ class MainPage extends Component {
     return (
       <div ref={this.containerRef}>
         <Container
-          className="snow p-0"
+          className={classnames('snow p-0', { 'blackout-visible': shouldShowLogin && !isMobile })}
           fluid
           onKeyDown={this.onKeyDownHandler}
           tabIndex={0}
@@ -271,6 +275,7 @@ class MainPage extends Component {
                       isSearchOpened={isSearchOpened}
                       onMenuToggle={this.toggleMenu}
                       onSearchToggle={this.toggleSearch}
+                      toggleLoginView={this.toggleLogin}
                     />
                   )}
                 <div className="snow-col-main-content">
@@ -322,10 +327,11 @@ class MainPage extends Component {
               {shouldShowLogin && (
                 <AuthenticationView onClose={this.toggleLogin} />
               )}
-              <div className="blackout " />
+              <div className="feed-blackout " />
             </Col>
           </Row>
           <ReactResizeDetector handleWidth onResize={this.onResize} />
+          <div className="blackout" />
         </Container>
       </div>
     );

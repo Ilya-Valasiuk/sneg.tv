@@ -61,7 +61,8 @@
 .header-hamburger,
 .header-search,
 .header-back,
-.header-share {
+.header-share,
+.header-user {
   font-size: 18px;
   height: 51px;
   width: 50px;
@@ -79,7 +80,9 @@
 .header-hamburger:hover svg path,
 .header-search:hover svg path,
 .header-back:hover svg path,
-.header-share:hover svg path {
+.header-share:hover svg path,
+.header-user:hover svg path,
+.header-user:hover svg circle {
   stroke: #4dabf7;
 }
 
