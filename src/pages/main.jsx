@@ -231,7 +231,7 @@ class MainPage extends Component {
     return (
       <div ref={this.containerRef}>
         <Container
-          className={classnames('snow p-0', { 'blackout-visible': shouldShowLogin && !isMobile })}
+          className={classnames('snow p-0', { 'blackout-all': shouldShowLogin && !isMobile })}
           fluid
           onKeyDown={this.onKeyDownHandler}
           tabIndex={0}
@@ -255,6 +255,7 @@ class MainPage extends Component {
                 isFeedOpened={isDesktop || isFeedOpened}
                 onFeedPanelOpen={this.toggleFeedPanel}
               />
+              <div className="feed-blackout " />
             </Col>
             <Col className="snow-col-main">
               <div
@@ -327,11 +328,10 @@ class MainPage extends Component {
               {shouldShowLogin && (
                 <AuthenticationView onClose={this.toggleLogin} />
               )}
-              <div className="feed-blackout " />
+              <div className="main-blackout " />
             </Col>
           </Row>
           <ReactResizeDetector handleWidth onResize={this.onResize} />
-          <div className="blackout" />
         </Container>
       </div>
     );

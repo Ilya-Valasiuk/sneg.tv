@@ -66,7 +66,7 @@ body {
     overflow-y: hidden;
     position: fixed;
 
-    .feed-blackout {
+    .main-blackout {
       display: block;
     }
 
@@ -79,7 +79,7 @@ body {
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
 
-      .feed-blackout {
+      .main-blackout {
         display: none;
       }
     }
@@ -87,7 +87,7 @@ body {
 }
 
 .feed-blackout,
-.blackout {
+.main-blackout {
   display: none;
   position: absolute;
   z-index: 11;
@@ -98,14 +98,11 @@ body {
   height: 999999px;
   background-color: #333333;
   opacity: .6;
-}
 
-.blackout {
-  .blackout-visible & {
+  .blackout-all & {
     display: block;
   }
 }
-
 
 /* SHARED */
 .text-blue {
