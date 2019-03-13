@@ -22,16 +22,16 @@ const TIME_FILTER_DATA = {
   initialFilterValue: { value: 'За всё время', id: 0 },
   filters: [
     { value: 'За всё время', id: 0 },
-    { value: 'За последний час', id: 1 },
-    { value: 'За последний день', id: 2 },
-    { value: 'За последнюю неделю', id: 3 },
-    { value: 'За последний месяц', id: 4 },
-    { value: 'За последний год', id: 5 },
-    { value: 'За последнее столетие', id: 6 },
+    { value: 'За месяц', id: 1 },
+    { value: 'За год', id: 2 },
   ],
 };
 
 export class SearchResultsUI extends Component {
+  onSelectChange = (dates) => {
+    console.log(dates);
+  }
+
   render() {
     const { results, onSearch, isMobile } = this.props;
 
@@ -53,7 +53,7 @@ export class SearchResultsUI extends Component {
               </Col>
               <Col xs={12} md="auto" className="d-flex">
                 <DropdownFilter className="mr-3" data={SEACTION_FILTER_DATA} isMobile={isMobile} />
-                <DropdownFilter data={TIME_FILTER_DATA} isMobile={isMobile} />
+                <DropdownFilter data={TIME_FILTER_DATA} isMobile={isMobile} onSelectChange={this.onSelectChange} showDateRange />
               </Col>
             </Row>
             <Row>

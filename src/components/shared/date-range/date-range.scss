@@ -1,0 +1,87 @@
+@import './../../../styles/breakpoints';
+.date-range {
+  @media (min-width: $breakpoint-tablet-sm) {
+    padding: 0 10px;
+  }
+
+  &-arrow {
+    position: absolute;
+    top: 5px;
+    z-index: 1;
+    cursor: pointer;
+
+    path {
+      stroke: #949494;
+    }
+
+    &--left {
+      left: 18px;
+    }
+
+    &--right {
+      right: 18px;
+    }
+  }
+
+  .DateRangePicker {
+    width: 100%;
+
+    &__DateLabel,
+    &__MonthHeaderSelect {
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 14px;
+      line-height: 1.14;
+      color: #2a2a2a;
+    }
+
+    &__Weekdays {
+      display: none;
+    }
+
+    &__Date {
+      border: 0;
+
+      &--weekend {
+        background-color: transparent;
+      }
+
+      &--is-highlighted,
+      &--is-selected {
+        // background-color: #13a5f7;
+        // border-radius: 4px;
+
+        .DateRangePicker__CalendarHighlight--single,
+        .DateRangePicker__CalendarSelection--single,
+        .DateRangePicker__CalendarSelection--start,
+        .DateRangePicker__CalendarSelection--end,
+        .DateRangePicker__CalendarSelection--segment,
+        .DateRangePicker__CalendarSelection--is-pending {
+          border: 0;
+          background-color: #13a5f7;
+        }
+
+        .DateRangePicker__CalendarSelection--is-pending {
+          opacity: 0.8;
+        }
+
+        // .DateRangePicker__CalendarSelection--segment {
+        //   border: 0;
+        //   background-color: #efefef;
+        // }
+
+        .DateRangePicker__DateLabel {
+          color: white;
+        }
+      }
+    }
+
+    &__MonthDates {
+      border-bottom: 0;
+    }
+
+    &__Month {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
