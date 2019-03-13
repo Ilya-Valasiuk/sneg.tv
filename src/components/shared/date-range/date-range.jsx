@@ -36,7 +36,7 @@ export class DateRange extends Component {
         <DateRangePicker
           onSelect={this.onSelect}
           value={this.state.dates}
-          singleDateRange
+          // singleDateRange
           paginationArrowComponent={PaginationArrowComponent}
         />
       </div>

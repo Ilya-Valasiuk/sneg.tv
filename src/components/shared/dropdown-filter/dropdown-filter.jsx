@@ -49,6 +49,11 @@ export class DropdownFilter extends Component {
 
     this.setState({ filter: filterValue });
 
+    setTimeout(() => {
+      this.toggle();
+    }, 200)
+    
+
     // this.props.onSelectChange();
   }
 
