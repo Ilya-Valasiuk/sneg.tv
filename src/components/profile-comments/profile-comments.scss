@@ -1,0 +1,24 @@
+.profile-comments {
+  padding: 33px 20px;
+
+  &-header {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 7px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+  }
+
+  &-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: #36b3f8;
+    line-height: 1.41;
+  }
+
+  &-btn {
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 14px;
+    color: #13a5f7;
+  }
+}

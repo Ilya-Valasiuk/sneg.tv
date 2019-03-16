@@ -1,0 +1,68 @@
+.profile-add-article {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  background-color: white;
+  z-index: 11;
+  overflow-y: auto;
+
+  &-header {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 7px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+  }
+
+  &-label {
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 16px;
+    line-height: 2;
+    color: #2a2a2a;
+  }
+
+  &-text-area {
+    padding: 15px 13px 17px 13px;
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 14px;
+    line-height: 1.14;
+    font-weight: normal;
+    color: #2a2a2a;
+  }
+
+  &-btn {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+
+    &.btn-primary {
+      background-color: #13a5f7;
+      border: 0;
+      color: #ffffff;
+    }
+
+    &.btn-link {
+      color: #13a5f7;
+    }
+  }
+
+  &-main-photo {
+    max-height: 120px;
+    max-width: 196px;
+  }
+
+  .close-icon {
+    width: 20px;
+    height: 20px;
+
+    path {
+      stroke: #2a2a2a;
+    }
+  }
+}

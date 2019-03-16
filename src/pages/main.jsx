@@ -16,14 +16,15 @@ import { NewsCommentsPopup } from 'components/news-block/news-comments/news-comm
 import { CommentCreatorPopup } from 'components/news-block/news-comments/comment-creator-popup';
 import { AuthenticationView } from 'components/authentication/authentication';
 
-import { Home } from "pages/subpages/home";
-import { Inner } from "pages/subpages/inner";
-import { SearchResults } from "pages/subpages/search-results";
+import { Home } from 'pages/subpages/home';
+import { Inner } from 'pages/subpages/inner';
+import { SearchResults } from 'pages/subpages/search-results';
+import { Profile } from 'pages/subpages/profile';
 
-import "./main.scss";
+import './main.scss';
 
 const scrollToTop = () => {
-  const scrollCol = document.body.querySelector(".snow-col-main");
+  const scrollCol = document.body.querySelector('.snow-col-main');
 
   if (scrollCol) scrollCol.scrollTo(0, 0);
 };
@@ -131,7 +132,8 @@ class MainPage extends Component {
       isSearchOpened: false,
       isShareOpened: false,
       shouldShowCommnetsPopup: false,
-      shouldShowCommnetCreatorPopup: false
+      shouldShowCommnetCreatorPopup: false,
+      shouldShowLogin: false,
     });
   };
 
@@ -145,6 +147,11 @@ class MainPage extends Component {
     this.resetAllFlags();
     this.props.history.push(`/search?value=${searchValue}`);
   };
+
+  openProfile = () => {
+    this.resetAllFlags();
+    this.props.history.push(`/profile`);
+  }
 
   onKeyDownHandler = event => {
     if (event.keyCode === 27) {
@@ -304,6 +311,12 @@ class MainPage extends Component {
                     />
                   )}
                   />
+                  <Route exact path="/profile" render={props => (
+                    <Profile
+                      isMobile={isMobile}
+                    />
+                  )}
+                  />
                 </div>
                 <Footer />
                 {isSearchOpened && <Search onSearch={this.search} />}
@@ -326,7 +339,7 @@ class MainPage extends Component {
                 />
               )}
               {shouldShowLogin && (
-                <AuthenticationView onClose={this.toggleLogin} />
+                <AuthenticationView onLogin={this.openProfile} onClose={this.toggleLogin} />
               )}
               <div className="main-blackout " />
             </Col>

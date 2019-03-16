@@ -4,7 +4,7 @@ import { Row, Col } from 'reactstrap';
 
 import './news-comments.scss';
 
-export function NewsComment({ avatartImg, userName, userNameAnswer, time, text, isThread }) {
+export function NewsComment({ className, avatartImg, userName, userNameAnswer, time, text, isThread }) {
   const avatarEl = <Fragment>
     <div className="news-comments-avatar-wrapper">
       {
@@ -15,7 +15,7 @@ export function NewsComment({ avatartImg, userName, userNameAnswer, time, text, 
     </div>
   </Fragment>;
   return (
-    <Row noGutters>
+    <Row className={className} noGutters>
       <Col xs='auto' className={classnames('pr-2 d-none', { 'd-md-block': !isThread })}>
         {avatarEl}
       </Col>
@@ -33,3 +33,7 @@ export function NewsComment({ avatartImg, userName, userNameAnswer, time, text, 
     </Row>
   );
 }
+
+NewsComment.defaultProps = {
+  className: '',
+};

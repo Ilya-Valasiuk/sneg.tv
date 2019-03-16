@@ -18,7 +18,7 @@ export class AuthenticationView extends Component {
   }
 
   render() {
-    const { onClose } = this.props;
+    const { onClose, onLogin } = this.props;
     const { isRegistration } = this.state;
 
     return (
@@ -58,7 +58,7 @@ export class AuthenticationView extends Component {
                 </Fragment>
             }
             <div className="d-flex flex-column">
-              <Button color="primary" className="authentication-form-enter mb-3" onClick={onClose}>{isRegistration ? 'Зарегестрироваться' : 'Войти'}</Button>
+              <Button color="primary" className="authentication-form-enter mb-3" onClick={onLogin}>{isRegistration ? 'Зарегестрироваться' : 'Войти'}</Button>
               <Button className="authentication-form-registration" onClick={this.toggleForm} outline>{!isRegistration ? 'Регистрация' : 'Вход на сайт'}</Button>
             </div>
           </div>

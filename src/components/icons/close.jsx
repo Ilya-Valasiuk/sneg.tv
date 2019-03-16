@@ -1,6 +1,6 @@
 import React from "react";
 
-export function CloseIcon({}) {
+export function CloseIcon({ onClick }) {
   return (
     <svg
       className="close-icon"
@@ -9,6 +9,7 @@ export function CloseIcon({}) {
       height={16}
       fill="none"
       viewBox="0 0 16 16"
+      onClick={onClick}
     >
       <path
         stroke="#fff"

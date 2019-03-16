@@ -15,6 +15,9 @@ export function HeaderMobile(headerProps) {
       <Route exact path="/search" render={props => (
         <InnerHeaderMobile {...headerProps} />
       )} />
+      <Route exact path="/profile" render={props => (
+        <InnerHeaderMobile {...headerProps} />
+      )} />
     </Fragment>
   );
 }
