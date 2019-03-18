@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Button } from 'reactstrap';
+import { Button, Row, Col } from 'reactstrap';
 import { ProfileProposedArticle } from 'components/profile-proposed-articles/profile-proposed-article';
 import { ProfileAddArticle } from 'components/profile-add-article/profile-add-article';
 
@@ -21,10 +21,13 @@ export class ProfileProposedArticles extends Component {
 
     return (
       <div className="profile-proposed-articles">
-        <h4 className="profile-proposed-articles-header mb-3">Предложенные статьи</h4>
+        <Row className="profile-proposed-articles-header mb-3 align-items-center">
+          <Col xs="12" md="auto">Предложенные статьи</Col>
+          <Col className="d-none d-md-block"><hr /></Col>
+        </Row>
         <Button
           color="primary"
-          className="profile-proposed-articles-btn w-100 mb-4"
+          className="profile-proposed-articles-btn mb-4"
           onClick={this.toggleAddArticle}
         >
           Предложить новую статью

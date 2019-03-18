@@ -1,3 +1,5 @@
+@import './../../styles/breakpoints';
+
 .profile-proposed-articles {
   padding: 33px 20px;
 
@@ -18,5 +20,14 @@
     color: #ffffff;
     background-color: #13a5f7;
     border: 0;
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      width: auto;
+    }
+  }
+
+  .close-icon {
+    cursor: pointer;
   }
 }

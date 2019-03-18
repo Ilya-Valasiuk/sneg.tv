@@ -1,3 +1,5 @@
+@import './../../styles/breakpoints';
+
 .profile-comments {
   padding: 33px 20px;
 
@@ -20,5 +22,11 @@
     font-family: HelveticaNeueCyr-Roman;
     font-size: 14px;
     color: #13a5f7;
+
+    &-wrapper {
+      @media (min-width: $breakpoint-tablet-sm) {
+        padding-left: 52px;
+      }
+    }
   }
 }

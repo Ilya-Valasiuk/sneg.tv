@@ -44,5 +44,9 @@
     &.approved {
       color: #13a5f7;
     }
+
+    &.rejected {
+      color: #ff0000;
+    }
   }
 }

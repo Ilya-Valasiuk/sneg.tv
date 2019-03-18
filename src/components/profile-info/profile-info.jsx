@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input, FormGroup, Label } from 'reactstrap';
+import { Button, Input, FormGroup, Label, Row, Col } from 'reactstrap';
 import { NoProfilePhoto } from 'components/icons/no-profile-photo';
 
 import './profile-info.scss';
@@ -32,7 +32,10 @@ export class ProfileInfo extends Component {
   render() {
     return (
       <div className="profile-info">
-        <div className="profile-info-title mb-4">Общая информация</div>
+        <Row className="profile-info-title mb-4 align-items-center">
+          <Col xs="12" md="auto">Общая информация</Col>
+          <Col className="d-none d-md-block"><hr /></Col>
+        </Row>
         <FormGroup>
           <Label className="profile-info-label">Фото профиля</Label>
           <div className="profile-info-photo-wrapper d-flex align-items-center mb-4">
@@ -55,13 +58,19 @@ export class ProfileInfo extends Component {
           <Input className="profile-info-input mb-4" placeholder="jason_browdy15" />
         </FormGroup>
         <FormGroup>
-          <Label className="profile-info-title mb-4">Смена пароля</Label>
+          <Row className="profile-info-title mb-4 align-items-center">
+            <Col xs="12" md="auto">Смена пароля</Col>
+            <Col className="d-none d-md-block"><hr /></Col>
+          </Row>
           <Input className="profile-info-input mb-3" placeholder="Введите старый пароль" />
           <Input className="profile-info-input mb-3" placeholder="Введите новый пароль" />
           <Input className="profile-info-input mb-4" placeholder="Повторите новый пароль" />
         </FormGroup>
+        <Row className="profile-info-title mb-4 align-items-center">
+          <Col xs="12" md="auto">настройки подписки</Col>
+          <Col className="d-none d-md-block"><hr /></Col>
+        </Row>
         <FormGroup check>
-          <Label className="profile-info-title mb-4">настройки подписки</Label>
           <Label className="profile-info-label" check>
             <Input type="checkbox" />Получать дайджест новостей на мой email
           </Label>

@@ -5,6 +5,7 @@ import newsImg3 from './3.png';
 import newsImg4 from './4.png';
 import newsImg5 from './5.png';
 import newsImg6 from './6.png';
+import authorCologneImg from './author-cologne.png';
 import test1 from './test1.png';
 import inner from './inner.png';
 import mobileCar from './rectangle-2.png'; 
@@ -20,4 +21,5 @@ export {
   test1,
   inner,
   mobileCar,
+  authorCologneImg,
 };

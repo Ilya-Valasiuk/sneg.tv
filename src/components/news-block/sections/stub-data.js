@@ -7,10 +7,10 @@ import {
   newsImg4,
   newsImg5,
   newsImg6,
+  authorCologneImg,
 } from './../../../img/news';
 
-export const STUB_DATA = [
-  {
+export const STUB_DATA = [{
     imgSrc: mobileCar,
     imgAlt: 'Кокорин',
     imgPlaceholder: 'Кокорин не пришёл в полицию до истечение дедлайна МВД',
@@ -76,3 +76,11 @@ export const STUB_DATA = [
     date: '10 октября 2018 18:16',
   }
 ];
+
+export const STUB_AUTHOR_COLOGNE_DATA = {
+  imgSrc: authorCologneImg,
+  type: 'Авторская колонка',
+  date: '10 октября 2018 18:16',
+  author: 'Игорь Серебряный',
+  title: 'МО РФ не спешит компенсировать гибель военных',
+}
