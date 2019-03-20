@@ -56,7 +56,7 @@ export function KnowledgeSectionMobile({ }) {
           />
         </Col>
       </Row>
-      <Row noGutters className="without-margins">
+      <Row className="without-margins">
         <Col className="news-item-line-wrapper">
           <AuthorCologneMobile {...STUB_AUTHOR_COLOGNE_DATA} />
         </Col>
