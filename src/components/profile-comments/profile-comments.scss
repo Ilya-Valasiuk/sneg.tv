@@ -14,8 +14,12 @@
   &-title {
     font-size: 18px;
     font-weight: 900;
-    color: #36b3f8;
+    color: #2a2a2a;
     line-height: 1.41;
+
+    &:hover {
+      color: #36b3f8;
+    }
   }
 
   &-btn {

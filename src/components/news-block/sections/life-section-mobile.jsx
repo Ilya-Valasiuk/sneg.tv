@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { cloneDeep } from 'lodash';
-import { AuthorCologneMobile } from 'components/news-block/author-cologne/author-cologne-mobile';
+import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 import { NewsItem } from './../news-item/news-item';
 import { More } from './../../shared/more/more';
 import { MobileNews } from '../mobile-news';
-import { STUB_DATA, STUB_AUTHOR_COLOGNE_DATA } from './stub-data';
+import { STUB_DATA } from './stub-data';
 
 import './../news-block.scss';
 
@@ -63,7 +63,26 @@ export function LifeSectionMobile({ }) {
       </Row>
       <Row noGutters>
         <Col className="news-item-line-wrapper">
-          <AuthorCologneMobile {...STUB_AUTHOR_COLOGNE_DATA} />
+          <NewsSimpleItem
+            previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
+            type="Жизнь"
+            date="10 октября 2018 18:16"
+            className="mobile-large"
+          />
+          <hr />
+          <NewsSimpleItem
+            previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
+            type="Жизнь"
+            date="10 октября 2018 18:16"
+            className="mobile-large"
+          />
+          <hr />
+          <NewsSimpleItem
+            previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"
+            type="Жизнь"
+            date="10 октября 2018 18:16"
+            className="mobile-large"
+          />
         </Col>
       </Row>
       <Row>

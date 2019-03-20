@@ -39,32 +39,41 @@ export class ProfileInfo extends Component {
         <FormGroup>
           <Label className="profile-info-label">Фото профиля</Label>
           <div className="profile-info-photo-wrapper d-flex align-items-center mb-4">
-            <span className="mr-4">
+            <span className="mr-2 mr-md-4">
               {this.state.photo ?
                 <img src={this.state.photo} className="profile-info-photo" alt="profile avatar" /> :
                 <NoProfilePhoto />
               }
             </span>
-            <Button onClick={this.onClick} className="profile-info-photo-btn px-5 py-2" color="primary">Загрузить</Button>
+            <Button onClick={this.onClick} className="profile-info-btn px-5 py-2" color="primary">Загрузить</Button>
             <input type="file" ref={this.fileInput} accept=".png, .jpg, .jpeg" onChange={this.onChange} className="d-none" />
           </div>
         </FormGroup>
-        <FormGroup>
-          <Label className="profile-info-label">Адрес email</Label>
-          <Input className="profile-info-input mb-4" placeholder="jason_browdy@gmail.com" />
-        </FormGroup>
-        <FormGroup>
-          <Label className="profile-info-label">Имя пользователя</Label>
-          <Input className="profile-info-input mb-4" placeholder="jason_browdy15" />
-        </FormGroup>
+        <Row>
+          <Col xs={12} md={6}>
+            <FormGroup>
+              <Label className="profile-info-label">Адрес email</Label>
+              <Input className="profile-info-input mb-4" placeholder="jason_browdy@gmail.com" />
+            </FormGroup>
+            <FormGroup>
+              <Label className="profile-info-label">Имя пользователя</Label>
+              <Input className="profile-info-input mb-4" placeholder="jason_browdy15" />
+            </FormGroup>
+          </Col>
+        </Row>
         <FormGroup>
           <Row className="profile-info-title mb-4 align-items-center">
             <Col xs="12" md="auto">Смена пароля</Col>
             <Col className="d-none d-md-block"><hr /></Col>
           </Row>
-          <Input className="profile-info-input mb-3" placeholder="Введите старый пароль" />
-          <Input className="profile-info-input mb-3" placeholder="Введите новый пароль" />
-          <Input className="profile-info-input mb-4" placeholder="Повторите новый пароль" />
+          <Row>
+            <Col xs={12} md={6}>
+              <Input className="profile-info-input mb-3" placeholder="Введите старый пароль" />
+              <Input className="profile-info-input mb-3" placeholder="Введите новый пароль" />
+              <Input className="profile-info-input mb-4" placeholder="Повторите новый пароль" />
+            </Col>
+          </Row>
+
         </FormGroup>
         <Row className="profile-info-title mb-4 align-items-center">
           <Col xs="12" md="auto">настройки подписки</Col>
@@ -72,9 +81,17 @@ export class ProfileInfo extends Component {
         </Row>
         <FormGroup check>
           <Label className="profile-info-label" check>
+            <Input type="checkbox" />Получать ответы на комментарии по почте
+          </Label>
+        </FormGroup>
+        <FormGroup className="mb-3" check>
+          <Label className="profile-info-label" check>
             <Input type="checkbox" />Получать дайджест новостей на мой email
           </Label>
         </FormGroup>
+
+
+        <Button className="profile-info-btn px-md-5" color="primary">Сохранить изменения</Button>
       </div>
     );
   }

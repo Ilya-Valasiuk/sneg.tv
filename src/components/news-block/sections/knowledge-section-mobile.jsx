@@ -1,11 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { cloneDeep } from 'lodash';
+import { AuthorCologneMobile } from 'components/news-block/author-cologne/author-cologne-mobile';
 import { NewsItem } from './../news-item/news-item';
-import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 import { More } from './../../shared/more/more';
-import { MobileNews } from '../mobile-news';
-import { STUB_DATA } from './stub-data';
+import { STUB_DATA, STUB_AUTHOR_COLOGNE_DATA } from './stub-data';
 
 import './../news-block.scss';
 
@@ -59,35 +58,7 @@ export function KnowledgeSectionMobile({ }) {
       </Row>
       <Row noGutters className="without-margins">
         <Col className="news-item-line-wrapper">
-          <Row noGutters>
-            <Col className="editor-choise py-3 px-4">
-              <Row>
-                <Col>
-                  <p className="editor-choise-title font-weight-900 pt-3">Выбор редакции</p>
-                </Col>
-              </Row>
-              <NewsSimpleItem
-                previewText="Фотограф заставил тысячи людей смотреть на углы. И им это нравится"
-                type={type}
-                date="10 октября 2018 18:16"
-                className="mobile-large"
-              />
-              <hr />
-              <NewsSimpleItem
-                previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
-                type={type}
-                date="10 октября 2018 18:16"
-                className="mobile-large"
-              />
-              <hr />
-              <NewsSimpleItem
-                previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"
-                type={type}
-                date="10 октября 2018 18:16"
-                className="mobile-large"
-              />
-            </Col>
-          </Row>
+          <AuthorCologneMobile {...STUB_AUTHOR_COLOGNE_DATA} />
         </Col>
       </Row>
       <Row>

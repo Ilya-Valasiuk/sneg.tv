@@ -10,9 +10,12 @@ import {
   newsImg6,
 } from './../../../img/news';
 
+import { AuthorCologne } from 'components/news-block/author-cologne/author-cologne';
 import { NewsItem } from './../news-item/news-item';
 import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 import { More } from './../../shared/more/more';
+
+import { STUB_AUTHOR_COLOGNE_DATA } from './stub-data'; 
 
 import './../news-block.scss';
 
@@ -41,32 +44,7 @@ export function KnowledgeSection({ }) {
           />
         </Col>
         <Col className="news-item-line-wrapper">
-          <Row noGutters>
-            <Col className="editor-choise py-2 py-lg-3 px-3 px-lg-4">
-              <Row>
-                <Col>
-                  <p className="editor-choise-title font-weight-900 pt-3">Выбор редакции</p>
-                </Col>
-              </Row>
-              <NewsSimpleItem
-                previewText="Фотограф заставил тысячи людей смотреть на углы. И им это нравится"
-                type={type}
-                date="10 октября 2018 18:16"
-              />
-              <hr />
-              <NewsSimpleItem
-                previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
-                type={type}
-                date="10 октября 2018 18:16"
-              />
-              <hr />
-              <NewsSimpleItem
-                previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"
-                type={type}
-                date="10 октября 2018 18:16"
-              />
-            </Col>
-          </Row>
+          <AuthorCologne {...STUB_AUTHOR_COLOGNE_DATA} />
         </Col>
       </Row>
       <Row>

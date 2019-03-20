@@ -23,7 +23,7 @@ export function NewsItem({
     <Row tag={withoutLink ? 'div' : RouterLink} to="/inner" className={classnames('flex-column news-item', { 'no-link': withoutLink })}>
       <Col xs={12}>
         <div className={classnames('position-relative', { 'news-item-image': !large })}>
-          <img src={imgSrc} alt={imgAlt} className={classnames('img-fluid', { 'w-100 min-h-100': !large })} />
+          <img src={imgSrc} alt={imgAlt} className={classnames('img-fluid', { 'w-100 min-h-100': !large, 'news-item-image-large': large })} />
         </div>
       </Col>
       <Col xs={12}>

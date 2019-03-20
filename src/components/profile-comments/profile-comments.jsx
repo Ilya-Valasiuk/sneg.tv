@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Button, Row, Col } from 'reactstrap';
 import { NewsComment } from 'components/news-block/news-comments/news-comment';
+import { Link } from 'components/shared/link/link';
 
 import './profile-comments.scss';
 
@@ -14,7 +15,7 @@ export function ProfileComments({ data }) {
       </Row>
       {data.map(({ title, comments }) =>
         <Fragment key={title}>
-          <div className="profile-comments-title mb-3">{title}</div>
+          <Link href="#" className="profile-comments-title mb-3 d-block">{title}</Link>
           {comments.map((comment, index) =>
             <div className="mb-3" key={index}>
               <NewsComment className="mb-2" {...comment} />

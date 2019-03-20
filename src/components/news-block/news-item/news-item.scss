@@ -10,7 +10,7 @@
       .preview-text {
         color: #13A5F7 !important;
       }
-  
+
       img {
         opacity: .9;
       }
@@ -38,13 +38,24 @@
 
     @media (min-width: $breakpoint-large) {
       width: 373px;
-      height: 211px;;
+      height: 211px;
+    }
+
+    &-large {
+      @media (min-width: $breakpoint-desktop) {
+        height: 345px;
+        width: 100%;
+      }
+
+      @media (min-width: $breakpoint-large) {
+        height: auto;
+      }
     }
   }
 
   &-line-wrapper {
     width: 49%;
-    
+
     &.mr-2-percent {
       margin-right: 2%;
     }

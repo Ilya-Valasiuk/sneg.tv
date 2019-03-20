@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { cloneDeep } from 'lodash';
 
-import { AuthorCologne } from 'components/news-block/author-cologne/author-cologne';
 import { NewsItem } from './../news-item/news-item';
 import { NewsItemMain } from './../news-item-main/news-item-main';
 import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
@@ -32,7 +31,23 @@ export function LifeSection({ isMobile }) {
           />
         </Col>
         <Col className="news-item-line-wrapper">
-          <AuthorCologne {...STUB_AUTHOR_COLOGNE_DATA} />
+          <NewsSimpleItem
+            previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"	
+            type="Жизнь"	
+            date="10 октября 2018 18:16"	
+          />	
+          <hr />	
+          <NewsSimpleItem	
+            previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"	
+            type="Жизнь"	
+            date="10 октября 2018 18:16"	
+          />	
+          <hr />	
+          <NewsSimpleItem	
+            previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"	
+            type="Жизнь"	
+            date="10 октября 2018 18:16"	
+          />
         </Col>
       </Row>
       <Row>
