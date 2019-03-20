@@ -18,6 +18,7 @@ import { AuthenticationView } from 'components/authentication/authentication';
 
 import { Home } from 'pages/subpages/home';
 import { Inner } from 'pages/subpages/inner';
+import { AuthorArticles } from 'pages/subpages/author-articles';
 import { SearchResults } from 'pages/subpages/search-results';
 import { Profile } from 'pages/subpages/profile';
 
@@ -304,6 +305,15 @@ class MainPage extends Component {
                     />
                   )}
                   />
+                  <Route exact path="/author-articles" render={props => (
+                    <AuthorArticles
+                      {...props}
+                      isMobile={isMobile}
+                      isTabletSm={isTabletSm}
+                    />
+                  )}
+                  />
+
                   <Route exact path="/search" render={props => (
                     <SearchResults
                       onSearch={this.search}

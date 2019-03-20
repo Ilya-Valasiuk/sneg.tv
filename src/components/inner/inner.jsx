@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import classnames from "classnames";
 import { Container, Row, Col } from "reactstrap";
+import { AuthorArticle } from "components/author-article/author-article";
 import { AdBanner } from "./../ad-banner/ad-baner";
 import { NewsSimpleItem } from "./../news-block/news-simple-item/news-simple-item";
 import { NewsItemPartner } from "./../news-block/news-item-partner";
@@ -23,7 +24,9 @@ export class Inner extends Component {
       partnerData,
       showIframe,
       onToggleCommentsPopup,
-      emptyComments
+      emptyComments,
+      articleData,
+      showAuthorArticle,
     } = this.props;
     const {
       title,
@@ -36,7 +39,7 @@ export class Inner extends Component {
       authorName,
       authorTitle,
       tags,
-      imgSrc
+      imgSrc,
     } = data;
     const { isCollapsed } = this.state;
 
@@ -49,6 +52,7 @@ export class Inner extends Component {
               lg="auto"
               className="news-item-line-wrapper-large mr-15"
             >
+              {showAuthorArticle && <AuthorArticle {...articleData} isWidget />}
               <NewsInner
                 date={date}
                 type={type}

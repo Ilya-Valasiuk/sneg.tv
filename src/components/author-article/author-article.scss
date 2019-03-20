@@ -1,0 +1,86 @@
+@import './../../styles/breakpoints';
+
+.author-article {
+  &-img {
+    @media (min-width: $breakpoint-tablet-sm) {
+      max-width: 300px;
+    }
+  }
+
+  &-name {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.52;
+    color: #2a2a2a;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      font-size: 22px;
+    }
+  }
+
+  &-title {
+    font-family: Georgia;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.52;
+    color: #2a2a2a;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      font-size: 18px;
+      line-height: 1.44;
+    }
+  }
+
+  &-info {
+    font-family: Georgia;
+    font-size: 12px;
+    line-height: 1.52;
+    color: #2a2a2a;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      font-size: 18px;
+      line-height: 1.44;
+    }
+  }
+
+  &-link {
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 12px;
+    line-height: 1.52;
+    color: #13a5f7;
+  }
+
+  &-socials {
+    &-item {
+      color: #b4b4b4;
+      font-size: 18px;
+    }
+  }
+
+  &-widget {
+    .author-article {
+      &-wrapper {
+        padding: 12px 10px;
+        border: solid 1px #efefef;
+        background-color: #f9f9f9;
+      }
+
+      @media (min-width: $breakpoint-tablet-sm) {
+        &-img {
+          max-width: 140px;
+        }
+
+        &-name {
+          font-size: 18px;
+        }
+
+        &-title,
+        &-info {
+          font-size: 12px;
+          line-height: 1.52;
+        }
+      }
+
+    }
+  }
+}

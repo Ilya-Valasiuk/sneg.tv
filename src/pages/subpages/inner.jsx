@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { HeaderNewsSingle } from "components/header-news/header-news-single";
 import { withLoadingHeader } from "components/header-news/header-loading-hoc";
 import { Inner as InnerComponent } from "components/inner/inner";
-import { INNER_STUB_DATA, PARTNER_DATA } from "./stub-data";
+import { INNER_STUB_DATA, PARTNER_DATA, AUTHOR_ARTICLE_DATA } from "./stub-data";
 
 class InnerUI extends Component {
   render() {
@@ -29,6 +29,8 @@ class InnerUI extends Component {
                 emptyComments={emptyComments}
                 isCollapsed={isCollapsed}
                 showIframe={showIframe}
+                showAuthorArticle={index === 0}
+                articleData={AUTHOR_ARTICLE_DATA}
               />
               {index + 1 !== INNER_STUB_DATA.length && <hr />}
             </Fragment>

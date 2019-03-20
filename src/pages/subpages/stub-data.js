@@ -3,6 +3,7 @@ import {
   newsImg2,
   newsImg3,
   inner as innerImg,
+  authorCologneImg,
 } from './../../img/news';
 
 export const INNER_STUB_DATA = [{
@@ -188,7 +189,7 @@ export const PROFILE_PROPOSED_ARTICLES = [{
   title: '«Зенит» попросил суд отпустить Кокорина из-под стражи',
   previewText: 'ФК «Зенит» обратился в суд с просьбой изменить меру пресечения для футболиста Александра Кокорина, арестованного после избиения чиновника Минпромторга',
   status: 0 // Отклонено
-},];
+}, ];
 
 export const PROFILE_FAVORITES = [{
   id: 0,
@@ -212,3 +213,37 @@ export const PROFILE_FAVORITES = [{
   typeLink: '#',
   imgSrc: innerImg,
 }];
+
+export const AUTHOR_ARTICLE_DATA = {
+  authorPhoto: authorCologneImg,
+  authorName: 'Андрей Малосолов',
+  authorTitle: 'журналист, телеведущий',
+  authorInfo: 'Телеведущий программы ФанZона; радиоведущий программы "Откройте Россию с Андреем Малосоловым" на «Радио Комсомольская Правда»; в прошлом - заместитель директора «Института актуальной экономики»; пресс-секретарь «АНО Оргкомитет ОФЛ»; директор по маркетингу ФК «Жемчужина-Сочи»; Пресс-атташе «Российского Футбольного Союза»; специальный корреспондент «РИА Новости»',
+  link: '/author-articles'
+};
+
+export const AUTHOR_ARTICLES_DATA = {
+  author: AUTHOR_ARTICLE_DATA,
+  articles: [{
+    id: 0,
+    imgSrc: innerImg,
+    title: '«Зенит» попросил суд отпустить Кокорина из-под стражи',
+    type: 'Жизнь',
+    typeLink: '#',
+    date: '10 октября 2018 18:16',
+  }, {
+    id: 1,
+    imgSrc: innerImg,
+    title: '«Зенит» попросил суд отпустить Кокорина из-под стражи',
+    type: 'Жизнь',
+    typeLink: '#',
+    date: '10 октября 2018 18:16',
+  }, {
+    id: 2,
+    imgSrc: innerImg,
+    title: '«Зенит» попросил суд отпустить Кокорина из-под стражи',
+    type: 'Жизнь',
+    typeLink: '#',
+    date: '10 октября 2018 18:16',
+  }],
+};

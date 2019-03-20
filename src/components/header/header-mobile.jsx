@@ -12,6 +12,9 @@ export function HeaderMobile(headerProps) {
       <Route exact path="/inner" render={props => (
         <InnerHeaderMobile {...headerProps} />
       )} />
+      <Route exact path="/author-articles" render={props => (
+        <InnerHeaderMobile {...headerProps} />
+      )} />
       <Route exact path="/search" render={props => (
         <InnerHeaderMobile {...headerProps} />
       )} />

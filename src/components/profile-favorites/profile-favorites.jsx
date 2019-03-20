@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Row, Col } from 'reactstrap';
-import { FavoriteArticle } from 'components/favorite-article/favorite-article';
+import { SimpleArticle } from 'components/simple-article/simple-article';
 
 import './profile-favorites.scss';
 
@@ -14,7 +14,7 @@ export function ProfileFavorites({ data }) {
       <Row>
         {data.map((favoriteArticle, index) =>
           <Col xs={12} md={4} key={index}>
-            <FavoriteArticle id={favoriteArticle.id} {...favoriteArticle} />
+            <SimpleArticle id={favoriteArticle.id} {...favoriteArticle} isPinned />
             {data.length - 1 !== index && <hr className="my-4 d-md-none" />}
           </Col>
         )}
