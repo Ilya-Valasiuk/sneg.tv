@@ -14,9 +14,19 @@
     }
   }
 
-  @media (min-width: $breakpoint-desktop) {
-    &-img {
+  &-img {
+    object-fit: cover;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 380px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
       height: 345px;
+    }
+
+    @media (min-width: $breakpoint-large) {
+      height: 470px;
     }
   }
 
