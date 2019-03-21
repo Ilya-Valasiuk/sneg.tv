@@ -1,7 +1,7 @@
 {
   "main.css": "/sneg.tv/static/css/main.0acb1119.chunk.css",
-  "main.js": "/sneg.tv/static/js/main.5446c11e.chunk.js",
-  "main.js.map": "/sneg.tv/static/js/main.5446c11e.chunk.js.map",
+  "main.js": "/sneg.tv/static/js/main.0615c0c8.chunk.js",
+  "main.js.map": "/sneg.tv/static/js/main.0615c0c8.chunk.js.map",
   "static/css/1.d8e33e8f.chunk.css": "/sneg.tv/static/css/1.d8e33e8f.chunk.css",
   "static/js/1.58e44377.chunk.js": "/sneg.tv/static/js/1.58e44377.chunk.js",
   "static/js/1.58e44377.chunk.js.map": "/sneg.tv/static/js/1.58e44377.chunk.js.map",
@@ -26,6 +26,6 @@
   "static/css/main.0acb1119.chunk.css.map": "/sneg.tv/static/css/main.0acb1119.chunk.css.map",
   "static/css/1.d8e33e8f.chunk.css.map": "/sneg.tv/static/css/1.d8e33e8f.chunk.css.map",
   "index.html": "/sneg.tv/index.html",
-  "precache-manifest.558ecc57d2e546d52aed18758a3d79dc.js": "/sneg.tv/precache-manifest.558ecc57d2e546d52aed18758a3d79dc.js",
+  "precache-manifest.960ad3299dffb0ef23659cf5db1a7d82.js": "/sneg.tv/precache-manifest.960ad3299dffb0ef23659cf5db1a7d82.js",
   "service-worker.js": "/sneg.tv/service-worker.js"
 }
