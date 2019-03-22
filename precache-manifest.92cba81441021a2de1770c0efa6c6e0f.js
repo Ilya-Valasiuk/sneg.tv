@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLightItalic.eddbfc23.ttf"
   },
   {
-    "revision": "7c35362c1c1cff2172fa",
-    "url": "/sneg.tv/static/css/main.0acb1119.chunk.css"
+    "revision": "dd9a85c1f93cd5841384",
+    "url": "/sneg.tv/static/css/main.4346b557.chunk.css"
   },
   {
-    "revision": "afe760ffd0c1944072ba8f7c3f47b4d5",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.afe760ff.ttf"
+    "revision": "307781839e3e303ff49b223dc242baac",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Light.30778183.ttf"
   },
   {
     "revision": "58e443779ba12f592529",
@@ -124,24 +124,20 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Black.d80c6227.woff"
   },
   {
-    "revision": "303f6a538da65cd9cd71f5cdd0d92125",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Black.303f6a53.ttf"
-  },
-  {
     "revision": "2d33d321e04da2c9f9bada8f9d011022",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLightItalic.2d33d321.eot"
+  },
+  {
+    "revision": "303f6a538da65cd9cd71f5cdd0d92125",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Black.303f6a53.ttf"
   },
   {
     "revision": "84210837900fbe0bf04e0051e8a8f0b9",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLightItalic.84210837.woff"
   },
   {
-    "revision": "7c35362c1c1cff2172fa",
-    "url": "/sneg.tv/static/js/main.7c35362c.chunk.js"
-  },
-  {
-    "revision": "3a528f425cc484d78ccb79ab6e7ffd68",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.3a528f42.eot"
+    "revision": "dd9a85c1f93cd5841384",
+    "url": "/sneg.tv/static/js/main.dd9a85c1.chunk.js"
   },
   {
     "revision": "e87e87521b5d3a40a6011ddb2156e3a2",
@@ -150,6 +146,10 @@ self.__precacheManifest = [
   {
     "revision": "b8b29bfffbfd4a2918fb88a57ab7f619",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.b8b29bff.ttf"
+  },
+  {
+    "revision": "3a528f425cc484d78ccb79ab6e7ffd68",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.3a528f42.eot"
   },
   {
     "revision": "6e6845c8bf5e49fcff1ae035c2f016b1",
@@ -196,12 +196,12 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLight.13c84243.woff"
   },
   {
-    "revision": "30111f49e3746df5024292767ab0494f",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLight.30111f49.ttf"
-  },
-  {
     "revision": "bc385be2675498085028e19f414a576c",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-BoldItalic.bc385be2.eot"
+  },
+  {
+    "revision": "30111f49e3746df5024292767ab0494f",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLight.30111f49.ttf"
   },
   {
     "revision": "dec627fe9d801ff74c2c7fb83e6ad13e",
@@ -232,12 +232,12 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Roman.510e1c04.woff"
   },
   {
-    "revision": "fadb2adb0984cb4e053e45428d96e01a",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Roman.fadb2adb.ttf"
-  },
-  {
     "revision": "5bbf832fec501cfb6afae24d67d39a0a",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Bold.5bbf832f.eot"
+  },
+  {
+    "revision": "fadb2adb0984cb4e053e45428d96e01a",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Roman.fadb2adb.ttf"
   },
   {
     "revision": "ca12a719cd344dd391d9f51e7bbd9b33",
@@ -256,10 +256,6 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Light.e914a2dd.woff"
   },
   {
-    "revision": "307781839e3e303ff49b223dc242baac",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Light.30778183.ttf"
-  },
-  {
     "revision": "9b4d23f4e67b13185db491462417b79e",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.9b4d23f4.eot"
   },
@@ -268,11 +264,15 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.4609737f.woff"
   },
   {
+    "revision": "afe760ffd0c1944072ba8f7c3f47b4d5",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.afe760ff.ttf"
+  },
+  {
     "revision": "58e443779ba12f592529",
     "url": "/sneg.tv/static/css/1.d8e33e8f.chunk.css"
   },
   {
-    "revision": "9b51d5c1d39d97f76a09110a71817d66",
+    "revision": "06ae02493b9f8141e379c7095e53bbcd",
     "url": "/sneg.tv/index.html"
   }
 ];
