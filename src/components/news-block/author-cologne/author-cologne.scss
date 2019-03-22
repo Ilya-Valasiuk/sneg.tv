@@ -6,6 +6,10 @@
   background-color: #f8f8f8;
   color: #2a2a2a;
 
+  &:hover {
+    text-decoration: none;
+  }
+
   &-data {
     padding: 15px 10px;
 
@@ -91,7 +95,7 @@
     }
 
     &-author {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 500;
       line-height: 1.14;
       letter-spacing: 1px;
@@ -99,7 +103,7 @@
     }
 
     &-title {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 900;
       line-height: 1.09;
     }

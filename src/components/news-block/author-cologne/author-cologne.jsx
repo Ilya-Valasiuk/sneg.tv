@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'components/shared/link/link';
+import { Link } from 'react-router-dom';
 
 import './author-cologne.scss';
 
@@ -7,7 +7,7 @@ export function AuthorCologne(props) {
   const { imgSrc, type, date, author, title } = props;
 
   return (
-    <Link href="#" className="author-cologne">
+    <Link to="/inner" className="author-cologne">
       <img src={imgSrc} alt="author" className="author-cologne-img img-fluid" />
       <div className="author-cologne-data">
         <div className="author-cologne-date mb-1">{date}</div>
