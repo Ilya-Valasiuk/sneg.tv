@@ -10,7 +10,7 @@ class InnerUI extends Component {
       progress,
       headerTitle,
       isMobile,
-      onToggleCommentsPopup
+      onToggleCommentsPopup,
     } = this.props;
 
     return (
