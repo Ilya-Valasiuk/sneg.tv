@@ -10,6 +10,7 @@ import { RightIcon3 } from 'components/icons/right-3';
 import { SocialIcons } from 'components/shared/social-icons/social-icons';
 import { SimpleArticle } from 'components/simple-article/simple-article';
 import { NewsDateType } from 'components/news-block/news-date-type/news-date-type';
+import { SharePopup } from 'components/share-popup/share-popup';
 
 import { GALLERY_STUB_DATA, GALLERY_MORE_DATA } from './stub-data';
 
@@ -18,6 +19,7 @@ import './gallery.scss';
 export class Gallery extends Component {
   state = {
     isOpen: false,
+    isShareOpened: false,
     currentIndex: 0,
     shouldShowPartners: false,
   }
@@ -32,6 +34,12 @@ export class Gallery extends Component {
         this.props.onModalToggle();
       }
     });
+  }
+
+  toggleShare = () => {
+    this.setState({
+      isShareOpened: !this.state.isShareOpened,
+    })
   }
 
   next = () => {
@@ -72,7 +80,7 @@ export class Gallery extends Component {
 
   render() {
     const { data, isMobile } = this.props;
-    const { isOpen, currentIndex, shouldShowPartners } = this.state;
+    const { isOpen, isShareOpened, currentIndex, shouldShowPartners } = this.state;
     const maxPreviewImages = isMobile ? 3 : 5;
     const currentPopupData = data[currentIndex];
     const previewData = data.slice(1, maxPreviewImages);
@@ -104,7 +112,7 @@ export class Gallery extends Component {
           </Col>
         </Row>
         {isOpen &&
-          <Swipe onSwipeLeft={this.next} onSwipeRight={this.prev} tolerance={100} >
+          <Swipe onSwipeLeft={this.next} onSwipeRight={this.prev} tolerance={60} >
             <div className="gallery-popup">
               {
                 !isMobile &&
@@ -125,8 +133,8 @@ export class Gallery extends Component {
                 </Col>
                 {
                   isMobile &&
-                  <Col xs="auto" className="px-4">
-                    <ShareIcon />
+                  <Col xs="auto" className="px-4" onClick={this.toggleShare}>
+                    {isShareOpened ? <CloseIcon /> : <ShareIcon />}
                   </Col>
                 }
                 <Col xs="auto" className="px-4">
@@ -165,10 +173,10 @@ export class Gallery extends Component {
                     </Fragment>
                 }
               </div>
+              {isShareOpened && <SharePopup />}
             </div>
           </Swipe>
         }
-
       </div>
     )
   }
