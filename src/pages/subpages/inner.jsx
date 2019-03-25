@@ -11,6 +11,7 @@ class InnerUI extends Component {
       headerTitle,
       isMobile,
       onToggleCommentsPopup,
+      onModalToggle,
     } = this.props;
 
     return (
@@ -26,6 +27,7 @@ class InnerUI extends Component {
                 data={data}
                 partnerData={PARTNER_DATA}
                 onToggleCommentsPopup={onToggleCommentsPopup}
+                onModalToggle={onModalToggle}
                 emptyComments={emptyComments}
                 isCollapsed={isCollapsed}
                 showIframe={showIframe}

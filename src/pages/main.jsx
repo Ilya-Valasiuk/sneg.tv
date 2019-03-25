@@ -40,6 +40,7 @@ class MainPage extends Component {
       isMobileFeedOpened: false,
       isSearchOpened: false,
       isShareOpened: false,
+      isModalOpened: false,
       shouldShowCommnetsPopup: false,
       shouldShowCommnetCreatorPopup: false,
       shouldShowLogin: false,
@@ -125,6 +126,12 @@ class MainPage extends Component {
     })
   }
 
+  toggleModal = () => {
+    this.setState({
+      isModalOpened: !this.state.isModalOpened,
+    });
+  }
+
   resetAllFlags = () => {
     this.setState({
       isFeedOpened: false,
@@ -132,6 +139,7 @@ class MainPage extends Component {
       isMobileFeedOpened: false,
       isSearchOpened: false,
       isShareOpened: false,
+      isModalOpened: false,
       shouldShowCommnetsPopup: false,
       shouldShowCommnetCreatorPopup: false,
       shouldShowLogin: false,
@@ -233,6 +241,7 @@ class MainPage extends Component {
       shouldShowCommnetsPopup,
       shouldShowCommnetCreatorPopup,
       shouldShowLogin,
+      isModalOpened,
     } = this.state;
     const MenuComponent = isMobile ? MenuMobile : Menu;
 
@@ -249,6 +258,7 @@ class MainPage extends Component {
               "feed-opened": isFeedOpened,
               "menu-opened": isMenuOpened,
               "search-opened": isSearchOpened,
+              "modal-opened": isModalOpened,
               "popup-opened":
                 isMobileFeedOpened ||
                 shouldShowCommnetsPopup ||
@@ -302,6 +312,7 @@ class MainPage extends Component {
                       isMobile={isMobile}
                       isTabletSm={isTabletSm}
                       onToggleCommentsPopup={this.toggleCommentsPopup}
+                      onModalToggle={this.toggleModal}
                     />
                   )}
                   />

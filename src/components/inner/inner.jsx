@@ -28,6 +28,8 @@ export class Inner extends Component {
       emptyComments,
       articleData,
       showAuthorArticle,
+      onModalToggle,
+      isMobile,
     } = this.props;
     const {
       title,
@@ -72,7 +74,7 @@ export class Inner extends Component {
                 onToggleCommentsPopup={onToggleCommentsPopup}
                 emptyComments={emptyComments}
               />
-              <Gallery />
+              <Gallery isMobile={isMobile} onModalToggle={onModalToggle} />
               <Row>
                 <Col
                   xs={12}

@@ -4,6 +4,10 @@ import Swipe from 'react-easy-swipe';
 import { PhotoIcon } from 'components/icons/photo';
 import { CloseIcon } from 'components/icons/close';
 import { ShareIcon } from 'components/icons/share';
+import { FullScreenIcon } from 'components/icons/fullscreen';
+import { LeftIcon3 } from 'components/icons/left-3';
+import { RightIcon3 } from 'components/icons/right-3';
+import { SocialIcons } from 'components/shared/social-icons/social-icons';
 import { SimpleArticle } from 'components/simple-article/simple-article';
 import { NewsDateType } from 'components/news-block/news-date-type/news-date-type';
 
@@ -23,7 +27,11 @@ export class Gallery extends Component {
       isOpen: !isOpen,
       currentIndex: 0,
       shouldShowPartners: false,
-    }));
+    }), () => {
+      if (this.props.onModalToggle) {
+        this.props.onModalToggle();
+      }
+    });
   }
 
   next = () => {
@@ -47,7 +55,8 @@ export class Gallery extends Component {
     }
   }
 
-  prev = () => {
+  prev = (event) => {
+    console.log(event)
     const { currentIndex, shouldShowPartners } = this.state;
 
     if (shouldShowPartners) {
@@ -62,45 +71,64 @@ export class Gallery extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, isMobile } = this.props;
     const { isOpen, currentIndex, shouldShowPartners } = this.state;
+    const maxPreviewImages = isMobile ? 3 : 5;
     const currentPopupData = data[currentIndex];
+    const previewData = data.slice(1, maxPreviewImages);
+    console.log(previewData, isMobile)
 
     return (
       <div className="gallery">
-        <Row className="gallery-widget">
+        <Row className="gallery-widget" onClick={this.toggle}>
           <Col xs={12}>
             <img src={data[0].image} alt="Preview large" className="gallery-widget-image-large" />
+            {!isMobile && <FullScreenIcon />}
           </Col>
           <Col xs={12}>
             <Row className="gallery-widget-image-small-wrapper mx-0">
-              <Col xs={6} className="gallery-widget-image-small-col gallery-widget-image-small-col-left">
-                <img src={data[1].image} alt="Preview small" className="gallery-widget-image-small" />
-              </Col>
-              <Col xs={6} className="gallery-widget-image-small-col gallery-widget-image-small-col-right" onClick={this.toggle}>
-                <div className="position-relative">
-                  <img src={data[2].image} alt="Preview small" className="gallery-widget-image-small" />
-                  <div className="gallery-widget-blackout d-flex align-items-center justify-content-center">
-                    <PhotoIcon />
-                    <span className="gallery-widget-blackout-more ml-2">+{data.length}</span>
+              {previewData.map((previewItem, index) => (
+                <Col xs={12 / (maxPreviewImages - 1)} key={previewItem.id} className="gallery-widget-image-small-col pl-0">
+                  <div className="position-relative">
+                    <img src={previewItem.image} alt="Preview small" className="gallery-widget-image-small" />
+                    {previewData.length - 1 === index &&
+                      <div className="gallery-widget-blackout d-flex align-items-center justify-content-center">
+                        <PhotoIcon />
+                        <span className="gallery-widget-blackout-more ml-2">+{data.length}</span>
+                      </div>
+                    }
                   </div>
-                </div>
-              </Col>
+                </Col>
+              ))}
             </Row>
           </Col>
         </Row>
         {isOpen &&
-          <Swipe onSwipeLeft={this.next} onSwipeRight={this.prev} >
+          <Swipe onSwipeLeft={this.next} onSwipeRight={this.prev} tolerance={100} >
             <div className="gallery-popup">
+              {
+                !isMobile &&
+                <Fragment>
+                  <div className="gallery-popup-navigation gallery-popup-navigation-left" onClick={this.prev}>
+                    <LeftIcon3 />
+                  </div>
+                  <div className="gallery-popup-navigation gallery-popup-navigation-right" onClick={this.next}>
+                    <RightIcon3 />
+                  </div>
+                </Fragment>
+              }
               <Row className="gallery-popup-header align-items-center mx-0">
                 <Col>
                   <Row>
                     <NewsDateType {...currentPopupData} />
                   </Row>
                 </Col>
-                <Col xs="auto" className="px-4">
-                  <ShareIcon />
-                </Col>
+                {
+                  isMobile &&
+                  <Col xs="auto" className="px-4">
+                    <ShareIcon />
+                  </Col>
+                }
                 <Col xs="auto" className="px-4">
                   <CloseIcon onClick={this.toggle} />
                 </Col>
@@ -110,18 +138,30 @@ export class Gallery extends Component {
                 {
                   shouldShowPartners ?
                     <div className="gallery-popup-partners">
-                      <h5 className="gallery-popup-partners-title mb-3">смотрите также</h5>
-                      {GALLERY_MORE_DATA.map((item, index) =>
-                        <Fragment key={item.id}>
-                          <SimpleArticle {...item} hideDate />
-                          <div className="gallery-popup-partners-prefix">{item.count} фото</div>
-                          {GALLERY_MORE_DATA.length - 1 !== index && <hr className="my-4" />}
-                        </Fragment>
-                      )}
+                      <h5 className="gallery-popup-partners-title mb-3">Смотрите также</h5>
+                      <Row>
+                        {GALLERY_MORE_DATA.map((item, index) =>
+                          <Col key={item.id} xs={12} md={4}>
+                            <SimpleArticle {...item} hideDate />
+                            <div className="gallery-popup-partners-prefix">{item.count} фото</div>
+                            {isMobile && GALLERY_MORE_DATA.length - 1 !== index && <hr className="my-4" />}
+                          </Col>
+                        )}
+                      </Row>
                     </div> :
                     <Fragment>
                       <img className="gallery-popup-image" src={currentPopupData.image} alt="Content" />
                       <p className="gallery-popup-text">{currentPopupData.text}</p>
+                      {!isMobile &&
+                        <Row className="gallery-popup-caption">
+                          <Col>
+                            <SocialIcons />
+                          </Col>
+                          <Col md="auto" className="gallery-popup-author">
+                            Фото: {currentPopupData.author}
+                          </Col>
+                        </Row>
+                      }
                     </Fragment>
                 }
               </div>
