@@ -67,12 +67,18 @@
     right: 0;
     bottom: 0;
     top: 0;
-    opacity: 0.95;
-    background-color: #2a2a2a;
+    background-color: rgba(42, 42, 42, 0.95);
     z-index: 10;
+    display: flex;
+    flex-direction: column;
 
     @media (min-width: $breakpoint-tablet-sm) {
       padding: 20px 75px;
+    }
+
+    &-carousel {
+      overflow-y: auto !important;
+      flex: 1;
     }
 
     &-navigation {
@@ -110,21 +116,13 @@
 
     &-content {
       color: #ffffff;
-      height: calc(100% - 51px);
+      // height: calc(100% - 51px);
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
 
       @media (min-width: $breakpoint-tablet-sm) {
         display: flex;
         flex-direction: column;
-      }
-
-      .simple-article-title {
-        color: #ffffff;
-
-        @media (min-width: $breakpoint-tablet-sm) {
-          font-size: 22px;
-        }
       }
     }
 
@@ -147,6 +145,7 @@
         font-weight: 900;
         letter-spacing: 7px;
         text-transform: uppercase;
+        color: #ffffff;
 
         @media (min-width: $breakpoint-tablet-sm) {
           font-size: 27px;
@@ -170,6 +169,14 @@
         }
       }
 
+      .simple-article-title {
+        color: #ffffff;
+
+        @media (min-width: $breakpoint-tablet-sm) {
+          font-size: 22px;
+        }
+      }
+
       hr {
         border-color: #ffffff;
       }
@@ -181,6 +188,7 @@
       font-weight: 900;
       line-height: 1.52;
       padding: 10px 20px;
+      color: #ffffff;
 
       @media (min-width: $breakpoint-tablet-sm) {
         font-size: 27px;
@@ -190,9 +198,15 @@
 
     &-image {
       width: 100%;
+      text-align: center;
 
       @media (min-width: $breakpoint-tablet-sm) {
         padding: 0 20px;
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        display: flex;
+        justify-content: center;
       }
     }
 
@@ -214,6 +228,10 @@
 
     .social-icons {
       font-size: 18px;
+    }
+
+    .share-popup {
+      z-index: 1;
     }
   }
 }

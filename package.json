@@ -17,9 +17,11 @@
     "react-easy-swipe": "^0.0.17",
     "react-resize-detector": "^3.2.1",
     "react-router-dom": "^4.3.1",
+    "react-slick": "^0.23.2",
     "react-sticky": "^6.0.3",
     "react-sticky-el": "^1.0.20",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^6.5.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "react-scripts": "2.1.1"
