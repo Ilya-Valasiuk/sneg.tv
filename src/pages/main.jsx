@@ -21,6 +21,9 @@ import { Inner } from 'pages/subpages/inner';
 import { AuthorArticles } from 'pages/subpages/author-articles';
 import { SearchResults } from 'pages/subpages/search-results';
 import { Profile } from 'pages/subpages/profile';
+import { Contacts } from 'pages/subpages/contacts';
+import { Editors } from 'pages/subpages/editors';
+import { Commercial } from 'pages/subpages/commercial';
 
 import './main.scss';
 
@@ -50,6 +53,12 @@ class MainPage extends Component {
     };
 
     this.containerRef = React.createRef();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.resetAllFlags();
+    }
   }
 
   toggleMenu = () => {
@@ -336,6 +345,18 @@ class MainPage extends Component {
                     <Profile
                       isMobile={isMobile}
                     />
+                  )}
+                  />
+                  <Route exact path="/contacts" render={props => (
+                    <Contacts />
+                  )}
+                  />
+                  <Route exact path="/editors" render={props => (
+                    <Editors />
+                  )}
+                  />
+                  <Route exact path="/commercial" render={props => (
+                    <Commercial />
                   )}
                   />
                 </div>

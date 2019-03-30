@@ -1,0 +1,53 @@
+@import "../../styles/breakpoints";
+
+.contacts {
+  padding: 25px 20px;
+
+  &-header {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 7px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+  }
+
+  &-title {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: normal;
+    color: #2a2a2a;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      font-size: 22px;
+    }
+  }
+
+  &-section {
+    &-title {
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 16px;
+      letter-spacing: normal;
+      color: #2a2a2a;
+    }
+
+    &-title-bold {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2a2a2a;
+    }
+  }
+
+  &-number {
+    font-family: HelveticaNeueCyr;
+    font-size: 22px;
+    font-weight: 900;
+    color: #2a2a2a;
+  }
+
+  &-link {
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 16px;
+    color: #13a5f7;
+    text-decoration: none;
+  }
+}

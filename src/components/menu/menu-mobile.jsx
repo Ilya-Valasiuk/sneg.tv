@@ -47,9 +47,9 @@ export function MenuMobile({ onSearch, toggleLoginView }) {
         </Col>
         <Col xs={12} className="size-14 mb-2">
           <Links title="О НАС" titleClass="mb-4 menu-links-title" itemsClass="menu-mobile-links-item" items={[
-            { link: '#', title: 'Контакты' },
-            { link: '#', title: 'Редакция' },
-            { link: '#', title: 'Реклама' },
+            { link: '/contacts', title: 'Контакты' },
+            { link: '/editors', title: 'Редакция' },
+            { link: '/commercial', title: 'Реклама' },
           ]} />
         </Col>
         <Col xs={12} className="mb-2"><hr className="separator without-margins" /></Col>

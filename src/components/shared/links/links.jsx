@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Row, Col } from "reactstrap";
 import classnames from "classnames";
 
@@ -12,9 +13,9 @@ export function Links({ title, titleClass, items, itemsClass }) {
       </Col>
       {items.map(({ link, title }) => (
         <Col key={title} xs={12} className={`mb-2 ${itemsClass}`}>
-          <a href={link} className="text-white">
+          <Link to={link} className="text-white">
             {title}
-          </a>
+          </Link>
         </Col>
       ))}
     </Row>

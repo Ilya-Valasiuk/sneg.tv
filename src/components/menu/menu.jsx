@@ -67,9 +67,9 @@ export function Menu() {
             </Col>
             <Col xs={12} className="size-14 mb-5">
               <Links title="О НАС" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
-                { link: '#', title: 'Контакты' },
-                { link: '#', title: 'Редакция' },
-                { link: '#', title: 'Реклама' },
+                { link: '/contacts', title: 'Контакты' },
+                { link: '/editors', title: 'Редакция' },
+                { link: '/commercial', title: 'Реклама' },
               ]} />
             </Col>
           </Row>
