@@ -1,10 +1,10 @@
 {
-  "main.css": "/sneg.tv/static/css/main.f297fc89.chunk.css",
-  "main.js": "/sneg.tv/static/js/main.63e03a9a.chunk.js",
-  "main.js.map": "/sneg.tv/static/js/main.63e03a9a.chunk.js.map",
+  "main.css": "/sneg.tv/static/css/main.b4066505.chunk.css",
+  "main.js": "/sneg.tv/static/js/main.c70fee18.chunk.js",
+  "main.js.map": "/sneg.tv/static/js/main.c70fee18.chunk.js.map",
   "static/css/1.d3fb221c.chunk.css": "/sneg.tv/static/css/1.d3fb221c.chunk.css",
-  "static/js/1.a9cdbf75.chunk.js": "/sneg.tv/static/js/1.a9cdbf75.chunk.js",
-  "static/js/1.a9cdbf75.chunk.js.map": "/sneg.tv/static/js/1.a9cdbf75.chunk.js.map",
+  "static/js/1.cc823597.chunk.js": "/sneg.tv/static/js/1.cc823597.chunk.js",
+  "static/js/1.cc823597.chunk.js.map": "/sneg.tv/static/js/1.cc823597.chunk.js.map",
   "runtime~main.js": "/sneg.tv/static/js/runtime~main.0dafaa1f.js",
   "runtime~main.js.map": "/sneg.tv/static/js/runtime~main.0dafaa1f.js.map",
   "static/media/index.scss": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.afe760ff.ttf",
@@ -27,9 +27,9 @@
   "static/media/image-3.png": "/sneg.tv/static/media/image-3.f0010ca5.png",
   "static/media/slick-theme.css": "/sneg.tv/static/media/slick.f97e3bbf.svg",
   "static/media/ford-banner.png": "/sneg.tv/static/media/ford-banner.a4d388a3.png",
-  "static/css/main.f297fc89.chunk.css.map": "/sneg.tv/static/css/main.f297fc89.chunk.css.map",
+  "static/css/main.b4066505.chunk.css.map": "/sneg.tv/static/css/main.b4066505.chunk.css.map",
   "static/css/1.d3fb221c.chunk.css.map": "/sneg.tv/static/css/1.d3fb221c.chunk.css.map",
   "index.html": "/sneg.tv/index.html",
-  "precache-manifest.f0b5248e4f6ab0c4b81660bcdb0d2cf4.js": "/sneg.tv/precache-manifest.f0b5248e4f6ab0c4b81660bcdb0d2cf4.js",
+  "precache-manifest.1bc90d76845451e2cf63770126605a18.js": "/sneg.tv/precache-manifest.1bc90d76845451e2cf63770126605a18.js",
   "service-worker.js": "/sneg.tv/service-worker.js"
 }
