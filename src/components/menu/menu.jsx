@@ -61,7 +61,7 @@ export function Menu() {
               ]} />
               <Row>
                 <Col xs="auto" className="pt-2">
-                  <More title="Ещё" className="text-white px-3 py-1" />
+                  <More title="Ещё" link="/rubrics" className="text-white px-3 py-1" />
                 </Col>
               </Row>
             </Col>

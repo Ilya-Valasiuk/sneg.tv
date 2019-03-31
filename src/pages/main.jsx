@@ -24,6 +24,7 @@ import { Profile } from 'pages/subpages/profile';
 import { Contacts } from 'pages/subpages/contacts';
 import { Editors } from 'pages/subpages/editors';
 import { Commercial } from 'pages/subpages/commercial';
+import { Rubrics } from 'pages/subpages/rubrics';
 
 import './main.scss';
 
@@ -347,16 +348,20 @@ class MainPage extends Component {
                     />
                   )}
                   />
+                  <Route exact path="/rubrics" render={props => (
+                    <Rubrics isMobile={isMobile} />
+                  )}
+                  />
                   <Route exact path="/contacts" render={props => (
-                    <Contacts />
+                    <Contacts isMobile={isMobile} />
                   )}
                   />
                   <Route exact path="/editors" render={props => (
-                    <Editors />
+                    <Editors isMobile={isMobile} />
                   )}
                   />
                   <Route exact path="/commercial" render={props => (
-                    <Commercial />
+                    <Commercial isMobile={isMobile} />
                   )}
                   />
                 </div>

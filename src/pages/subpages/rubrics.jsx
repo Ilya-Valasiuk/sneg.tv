@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
 import { HeaderNews } from 'components/header-news/header-news';
-import { Contacts as ContactsComponent } from 'components/contacts/contacts';
+import { Rubrics as RubricsComponent } from 'components/rubrics/rubrics';
 
-export function Contacts({ isMobile }) {
+export function Rubrics({ isMobile }) {
   return (
     <Fragment>
       {!isMobile && <HeaderNews />}
-      <ContactsComponent />
+      <RubricsComponent />
     </Fragment>
-
   );
 }

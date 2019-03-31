@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { HeaderNews } from 'components/header-news/header-news';
 import { Editors as EditorsComponent } from 'components/editors/editors';
 
-export function Editors() {
+export function Editors({ isMobile }) {
   return (
-    <EditorsComponent />
+    <Fragment>
+      {!isMobile && <HeaderNews />}
+      <EditorsComponent />
+    </Fragment>
   );
 }

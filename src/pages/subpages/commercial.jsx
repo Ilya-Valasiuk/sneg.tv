@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { HeaderNews } from 'components/header-news/header-news';
 import { Commercial as CommercialComponent } from 'components/commercial/commercial';
 
-export function Commercial() {
+export function Commercial({ isMobile }) {
   return (
-    <CommercialComponent />
+    <Fragment>
+      {!isMobile && <HeaderNews />}
+      <CommercialComponent />
+    </Fragment>
   );
 }

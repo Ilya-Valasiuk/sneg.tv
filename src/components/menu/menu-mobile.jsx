@@ -6,6 +6,7 @@ import { Find } from 'components/shared/find/find';
 import { InfoText } from 'components/shared/info-text/info-text';
 import { SocialIcons } from 'components/shared/social-icons/social-icons';
 import { UserIcon } from 'components/icons/user';
+import { More } from 'components/shared/more/more';
 
 import './menu.scss'
 
@@ -44,6 +45,11 @@ export function MenuMobile({ onSearch, toggleLoginView }) {
             { link: '#', title: 'Кокорин и Мамаев' },
             { link: '#', title: 'Пенсионная реформа' },
           ]} />
+          <Row>
+            <Col xs="auto" className="pt-2">
+              <More title="Ещё" link="/rubrics" className="text-white px-3 py-1" />
+            </Col>
+          </Row>
         </Col>
         <Col xs={12} className="size-14 mb-2">
           <Links title="О НАС" titleClass="mb-4 menu-links-title" itemsClass="menu-mobile-links-item" items={[

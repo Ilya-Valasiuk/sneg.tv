@@ -24,7 +24,7 @@ let reactSwipeEl;
 var settings = {
   dots: false,
   arrows: false,
-  adaptiveHeight: true,
+  // adaptiveHeight: true,
   infinite: false,
   slidesToShow: 1,
   slidesToScroll: 1
@@ -114,7 +114,11 @@ export class Gallery extends Component {
                 <CloseIcon onClick={this.toggle} />
               </Col>
             </Row>
-            <h4 className="gallery-popup-title">{title}</h4>
+            <Row>
+              <Col xs={12}>
+                <h4 className="gallery-popup-title">{title}</h4>
+              </Col>
+            </Row>
             {isShareOpened && <SharePopup />}
             <Slider
               className="gallery-popup-carousel"
@@ -122,35 +126,41 @@ export class Gallery extends Component {
               {...settings}
             >
               {slides.map(item => (
-                <div className="gallery-popup-content" key={item.id}>
-                  <div className="gallery-popup-image">
+                <Row className="gallery-popup-content" key={item.id}>
+                  <Col xs={12} className="gallery-popup-image">
                     <img className="img-fluid" src={item.image} alt="Content" />
-                  </div>
-                  <p className="gallery-popup-text">{item.text}</p>
+                  </Col>
+                  <Col xs={12}>
+                    <p className="gallery-popup-text">{item.text}</p>
+                  </Col>
                   {!isMobile &&
-                    <Row className="gallery-popup-caption">
-                      <Col>
-                        <SocialIcons />
-                      </Col>
-                      <Col md="auto" className="gallery-popup-author">
-                        Фото: {item.author}
-                      </Col>
-                    </Row>
-                  }
-                </div>
-              ))}
-              <div className="gallery-popup-partners">
-                <h5 className="gallery-popup-partners-title mb-3">Смотрите также</h5>
-                <Row>
-                  {GALLERY_MORE_DATA.map((item, index) =>
-                    <Col key={item.id} xs={12} md={4}>
-                      <SimpleArticle {...item} hideDate />
-                      <div className="gallery-popup-partners-prefix">{item.count} фото</div>
-                      {isMobile && GALLERY_MORE_DATA.length - 1 !== index && <hr className="my-4" />}
+                    <Col xs={12}>
+                      <Row className="gallery-popup-caption">
+                        <Col>
+                          <SocialIcons />
+                        </Col>
+                        <Col md="auto" className="gallery-popup-author">
+                          Фото: {item.author}
+                        </Col>
+                      </Row>
                     </Col>
-                  )}
+                  }
                 </Row>
-              </div>
+              ))}
+              <Row className="gallery-popup-partners">
+                <Col xs={12}>
+                  <h5 className="gallery-popup-partners-title mb-3">Смотрите также</h5>
+                  <Row>
+                    {GALLERY_MORE_DATA.map((item, index) =>
+                      <Col key={item.id} xs={12} md={4}>
+                        <SimpleArticle {...item} hideDate />
+                        <div className="gallery-popup-partners-prefix">{item.count} фото</div>
+                        {isMobile && GALLERY_MORE_DATA.length - 1 !== index && <hr className="my-4" />}
+                      </Col>
+                    )}
+                  </Row>
+                </Col>
+              </Row>
             </Slider>
           </div>
         }

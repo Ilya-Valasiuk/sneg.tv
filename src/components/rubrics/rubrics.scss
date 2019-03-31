@@ -1,0 +1,25 @@
+@import "../../styles/breakpoints";
+
+.rubrics {
+  padding: 25px 20px;
+
+  &-header {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 7px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+  }
+
+  &-link {
+    display: block;
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 14px;
+    color: #13a5f7;
+    margin-bottom: 15px;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      font-size: 16px;
+    }
+  }
+}
