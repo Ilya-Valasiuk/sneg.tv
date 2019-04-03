@@ -15,6 +15,9 @@ export function HeaderMobile(headerProps) {
       <Route exact path="/contacts" render={props => (
         <InnerHeaderMobile {...headerProps} />
       )} />
+      <Route exact path="/life" render={props => (
+        <InnerHeaderMobile {...headerProps} />
+      )} />
       <Route exact path="/editors" render={props => (
         <InnerHeaderMobile {...headerProps} />
       )} />

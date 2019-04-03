@@ -26,6 +26,7 @@ import { Editors } from 'pages/subpages/editors';
 import { Commercial } from 'pages/subpages/commercial';
 import { Rubrics } from 'pages/subpages/rubrics';
 import { Tags } from 'pages/subpages/tags';
+import { Life } from 'pages/subpages/life';
 
 import './main.scss';
 
@@ -347,6 +348,10 @@ class MainPage extends Component {
                     <Profile
                       isMobile={isMobile}
                     />
+                  )}
+                  />
+                  <Route exact path="/life" render={props => (
+                    <Life isMobile={isMobile} />
                   )}
                   />
                   <Route exact path="/tags" render={props => (

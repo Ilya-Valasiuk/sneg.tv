@@ -48,7 +48,7 @@ export function Menu() {
           <Row>
             <Col xs={12} className="size-14 mb-5">
               <Links title="РАЗДЕЛЫ" titleClass="mb-4 menu-links-title" itemsClass="menu-links-item" items={[
-                { link: '#', title: 'Жизнь' },
+                { link: '/life', title: 'Жизнь' },
                 { link: '#', title: 'Знания' },
                 { link: '#', title: 'Эмоции' },
               ]} />
