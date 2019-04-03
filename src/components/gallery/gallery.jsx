@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
-import Slider from "react-slick";
+import Swipe from 'react-easy-swipe';
+import classnames from 'classnames';
 import { PhotoIcon } from 'components/icons/photo';
 import { CloseIcon } from 'components/icons/close';
 import { ShareIcon } from 'components/icons/share';
@@ -15,28 +16,56 @@ import { SharePopup } from 'components/share-popup/share-popup';
 import { GALLERY_STUB_DATA, GALLERY_MORE_DATA } from './stub-data';
 
 import './gallery.scss';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-let reactSwipeEl;
-var settings = {
-  dots: false,
-  arrows: false,
-  // adaptiveHeight: true,
-  infinite: false,
-  slidesToShow: 1,
-  slidesToScroll: 1
-};
 
 export class Gallery extends Component {
   state = {
     isOpen: false,
     isShareOpened: false,
+    currentIndex: 0,
+    shouldShowPartners: false,
+  }
+
+  next = () => {
+    const dataLength = this.props.data.slides.length;
+    const { currentIndex, shouldShowPartners } = this.state;
+
+    if (dataLength === currentIndex + 1 && !shouldShowPartners) {
+      this.setState({
+        currentIndex: dataLength - 1,
+        shouldShowPartners: true,
+      })
+    } else if (dataLength === currentIndex + 1 && shouldShowPartners) {
+      // this.setState({	
+      //   currentIndex: 0,	
+      //   shouldShowPartners: false,	
+      // });	
+    } else {
+      this.setState({
+        currentIndex: currentIndex + 1,
+      })
+    }
+  }
+
+  prev = (event) => {
+    console.log(event)
+    const { currentIndex, shouldShowPartners } = this.state;
+
+    if (shouldShowPartners) {
+      this.setState({
+        shouldShowPartners: false,
+      })
+    } else {
+      this.setState({
+        currentIndex: currentIndex > 0 ? currentIndex - 1 : 0,
+      })
+    }
   }
 
   toggle = () => {
     this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
+      currentIndex: 0,
+      shouldShowPartners: false,
     }), () => {
       if (this.props.onModalToggle) {
         this.props.onModalToggle();
@@ -53,10 +82,10 @@ export class Gallery extends Component {
   render() {
     const { data, isMobile } = this.props;
     const { slides, title, ...otherProps } = data;
-    const { isOpen, isShareOpened } = this.state;
+    const { isOpen, isShareOpened, currentIndex, shouldShowPartners } = this.state;
     const maxPreviewImages = isMobile ? 3 : 5;
     const previewData = slides.slice(1, maxPreviewImages);
-    console.log(previewData, isMobile)
+    console.log(shouldShowPartners)
 
     return (
       <div className="gallery">
@@ -84,47 +113,42 @@ export class Gallery extends Component {
           </Col>
         </Row>
         {isOpen &&
-          <div className="gallery-popup">
-            {
-              !isMobile &&
-              <Fragment>
-                <div className="gallery-popup-navigation gallery-popup-navigation-left" onClick={() => reactSwipeEl.slickPrev()}>
-                  <LeftIcon3 />
-                </div>
-                <div className="gallery-popup-navigation gallery-popup-navigation-right" onClick={() => reactSwipeEl.slickNext()}>
-                  <RightIcon3 />
-                </div>
-              </Fragment>
-            }
-            <Row className="gallery-popup-header align-items-center mx-0">
-              <Col>
-                <Row>
-                  <NewsDateType {...otherProps} />
-                </Row>
-              </Col>
+          <Swipe onSwipeLeft={this.next} onSwipeRight={this.prev} tolerance={60} >
+            <div className="gallery-popup">
               {
-                isMobile &&
-                <Col xs="auto" className="px-4" onClick={this.toggleShare}>
-                  {isShareOpened ? <CloseIcon /> : <ShareIcon />}
-                </Col>
+                !isMobile &&
+                <Fragment>
+                  <div className="gallery-popup-navigation gallery-popup-navigation-left" onClick={this.prev}>
+                    <LeftIcon3 />
+                  </div>
+                  <div className="gallery-popup-navigation gallery-popup-navigation-right" onClick={this.next}>
+                    <RightIcon3 />
+                  </div>
+                </Fragment>
               }
-              <Col xs="auto" className="px-4">
-                <CloseIcon onClick={this.toggle} />
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12}>
-                <h4 className="gallery-popup-title">{title}</h4>
-              </Col>
-            </Row>
-            {isShareOpened && <SharePopup />}
-            <Slider
-              className="gallery-popup-carousel"
-              ref={el => (reactSwipeEl = el)}
-              {...settings}
-            >
-              {slides.map(item => (
-                <Row className="gallery-popup-content" key={item.id}>
+              <Row className="gallery-popup-header align-items-center mx-0">
+                <Col>
+                  <Row>
+                    <NewsDateType {...otherProps} />
+                  </Row>
+                </Col>
+                {
+                  isMobile &&
+                  <Col xs="auto" className="px-4" onClick={this.toggleShare}>
+                    {isShareOpened ? <CloseIcon /> : <ShareIcon />}
+                  </Col>
+                }
+                <Col xs="auto" className="px-4">
+                  <CloseIcon onClick={this.toggle} />
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <h4 className="gallery-popup-title">{title}</h4>
+                </Col>
+              </Row>
+              {slides.map((item, index) => (
+                <Row className={classnames('gallery-popup-content', { 'gallery-popup-content-active': currentIndex === index && !shouldShowPartners })} key={item.id}>
                   <Col xs={12} className="gallery-popup-image">
                     <img className="img-fluid" src={item.image} alt="Content" />
                   </Col>
@@ -145,8 +169,8 @@ export class Gallery extends Component {
                   }
                 </Row>
               ))}
-              <Row className="gallery-popup-partners">
-                <Col xs={12}>
+              <Row className={classnames('gallery-popup-partners', { 'gallery-popup-partners-active': shouldShowPartners })}>
+                <Col className="gallery-popup-partners-wrapper d-md-flex flex-column justify-content-center" xs={12}>
                   <h5 className="gallery-popup-partners-title mb-3">Смотрите также</h5>
                   <Row>
                     {GALLERY_MORE_DATA.map((item, index) =>
@@ -159,8 +183,9 @@ export class Gallery extends Component {
                   </Row>
                 </Col>
               </Row>
-            </Slider>
-          </div>
+              {isShareOpened && <SharePopup />}
+            </div>
+          </Swipe>
         }
       </div>
     )
