@@ -25,6 +25,7 @@ import { Contacts } from 'pages/subpages/contacts';
 import { Editors } from 'pages/subpages/editors';
 import { Commercial } from 'pages/subpages/commercial';
 import { Rubrics } from 'pages/subpages/rubrics';
+import { Tags } from 'pages/subpages/tags';
 
 import './main.scss';
 
@@ -285,7 +286,7 @@ class MainPage extends Component {
               />
               <div className="feed-blackout " />
             </Col>
-            <Col className="snow-col-main">
+            <Col className="snow-col-main" id="snow-col-main">
               <div
                 className={classnames("main", { "menu-opened": isMenuOpened })}
               >
@@ -346,6 +347,10 @@ class MainPage extends Component {
                     <Profile
                       isMobile={isMobile}
                     />
+                  )}
+                  />
+                  <Route exact path="/tags" render={props => (
+                    <Tags isMobile={isMobile} />
                   )}
                   />
                   <Route exact path="/rubrics" render={props => (

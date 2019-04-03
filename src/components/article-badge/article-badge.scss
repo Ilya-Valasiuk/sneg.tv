@@ -1,0 +1,17 @@
+@import './../../styles/breakpoints';
+
+.article-badge {
+  background-color: #13a5f7;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 6px 0 5px 0;
+
+  @media (min-width: $breakpoint-tablet-sm) {
+    padding: 6px 10px 5px 10px;
+  }
+}

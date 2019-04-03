@@ -13,7 +13,7 @@ export function Menu() {
         <Col xs={8}>
           <Row className="flex-column">
             <Col xs={12} className="mb-2 size-14 menu-links-title">Темы дня</Col>
-            <Col xs={12}>
+            <Col xs={12} className="mb-3">
               <MenuItem
                 previewText="Кокорин не пришел в полицию до истечения дедлайна МВД"
                 text="Футболист «Зенита» Александр Кокорин не пришел в полицию в указанный срок — до 18:00. Ранее МВД обещало объявить футболиста в федеральный розыск"
@@ -38,6 +38,9 @@ export function Menu() {
                 type="Жизнь"
                 date="10 октября 2018 18:16"
               />
+            </Col>
+            <Col xs={12}>
+              <More title="Ещё" link="/tags" className="text-white px-3 py-1" />
             </Col>
           </Row>
         </Col>

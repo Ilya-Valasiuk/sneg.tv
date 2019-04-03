@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
-import Swipe from 'react-easy-swipe';
-import ReactSwipe from 'react-swipe';
 import Slider from "react-slick";
 import { PhotoIcon } from 'components/icons/photo';
 import { CloseIcon } from 'components/icons/close';

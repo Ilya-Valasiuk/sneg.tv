@@ -108,6 +108,7 @@ export class NewsInner extends Component {
           type={type}
           typeLink={typeLink}
           className="pl-0 align-items-center"
+          subType="Гражданская журналистика"
         />
         <h1 className="news-inner-title font-weight-900">{title}</h1>
         <p className="news-inner-text font-italic">{previewText}</p>

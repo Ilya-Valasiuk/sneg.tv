@@ -28,11 +28,16 @@
   }
 
   .content-collapse-button {
-    font-size: 16px;
-    font-weight: bold;
-
     .control-text {
-      border-bottom: 1px solid #13a5f7;
+      font-family: HelveticaNeueCyr-Roman;
+      font-size: 14px;
+      line-height: 1.52;
+      color: #13a5f7;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 16px;
+      }
+
     }
   }
 
@@ -41,7 +46,7 @@
     color: #b4b4b4;
     line-height: 1.64;
   }
-  
+
   &-caption {
     font-family: HelveticaNeueCyr-Roman;
 
