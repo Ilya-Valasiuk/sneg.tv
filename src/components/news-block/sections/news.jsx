@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 import {
   largeBlockImg,
   newsImg1,
@@ -14,11 +15,12 @@ import './../news-block.scss';
 
 const type = 'Знания';
 
-export function News({ isTabletSm }) {
+export function News({ isTabletSm, search, isScrollElement }) {
+  console.log(search);
   return (
     <Container className="py-3 news-block padding-x-20">
       <Row noGutters className="mb-3">
-        <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15 scroll-element">
+        <Col xs={isTabletSm ? 12 : 'auto'} className={classnames('news-item-line-wrapper-large mr-15', { 'scroll-element': isScrollElement })}>
           <NewsInner
             date="10 октября 2018 18:16"
             type={type}
@@ -72,7 +74,7 @@ export function News({ isTabletSm }) {
       </Row>
 
       <Row noGutters>
-        <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15 scroll-element">
+        <Col xs={isTabletSm ? 12 : 'auto'} className={classnames('news-item-line-wrapper-large mr-15', { 'scroll-element': isScrollElement })}>
           <NewsInner
             date="10 октября 2018 18:16"
             type={type}
@@ -108,7 +110,7 @@ export function News({ isTabletSm }) {
       </Row>
 
       <Row noGutters>
-        <Col xs={isTabletSm ? 12 : 'auto'} className="news-item-line-wrapper-large mr-15 scroll-element">
+        <Col xs={isTabletSm ? 12 : 'auto'} className={classnames('news-item-line-wrapper-large mr-15', { 'scroll-element': isScrollElement })}>
           <NewsInner
             date="10 октября 2018 18:16"
             type={type}

@@ -16,6 +16,8 @@ import { NewsCommentsPopup } from 'components/news-block/news-comments/news-comm
 import { CommentCreatorPopup } from 'components/news-block/news-comments/comment-creator-popup';
 import { AuthenticationView } from 'components/authentication/authentication';
 
+import { scrollToTop } from 'utils/shared';
+
 import { Home } from 'pages/subpages/home';
 import { Inner } from 'pages/subpages/inner';
 import { AuthorArticles } from 'pages/subpages/author-articles';
@@ -29,12 +31,6 @@ import { Tags } from 'pages/subpages/tags';
 import { Life } from 'pages/subpages/life';
 
 import './main.scss';
-
-const scrollToTop = () => {
-  const scrollCol = document.body.querySelector('.snow-col-main');
-
-  if (scrollCol) scrollCol.scrollTo(0, 0);
-};
 
 class MainPage extends Component {
   constructor(props) {
@@ -333,6 +329,7 @@ class MainPage extends Component {
                       {...props}
                       isMobile={isMobile}
                       isTabletSm={isTabletSm}
+                      isTabletSm={isTabletSm}
                     />
                   )}
                   />
@@ -341,37 +338,39 @@ class MainPage extends Component {
                     <SearchResults
                       onSearch={this.search}
                       isMobile={isMobile}
+                      isTabletSm={isTabletSm}
                     />
                   )}
                   />
                   <Route exact path="/profile" render={props => (
                     <Profile
                       isMobile={isMobile}
+                      isTabletSm={isTabletSm}
                     />
                   )}
                   />
                   <Route exact path="/life" render={props => (
-                    <Life isMobile={isMobile} />
+                    <Life isMobile={isMobile} isTabletSm={isTabletSm} />
                   )}
                   />
                   <Route exact path="/tags" render={props => (
-                    <Tags isMobile={isMobile} />
+                    <Tags isMobile={isMobile} isTabletSm={isTabletSm} />
                   )}
                   />
                   <Route exact path="/rubrics" render={props => (
-                    <Rubrics isMobile={isMobile} />
+                    <Rubrics isMobile={isMobile} isTabletSm={isTabletSm} />
                   )}
                   />
                   <Route exact path="/contacts" render={props => (
-                    <Contacts isMobile={isMobile} />
+                    <Contacts isMobile={isMobile} isTabletSm={isTabletSm} />
                   )}
                   />
                   <Route exact path="/editors" render={props => (
-                    <Editors isMobile={isMobile} />
+                    <Editors isMobile={isMobile} isTabletSm={isTabletSm} />
                   )}
                   />
                   <Route exact path="/commercial" render={props => (
-                    <Commercial isMobile={isMobile} />
+                    <Commercial isMobile={isMobile} isTabletSm={isTabletSm} />
                   )}
                   />
                 </div>

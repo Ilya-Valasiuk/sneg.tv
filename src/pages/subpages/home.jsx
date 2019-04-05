@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { HeaderNews } from 'components/header-news/header-news';
+import { Themes } from 'components/shared/themes/themes';
 import { AdBanner } from 'components/ad-banner/ad-baner';
 import { LifeSection } from 'components/news-block/sections/life-section';
 import { LifeSectionMobile } from 'components/news-block/sections/life-section-mobile';
@@ -11,36 +11,44 @@ import { News } from 'components/news-block/sections/news';
 import { NewsMobile } from 'components/news-block/sections/news-mobile';
 import { withLoadingHeader } from 'components/header-news/header-loading-hoc';
 
+function HomeComponent({ isMobile, isTabletSm }) {
+  return (
+    <Fragment>
+      {!isMobile && <AdBanner bannerType="fordBanner" className="w-100" />}
+      {
+        isMobile ?
+          <Fragment>
+            <LifeSectionMobile />
+            <KnowledgeSectionMobile />
+            <EmotionSectionMobile />
+            <NewsMobile />
+          </Fragment> :
+          <Fragment>
+            <LifeSection />
+            <KnowledgeSection />
+            <EmotionSection />
+            <div className="mb-5">
+              <AdBanner bannerType="barsRestaurant" className="w-100" />
+            </div>
+            <News isTabletSm={isTabletSm} isScrollElement />
+          </Fragment>
+      }
+    </Fragment>
+  )
+}
 
-export class HomeUI extends Component {
+const HomeUI = withLoadingHeader(HomeComponent);
+
+export class Home extends Component {
   render() {
     const { isMobile, isTabletSm } = this.props;
 
     return (
-      <Fragment>
-        {!isMobile && <HeaderNews />}
-        {!isMobile && <AdBanner bannerType="fordBanner" className="w-100" />}
-        {
-          isMobile ?
-            <Fragment>
-              <LifeSectionMobile />
-              <KnowledgeSectionMobile />
-              <EmotionSectionMobile />
-              <NewsMobile />
-            </Fragment> :
-            <Fragment>
-              <LifeSection />
-              <KnowledgeSection />
-              <EmotionSection />
-              <div className="mb-5">
-                <AdBanner bannerType="barsRestaurant" className="w-100" />
-              </div>
-              <News isTabletSm={isTabletSm} />
-            </Fragment>
-        }
-      </Fragment>
+      <Themes isMobile={isMobile} isTabletSm={isTabletSm}>
+        <Fragment>
+          <HomeUI {...this.props} />
+        </Fragment>
+      </Themes>
     );
   }
 }
-
-export const Home = withLoadingHeader(HomeUI, true);

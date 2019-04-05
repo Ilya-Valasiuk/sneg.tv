@@ -88,7 +88,7 @@ export class Gallery extends Component {
     console.log(shouldShowPartners)
 
     return (
-      <div className="gallery">
+      <div className="gallery my-3">
         <Row className="gallery-widget" onClick={this.toggle}>
           <Col xs={12}>
             <img src={slides[0].image} alt="Preview large" className="gallery-widget-image-large" />

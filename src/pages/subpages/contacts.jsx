@@ -1,13 +1,11 @@
-import React, { Fragment } from 'react';
-import { HeaderNews } from 'components/header-news/header-news';
+import React from 'react';
 import { Contacts as ContactsComponent } from 'components/contacts/contacts';
+import { Themes } from 'components/shared/themes/themes';
 
-export function Contacts({ isMobile }) {
+export function Contacts({ isMobile, isTabletSm }) {
   return (
-    <Fragment>
-      {!isMobile && <HeaderNews />}
+    <Themes isMobile={isMobile} isTabletSm={isTabletSm}>
       <ContactsComponent />
-    </Fragment>
-
+    </Themes>
   );
 }

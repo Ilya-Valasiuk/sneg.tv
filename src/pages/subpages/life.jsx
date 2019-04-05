@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react';
-import { HeaderNews } from 'components/header-news/header-news';
+import React from 'react';
+import { Themes } from 'components/shared/themes/themes';
 import { Unit } from 'components/unit/unit';
 
 import { STUB_UNIT_DATA } from './stub-data';
 
-export function Life({ isMobile }) {
+export function Life({ isMobile, isTabletSm }) {
   return (
-    <Fragment>
-      {!isMobile && <HeaderNews />}
+    <Themes isMobile={isMobile} isTabletSm={isTabletSm}>
       <Unit {...STUB_UNIT_DATA.life} />
-    </Fragment>
+    </Themes>
   );
 }

@@ -1,8 +1,11 @@
 import React from 'react';
+import { Themes } from 'components/shared/themes/themes';
 import { Tags as TagsComponent } from 'components/tags/tags';
 
-export function Tags() {
+export function Tags({ isMobile, isTabletSm }) {
   return (
-    <TagsComponent />
+    <Themes isMobile={isMobile} isTabletSm={isTabletSm}>
+      <TagsComponent />
+    </Themes>
   );
 }

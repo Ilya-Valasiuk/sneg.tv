@@ -61,7 +61,6 @@ const getHeaderData = articles => {
 	const currentNewsInner = currentVisibleEl && currentVisibleEl.querySelector('.news-inner');
 	const scrolledPosition = getScrolledPosition(currentNewsInner);
 	const isViewedAll = !Boolean(currentNewsInner && currentNewsInner.querySelector('.content-collapse-button'));
-	
 
 	return {
 		title: currentTitle,
@@ -84,7 +83,7 @@ const getInitValue = (progress, title) => {
 	return Boolean(progress >= 0 && progress <= 100 && title);
 }
 
-export const withLoadingHeader = (WrappedComponent, shouldCheckProgress = true) => {
+export const withLoadingHeader = (WrappedComponent) => {
 	return class HeaderLoadingHOC extends Component {
 
 		constructor(props) {

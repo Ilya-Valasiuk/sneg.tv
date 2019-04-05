@@ -21,12 +21,12 @@ export class HeaderNews extends Component {
 
   render() {
     const { headerTitle, progress } = this.props;
-    
+
     return (
       <Fragment>
         {
           this.state.isSingleHeaderNews ?
-            <HeaderNewsSingle title={headerTitle} progress={progress} hideCloseIcon /> : <HeaderNewsGenerall />
+            <HeaderNewsSingle title={headerTitle} progress={progress} hideCloseIcon /> : <HeaderNewsGenerall onThemeChange={this.props.onThemeChange} />
         }
       </Fragment>
     )
