@@ -11,20 +11,20 @@ import { News } from 'components/news-block/sections/news';
 import { NewsMobile } from 'components/news-block/sections/news-mobile';
 import { withLoadingHeader } from 'components/header-news/header-loading-hoc';
 
-function HomeComponent({ isMobile, isTabletSm }) {
+function HomeComponent({ isMobile, isTabletSm, onMoreUnitToggle }) {
   return (
     <Fragment>
       {!isMobile && <AdBanner bannerType="fordBanner" className="w-100" />}
       {
         isMobile ?
           <Fragment>
-            <LifeSectionMobile />
+            <LifeSectionMobile onMoreUnitToggle={onMoreUnitToggle} />
             <KnowledgeSectionMobile />
             <EmotionSectionMobile />
             <NewsMobile />
           </Fragment> :
           <Fragment>
-            <LifeSection />
+            <LifeSection onMoreUnitToggle={onMoreUnitToggle} />
             <KnowledgeSection />
             <EmotionSection />
             <div className="mb-5">

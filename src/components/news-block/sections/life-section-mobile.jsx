@@ -9,7 +9,7 @@ import { STUB_DATA } from './stub-data';
 
 import './../news-block.scss';
 
-export function LifeSectionMobile({ }) {
+export function LifeSectionMobile({ onMoreUnitToggle }) {
   const NEWS_DATA = cloneDeep(STUB_DATA);
 
   return (
@@ -87,7 +87,7 @@ export function LifeSectionMobile({ }) {
       </Row>
       <Row>
         <Col className="pt-3">
-          <More title="Больше жизни" className="font-weight-bold" />
+          <More title="Больше жизни" className="font-weight-bold" onClick={onMoreUnitToggle} />
         </Col>
       </Row>
     </Container>

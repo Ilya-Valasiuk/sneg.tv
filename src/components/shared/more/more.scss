@@ -6,6 +6,12 @@
   .btn-link {
     font-size: 16px;
     color: #13a5f7;
+    border: 0;
+
+    &:active {
+      background-color: transparent !important;
+      color: #13a5f7 !important;
+    }
   }
 
   .more-dots {

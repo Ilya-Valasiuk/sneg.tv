@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Container, Row, Col, Button, Input } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import { NewsComment } from './news-comment';
-import { CloseIcon } from './../../icons/close';
+import { CloseIcon } from 'components/icons/close';
 
 import { STUB_COMMENTS } from './stub-data';
 

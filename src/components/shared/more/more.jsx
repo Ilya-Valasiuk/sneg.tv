@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 
 import './more.scss';
 
-export function More({ title, link, className }) {
+export function More({ title, link, className, onClick }) {
   return (
     <div className="more text-center border rounded">
       <Button
-        tag={Link}
+        tag={onClick ? undefined : Link}
         to={link}
         color="link"
         className={className}
+        onClick={onClick}
       >
         {title}
       </Button>

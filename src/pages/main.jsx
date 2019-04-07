@@ -15,6 +15,7 @@ import { Footer } from 'components/footer/footer';
 import { NewsCommentsPopup } from 'components/news-block/news-comments/news-comments-popup';
 import { CommentCreatorPopup } from 'components/news-block/news-comments/comment-creator-popup';
 import { AuthenticationView } from 'components/authentication/authentication';
+import { MoreUnitPopup } from 'components/more-unit-popup/more-unit-popup';
 
 import { scrollToTop } from 'utils/shared';
 
@@ -30,6 +31,8 @@ import { Rubrics } from 'pages/subpages/rubrics';
 import { Tags } from 'pages/subpages/tags';
 import { Life } from 'pages/subpages/life';
 
+import { STUB_UNIT_DATA } from 'pages/subpages/stub-data';
+
 import './main.scss';
 
 class MainPage extends Component {
@@ -44,6 +47,7 @@ class MainPage extends Component {
       isShareOpened: false,
       isModalOpened: false,
       shouldShowCommnetsPopup: false,
+      shouldShowMoreUnit: false,
       shouldShowCommnetCreatorPopup: false,
       shouldShowLogin: false,
       isDesktop: true,
@@ -58,6 +62,18 @@ class MainPage extends Component {
     if (this.props.location.pathname !== prevProps.location.pathname) {
       this.resetAllFlags();
     }
+  }
+
+  saveScrollPosition = () => {
+    this.prevSrollState = window.document.querySelector(
+      ".snow-col-main"
+    ).scrollTop;
+  }
+
+  restoreScrollPosition = () => {
+    window.document.querySelector(
+      ".snow-col-main"
+    ).scrollTop = this.prevSrollState;
   }
 
   toggleMenu = () => {
@@ -109,9 +125,7 @@ class MainPage extends Component {
 
   toggleCommentsPopup = () => {
     if (!this.state.shouldShowCommnetsPopup) {
-      this.prevSrollState = window.document.querySelector(
-        ".snow-col-main"
-      ).scrollTop;
+      this.saveScrollPosition();
     }
     this.setState(
       ({ shouldShowCommnetsPopup }) => ({
@@ -119,9 +133,23 @@ class MainPage extends Component {
       }),
       () => {
         if (!this.state.shouldShowCommnetsPopup) {
-          window.document.querySelector(
-            ".snow-col-main"
-          ).scrollTop = this.prevSrollState;
+          this.restoreScrollPosition();
+        }
+      }
+    );
+  };
+
+  toggleMoreUnit = () => {
+    if (!this.state.shouldShowMoreUnit) {
+      this.saveScrollPosition();
+    }
+    this.setState(
+      ({ shouldShowMoreUnit }) => ({
+        shouldShowMoreUnit: !shouldShowMoreUnit
+      }),
+      () => {
+        if (!this.state.shouldShowMoreUnit) {
+          this.restoreScrollPosition();
         }
       }
     );
@@ -150,6 +178,7 @@ class MainPage extends Component {
       isModalOpened: false,
       shouldShowCommnetsPopup: false,
       shouldShowCommnetCreatorPopup: false,
+      shouldShowMoreUnit: false,
       shouldShowLogin: false,
     });
   };
@@ -247,6 +276,7 @@ class MainPage extends Component {
       isMobileFeedOpened,
       isShareOpened,
       shouldShowCommnetsPopup,
+      shouldShowMoreUnit,
       shouldShowCommnetCreatorPopup,
       shouldShowLogin,
       isModalOpened,
@@ -270,7 +300,8 @@ class MainPage extends Component {
               "popup-opened":
                 isMobileFeedOpened ||
                 shouldShowCommnetsPopup ||
-                shouldShowCommnetCreatorPopup
+                shouldShowCommnetCreatorPopup ||
+                shouldShowMoreUnit
             })}
             noGutters
           >
@@ -311,6 +342,7 @@ class MainPage extends Component {
                       {...props}
                       isMobile={isMobile}
                       isTabletSm={isTabletSm}
+                      onMoreUnitToggle={this.toggleMoreUnit}
                     />
                   )}
                   />
@@ -388,6 +420,9 @@ class MainPage extends Component {
                   onToggleCommentCreatorPopup={this.toggleCommentCreatorPopup}
                   onToggleCommentsPopup={this.toggleCommentsPopup}
                 />
+              )}
+              {shouldShowMoreUnit && (
+                <MoreUnitPopup {...STUB_UNIT_DATA.life} onMoreUnitToggle={this.toggleMoreUnit} />
               )}
               {shouldShowCommnetCreatorPopup && (
                 <CommentCreatorPopup

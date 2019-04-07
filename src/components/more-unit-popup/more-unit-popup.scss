@@ -1,0 +1,40 @@
+@import '../../styles/breakpoints';
+
+.more-unit-popup {
+  position: absolute;
+  padding-left: 20px;
+  padding-right: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #f9f9f9;
+
+  @media (min-width: $breakpoint-tablet-sm) {
+    right: auto;
+    background-color: #fff;
+  }
+
+  &-title {
+    height: 51px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #2a2a2a;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      height: 102px;
+      font-size: 27px;
+      letter-spacing: normal;
+      text-transform: capitalize;
+    }
+  }
+
+  .close-icon {
+    path {
+      stroke: #2a2a2a;
+    }
+  }
+}

@@ -6,12 +6,12 @@ import { NewsItem } from './../news-item/news-item';
 import { NewsItemMain } from './../news-item-main/news-item-main';
 import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 import { More } from './../../shared/more/more';
-import { STUB_DATA, STUB_AUTHOR_COLOGNE_DATA } from './stub-data'; 
+import { STUB_DATA, STUB_AUTHOR_COLOGNE_DATA } from './stub-data';
 
 import './../news-block.scss';
 
 
-export function LifeSection({ isMobile }) {
+export function LifeSection({ isMobile, onMoreUnitToggle }) {
   const NEWS_DATA = cloneDeep(STUB_DATA);
 
   return (
@@ -32,21 +32,21 @@ export function LifeSection({ isMobile }) {
         </Col>
         <Col className="news-item-line-wrapper">
           <NewsSimpleItem
-            previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"	
-            type="Жизнь"	
-            date="10 октября 2018 18:16"	
-          />	
-          <hr />	
-          <NewsSimpleItem	
-            previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"	
-            type="Жизнь"	
-            date="10 октября 2018 18:16"	
-          />	
-          <hr />	
-          <NewsSimpleItem	
-            previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"	
-            type="Жизнь"	
-            date="10 октября 2018 18:16"	
+            previewText="СК рассказал об отказе убитого в Подмосковье следователя от госзащиты"
+            type="Жизнь"
+            date="10 октября 2018 18:16"
+          />
+          <hr />
+          <NewsSimpleItem
+            previewText="Лукашенко назвал смешной возможность вступления Белоруссии в Россию"
+            type="Жизнь"
+            date="10 октября 2018 18:16"
+          />
+          <hr />
+          <NewsSimpleItem
+            previewText="Власти Британии заморозили активы жены отбывающего срок банкира из СНГ"
+            type="Жизнь"
+            date="10 октября 2018 18:16"
           />
         </Col>
       </Row>
@@ -92,7 +92,7 @@ export function LifeSection({ isMobile }) {
       </Row>
       <Row>
         <Col className="pt-3">
-          <More title="Больше жизни" className="font-weight-bold" />
+          <More title="Больше жизни" className="font-weight-bold" onClick={onMoreUnitToggle} />
         </Col>
       </Row>
     </Container>
