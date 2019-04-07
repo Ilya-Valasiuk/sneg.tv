@@ -65,15 +65,13 @@ class MainPage extends Component {
   }
 
   saveScrollPosition = () => {
-    this.prevSrollState = window.document.querySelector(
-      ".snow-col-main"
-    ).scrollTop;
+    this.prevSrollState = window.document.querySelector('.snow-col-main').scrollTop;
+
+    window.document.querySelector('.snow-col-main').scrollTop = 0;
   }
 
   restoreScrollPosition = () => {
-    window.document.querySelector(
-      ".snow-col-main"
-    ).scrollTop = this.prevSrollState;
+    window.document.querySelector('.snow-col-main').scrollTop = this.prevSrollState;
   }
 
   toggleMenu = () => {
