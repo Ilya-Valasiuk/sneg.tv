@@ -149,14 +149,14 @@ export class Gallery extends Component {
               </Row>
               {slides.map((item, index) => (
                 <Row className={classnames('gallery-popup-content', { 'gallery-popup-content-active': currentIndex === index && !shouldShowPartners })} key={item.id}>
-                  <Col xs={12} className="gallery-popup-image">
+                  <Col xs="auto" className="gallery-popup-image">
                     <img className="img-fluid" src={item.image} alt="Content" />
                   </Col>
-                  <Col xs={12}>
+                  <Col xs="auto">
                     <p className="gallery-popup-text">{item.text}</p>
                   </Col>
                   {!isMobile &&
-                    <Col xs={12}>
+                    <Col xs="auto">
                       <Row className="gallery-popup-caption">
                         <Col>
                           <SocialIcons />

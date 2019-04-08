@@ -38,6 +38,16 @@
     }
   }
 
+  &-scoller {
+    height: calc(100% - 51px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @media (min-width: $breakpoint-tablet-sm) {
+      height: calc(100% - 102px);
+    }
+  }
+
   .close-icon {
     path {
       stroke: #2a2a2a;
