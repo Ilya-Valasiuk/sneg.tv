@@ -85,7 +85,6 @@ export class Gallery extends Component {
     const { isOpen, isShareOpened, currentIndex, shouldShowPartners } = this.state;
     const maxPreviewImages = isMobile ? 3 : 5;
     const previewData = slides.slice(1, maxPreviewImages);
-    console.log(shouldShowPartners)
 
     return (
       <div className="gallery my-3">
@@ -118,12 +117,17 @@ export class Gallery extends Component {
               {
                 !isMobile &&
                 <Fragment>
-                  <div className="gallery-popup-navigation gallery-popup-navigation-left" onClick={this.prev}>
-                    <LeftIcon3 />
-                  </div>
-                  <div className="gallery-popup-navigation gallery-popup-navigation-right" onClick={this.next}>
-                    <RightIcon3 />
-                  </div>
+                  {currentIndex > 0 &&
+                    <div className="gallery-popup-navigation gallery-popup-navigation-left" onClick={this.prev}>
+                      <LeftIcon3 />
+                    </div>
+                  }
+                  {!shouldShowPartners &&
+                    <div className="gallery-popup-navigation gallery-popup-navigation-right" onClick={this.next}>
+                      <RightIcon3 />
+                    </div>
+                  }
+
                 </Fragment>
               }
               <Row className="gallery-popup-header align-items-center mx-0">
@@ -151,6 +155,7 @@ export class Gallery extends Component {
                 <Row className={classnames('gallery-popup-content', { 'gallery-popup-content-active': currentIndex === index && !shouldShowPartners })} key={item.id}>
                   <Col xs="auto" className="gallery-popup-image">
                     <img className="img-fluid" src={item.image} alt="Content" />
+                    <div className="gallery-popup-image-element" style={{ backgroundImage: `url(${item.image})` }}></div>
                   </Col>
                   <Col xs="auto">
                     <p className="gallery-popup-text">{item.text}</p>

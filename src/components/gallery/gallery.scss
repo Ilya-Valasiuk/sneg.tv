@@ -1,5 +1,5 @@
-@import './../../styles/breakpoints';
-@import './../../styles/shared';
+@import "./../../styles/breakpoints";
+@import "./../../styles/shared";
 
 .gallery {
   &-widget {
@@ -182,7 +182,6 @@
         @media (min-width: $breakpoint-tablet-sm) {
           font-size: 14px;
           line-height: 1.36;
-
         }
       }
 
@@ -215,13 +214,32 @@
 
     &-image {
       flex: 1;
+      position: relative;
       overflow: hidden;
       // width: 100%;
       text-align: center;
 
-      // @media (min-width: $breakpoint-tablet-sm) {
-      //   padding: 0 20px;
-      // }
+      @media (min-width: $breakpoint-tablet-sm) {
+        .img-fluid {
+          visibility: hidden;
+        }
+      }
+
+      &-element {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+
+        @media (min-width: $breakpoint-tablet-sm) {
+          display: block;
+        }
+      }
 
       // @media (min-width: $breakpoint-desktop) {
       //   display: flex;
