@@ -16,7 +16,7 @@ const scrollToElement = (to) => {
 }
 
 const getLetters = lettersMap => lettersMap.map(({ name, values }) => (
-  <Col
+  <span
     key={name}
     className={classnames('tags-letter', {
       'tags-letter-disabled': values.length === 0
@@ -24,7 +24,7 @@ const getLetters = lettersMap => lettersMap.map(({ name, values }) => (
     onClick={() => scrollToElement(name)}
   >
     {name}
-  </Col>
+  </span>
 ));
 
 const getLettersValues = lettersMap => lettersMap.map(({ name, values }) => (
@@ -56,12 +56,12 @@ export function Tags() {
   return (
     <div className="tags">
       <div className="mb-5">
-        <Row className="mb-2">
+        <div className="d-flex mb-2 flex-wrap flex-lg-nowrap">
           {getLetters(STUB_DATA.lettersMapRus)}
-        </Row>
-        <Row>
+        </div>
+        <div className="d-flex flex-wrap flex-lg-nowrap">
           {getLetters(STUB_DATA.lettersMapEng)}
-        </Row>
+        </div>
       </div>
       <Row>
         {getLettersValues(STUB_DATA.lettersMapRus)}

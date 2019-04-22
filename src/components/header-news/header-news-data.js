@@ -45,4 +45,9 @@ export const HEADER_NEWS_DATA = [
     id: 8,
     link: '#',
   },
+  {
+    title: 'Ещё',
+    id: 8,
+    link: '/rubrics',
+  },
 ];

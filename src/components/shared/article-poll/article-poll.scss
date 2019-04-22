@@ -1,8 +1,14 @@
+@import './../../../styles/breakpoints';
+
 .article-poll {
   background-color: #f8f8f8;
   margin-left: -15px;
   margin-right: -15px;
   padding: 25px 15px;
+
+  @media (min-width: $breakpoint-tablet-sm) {
+    background-color: transparent;
+  }
 
   &-title {
     font-size: 20px;
@@ -17,7 +23,7 @@
     line-height: 2;
     color: #b4b4b4;
   }
-  
+
   &-results-item {
     p {
       font-family: Georgia;
@@ -58,11 +64,11 @@
       background-color: #f8f8f8;
       border-radius: 50%;
       top: 1px;
-    } 
+    }
   }
 
   .custom-control-input {
-    &:checked ~ .custom-control-label {
+    &:checked~.custom-control-label {
 
       &::before {
         background-color: white;

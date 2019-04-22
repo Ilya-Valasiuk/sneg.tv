@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import { Link } from 'components/shared/link/link';
+// import { Link } from 'components/shared/link/link';
+import { Link } from "react-router-dom";
 
 import './vertical-carousel.scss';
 
@@ -45,7 +46,7 @@ export class VerticalCarousel extends Component {
           <Row noGutters className="vertical-carousel-scroll flex-nowrap h-100 font-weight-500 ml-1">
             {data.map(({ title, id, link }, index) =>
               <Col className="px-3" xs="auto" key={id}>
-                <Link onClick={() => this.select(index)} href={link} className={classnames('d-block py-3', { 'active': index === this.state.selectedIndex })} >{title}</Link>
+                <Link onClick={() => this.select(index)} to={link} className={classnames('link d-block py-3', { 'active': index === this.state.selectedIndex })} >{title}</Link>
               </Col>
             )}
           </Row>

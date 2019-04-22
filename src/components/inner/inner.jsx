@@ -3,6 +3,7 @@ import classnames from "classnames";
 import { Container, Row, Col } from "reactstrap";
 import { AuthorArticle } from 'components/author-article/author-article';
 import { Gallery } from 'components/gallery/gallery';
+import { ArticlePoll } from 'components/shared/article-poll/article-poll'
 import { AdBanner } from "./../ad-banner/ad-baner";
 import { NewsSimpleItem } from "./../news-block/news-simple-item/news-simple-item";
 import { NewsItemPartner } from "./../news-block/news-item-partner";
@@ -74,6 +75,7 @@ export class Inner extends Component {
                 onToggleCommentsPopup={onToggleCommentsPopup}
                 emptyComments={emptyComments}
               />
+              <ArticlePoll />
               <Gallery isMobile={isMobile} onModalToggle={onModalToggle} />
               <Row>
                 <Col
