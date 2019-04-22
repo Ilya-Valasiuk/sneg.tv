@@ -81,12 +81,12 @@ export class ProfileInfo extends Component {
         </Row>
         <FormGroup check>
           <Label className="profile-info-label" check>
-            <Input type="checkbox" />Получать ответы на комментарии по почте
+            <Input type="checkbox" defaultChecked />Получать ответы на комментарии по почте
           </Label>
         </FormGroup>
         <FormGroup className="mb-3" check>
           <Label className="profile-info-label" check>
-            <Input type="checkbox" />Получать дайджест новостей на мой email
+            <Input type="checkbox" defaultChecked />Получать дайджест новостей на мой email
           </Label>
         </FormGroup>
 
