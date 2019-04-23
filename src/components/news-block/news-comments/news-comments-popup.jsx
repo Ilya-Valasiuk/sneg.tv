@@ -45,7 +45,7 @@ export class NewsCommentsPopup extends Component {
             <Col xs={12} className={classnames('pt-2', { 'news-comments-thread': isThread })}>
               <NewsComment {...{ ...comment, isThread }} />
               <div className="news-comments-buttons">
-                <Button color="link" className="ml-md-2 px-0">Ответить</Button>
+                <Button onClick={this.toggleAddingComment} color="link" className="ml-md-2 px-0">Ответить</Button>
               </div>
               {isThread && <span className="news-comments-thread-line"></span>}
             </Col>
@@ -59,7 +59,7 @@ export class NewsCommentsPopup extends Component {
             isAdding ?
               <Row className="align-items-baseline">
                 <Col>
-                  <input ref={this.inputRef} className="comment-input form-control" placeholder="Введите текс комментария" />
+                  <input ref={this.inputRef} className="comment-input form-control" placeholder="Введите текст комментария" />
                 </Col>
                 <Col xs="auto">
                   <Button color="primary" onClick={onToggleCommentsPopup}>Ответить</Button>

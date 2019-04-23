@@ -12,6 +12,7 @@ import { SocialIcons } from 'components/shared/social-icons/social-icons';
 import { SimpleArticle } from 'components/simple-article/simple-article';
 import { NewsDateType } from 'components/news-block/news-date-type/news-date-type';
 import { SharePopup } from 'components/share-popup/share-popup';
+import { Link } from 'components/shared/link/link';
 
 import { GALLERY_STUB_DATA, GALLERY_MORE_DATA } from './stub-data';
 
@@ -179,7 +180,7 @@ export class Gallery extends Component {
                   <h5 className="gallery-popup-partners-title mb-3">Смотрите также</h5>
                   <Row>
                     {GALLERY_MORE_DATA.map((item, index) =>
-                      <Col key={item.id} xs={12} md={4}>
+                      <Col tag={Link} href={item.href} key={item.id} xs={12} md={4}>
                         <SimpleArticle {...item} hideDate />
                         <div className="gallery-popup-partners-prefix">{item.count} фото</div>
                         {isMobile && GALLERY_MORE_DATA.length - 1 !== index && <hr className="my-4" />}

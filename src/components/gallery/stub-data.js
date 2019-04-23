@@ -49,15 +49,18 @@ export const GALLERY_MORE_DATA = [{
   id: 0,
   title: '«Зенит» попросил суд отпустить Кокорина из-под стражи',
   imgSrc: innerImg,
+  href: '/',
   count: 15,
 }, {
   id: 1,
   title: '«Зенит» попросил суд отпустить Кокорина из-под стражи 2',
   imgSrc: innerImg,
+  href: '/',
   count: 15,
 }, {
   id: 2,
   title: '«Зенит» попросил суд отпустить Кокорина из-под стражи 3',
   imgSrc: innerImg,
+  href: '/',
   count: 15,
 }];

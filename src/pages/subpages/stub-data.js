@@ -197,6 +197,7 @@ export const PROFILE_FAVORITES = [{
   type: 'Знания',
   date: '10 октября 2018, 18:16',
   typeLink: '#',
+  href: '/#',
   imgSrc: innerImg,
 }, {
   id: 1,
@@ -204,6 +205,7 @@ export const PROFILE_FAVORITES = [{
   type: 'Знания',
   date: '10 октября 2018, 18:16',
   typeLink: '#',
+  href: '/#',
   imgSrc: innerImg,
 }, {
   id: 2,
@@ -211,6 +213,7 @@ export const PROFILE_FAVORITES = [{
   type: 'Знания',
   date: '10 октября 2018, 18:16',
   typeLink: '#',
+  href: '/#',
   imgSrc: innerImg,
 }];
 
