@@ -280,11 +280,16 @@ class MainPage extends Component {
       isModalOpened,
     } = this.state;
     const MenuComponent = isMobile ? MenuMobile : Menu;
+    const searchParam = this.props.location.search;
+    let classPrefix;
+    if (searchParam && searchParam.split('?test=')[1]) {
+      classPrefix = `test-${searchParam.split('?test=')[1]}`;
+    }
 
     return (
       <div ref={this.containerRef}>
         <Container
-          className={classnames('snow p-0', { 'blackout-all': shouldShowLogin && !isMobile })}
+          className={classnames('snow p-0', classPrefix, { 'blackout-all': shouldShowLogin && !isMobile })}
           fluid
           onKeyDown={this.onKeyDownHandler}
           tabIndex={0}
@@ -309,6 +314,7 @@ class MainPage extends Component {
                 isSearchOpened={isSearchOpened}
                 isFeedOpened={isDesktop || isFeedOpened}
                 onFeedPanelOpen={this.toggleFeedPanel}
+                searchProps={this.props.location}
               />
               <div className="feed-blackout " />
             </Col>

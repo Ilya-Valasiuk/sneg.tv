@@ -86,9 +86,71 @@
       font-family: Georgia;
       font-size: 16px;
 
-      @media (min-width: $breakpoint-tablet-sm) {
-        font-size: 14px;
+      .test-1 & {
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
       }
+
+      .test-2 & {
+        font-family: 'EB Garamond', serif;
+
+        font-weight: 400;
+      }
+
+      .test-3 & {
+        font-family: 'Vollkorn', serif;
+
+        font-weight: 400;
+      }
+
+      .test-4 & {
+        font-family: 'Alegreya', serif;
+
+        font-weight: 400;
+      }
+
+      .test-5 & {
+        font-family: 'Cormorant Garamond', serif;
+
+        font-weight: 300;
+      }
+
+      .test-6 & {
+        font-family: 'IBM Plex Serif', serif;
+
+        font-weight: 300;
+      }
+
+      .test-7 & {
+        font-family: 'Cormorant', serif;
+
+        font-weight: 300;
+      }
+
+      .test-8 & {
+        font-family: 'Spectral', serif;
+
+        font-weight: 300;
+      }
+
+      .test-9 & {
+        font-family: 'Alegreya SC', serif;
+
+        font-weight: 400;
+      }
+
+      .test-10 & {
+        font-family: 'Cormorant Infant', serif;
+
+        font-weight: 300;
+      }
+
+      .test-11 & {
+        font-family: 'Spectral SC', serif;
+        font-weight: 300;
+      }
+
+
     }
   }
 
