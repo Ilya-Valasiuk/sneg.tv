@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { ArticleBadge } from 'components/article-badge/article-badge';
 
 import './author-article.scss';
 
@@ -15,7 +16,14 @@ export function AuthorArticle(props) {
             <img className="author-article-img img-fluid" src={authorPhoto} alt="authorPhoto" />
           </Col>
           <Col xs={6} md="" className="pl-0">
-            <p className="author-article-name mb-0">{authorName}</p>
+            <Row>
+              <Col xs={12} md={6}>
+                <p className="author-article-name mb-0">{authorName}</p>
+              </Col>
+              <Col xs={12} md={6}>
+                <ArticleBadge title="Авторская колонка" />
+              </Col>
+            </Row>
             <p className="author-article-title mb-2">{authorTitle}</p>
             <div className="d-none d-md-block">
               <p className="author-article-info">{authorInfo}</p>

@@ -60,9 +60,8 @@
   &-widget {
     .author-article {
       &-wrapper {
-        padding: 12px 10px;
-        border: solid 1px #efefef;
-        background-color: #f9f9f9;
+        padding: 14px 10px;
+        background-color: rgba(19, 165, 247, 0.06);
       }
 
       @media (min-width: $breakpoint-tablet-sm) {
