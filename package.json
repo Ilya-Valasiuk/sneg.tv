@@ -21,6 +21,7 @@
     "react-slick": "^0.23.2",
     "react-sticky": "^6.0.3",
     "react-sticky-el": "^1.0.20",
+    "react-toggle-switch": "^3.0.4",
     "reactstrap": "^6.5.0",
     "slick-carousel": "^1.8.1"
   },

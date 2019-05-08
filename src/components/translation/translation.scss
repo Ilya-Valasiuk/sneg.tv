@@ -1,0 +1,57 @@
+@import './../../../node_modules/react-toggle-switch/dist/css/switch.min.css';
+
+.translation {
+  &-show-btn {
+    width: 100%;
+    border: solid 1px #f0f0f0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #13a5f8;
+  }
+
+  &-time {
+    background-color: #f9f9f9;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #2a2a2a;
+    display: inline;
+    padding: 10px;
+  }
+
+  &-text {
+    font-family: Georgia;
+    font-size: 18px;
+    color: #2a2a2a;
+  }
+
+  &-show-comments {
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 16px;
+    color: #13a5f8;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &-switch {
+    display: flex;
+    align-items: center;
+
+    .switch-toggle {
+      background-color: #13a5f7;
+    }
+
+    .switch.on {
+      background-color: white;
+    }
+
+    span {
+      font-family: HelveticaNeueCyr;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #13a5f8;
+      text-transform: uppercase;
+    }
+  }
+}
