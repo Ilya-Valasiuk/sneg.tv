@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLightItalic.84210837.woff"
   },
   {
-    "revision": "6c41bcc784d9bf8e7c12",
-    "url": "/sneg.tv/static/css/main.fcc50da3.chunk.css"
+    "revision": "5ce83cf2c8306701df91",
+    "url": "/sneg.tv/static/css/main.40a6b230.chunk.css"
   },
   {
     "revision": "afe760ffd0c1944072ba8f7c3f47b4d5",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.afe760ff.ttf"
   },
   {
-    "revision": "2a9e7fd4d87b01d24aed",
-    "url": "/sneg.tv/static/js/1.2a9e7fd4.chunk.js"
+    "revision": "2b48f9a14c1a272cbd3f",
+    "url": "/sneg.tv/static/js/1.2b48f9a1.chunk.js"
   },
   {
     "revision": "0dafaa1fbdd491fa0c30",
@@ -144,8 +144,8 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-UltraLightItalic.2d33d321.eot"
   },
   {
-    "revision": "6c41bcc784d9bf8e7c12",
-    "url": "/sneg.tv/static/js/main.6c41bcc7.chunk.js"
+    "revision": "5ce83cf2c8306701df91",
+    "url": "/sneg.tv/static/js/main.5ce83cf2.chunk.js"
   },
   {
     "revision": "eddbfc23e6a99287dc499da74d0e0c35",
@@ -156,12 +156,12 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.3a528f42.eot"
   },
   {
-    "revision": "e87e87521b5d3a40a6011ddb2156e3a2",
-    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.e87e8752.woff"
-  },
-  {
     "revision": "b8b29bfffbfd4a2918fb88a57ab7f619",
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.b8b29bff.ttf"
+  },
+  {
+    "revision": "e87e87521b5d3a40a6011ddb2156e3a2",
+    "url": "/sneg.tv/static/media/HelveticaNeueCyr-BlackItalic.e87e8752.woff"
   },
   {
     "revision": "6e6845c8bf5e49fcff1ae035c2f016b1",
@@ -280,11 +280,11 @@ self.__precacheManifest = [
     "url": "/sneg.tv/static/media/HelveticaNeueCyr-Thin.4609737f.woff"
   },
   {
-    "revision": "2a9e7fd4d87b01d24aed",
-    "url": "/sneg.tv/static/css/1.8199c503.chunk.css"
+    "revision": "2b48f9a14c1a272cbd3f",
+    "url": "/sneg.tv/static/css/1.b4f927f4.chunk.css"
   },
   {
-    "revision": "ddbee173dca6340fe240b35f6c6fc15b",
+    "revision": "f5ca2db6d7afe22301422cfa6f151107",
     "url": "/sneg.tv/index.html"
   }
 ];
