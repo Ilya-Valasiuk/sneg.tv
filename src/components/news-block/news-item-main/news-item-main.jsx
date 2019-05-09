@@ -17,7 +17,7 @@ export function NewsItemMain({
   text,
 }) {
   return (
-    <Row tag={RouterLink} to="/inner" className="flex-column news-item-main news-item-large">
+    <Row tag={RouterLink} to={link} className="flex-column news-item-main news-item-large">
       <Col xs={12}>
         <div className="position-relative">
           <img src={imgSrc} alt={imgAlt} className="img-fluid" />
@@ -29,7 +29,7 @@ export function NewsItemMain({
           type={type}
           typeLink={typeLink}
           date={date}
-          link={link}
+          link={null}
           previewText={previewText}
           text={text}
         />
@@ -39,7 +39,7 @@ export function NewsItemMain({
 }
 
 NewsItemMain.defaultProps = {
-  link: '#',
+  link: '/inner',
   typeLink: '#',
   large: false,
   withoutLink: false,

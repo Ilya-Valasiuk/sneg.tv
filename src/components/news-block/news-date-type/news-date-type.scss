@@ -1,23 +1,32 @@
-@import '../../../styles/breakpoints';
+@import "../../../styles/breakpoints";
 
 .news-date-type {
+  cursor: pointer;
+
   .date {
     font-size: 10px;
-    color: #B4B4B4;
+    color: #b4b4b4;
     font-family: HelveticaNeueCyr-Roman;
 
     @media (min-width: $breakpoint-tablet) {
       font-size: 11px;
     }
-  } 
+  }
 
   .type {
     font-size: 10px;
     letter-spacing: 1px;
-    color: #13A5F7;
+    color: #13a5f7;
 
     @media (min-width: $breakpoint-tablet) {
       font-size: 11px;
     }
+  }
+
+  .views,
+  .comments {
+    font-family: HelveticaNeueCyr-Roman;
+    font-size: 10px;
+    color: #b4b4b4;
   }
 }

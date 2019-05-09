@@ -12,16 +12,15 @@ import {
 
 import { AuthorCologne } from 'components/news-block/author-cologne/author-cologne';
 import { NewsItem } from './../news-item/news-item';
-import { NewsSimpleItem } from './../news-simple-item/news-simple-item';
 import { More } from './../../shared/more/more';
 
-import { STUB_AUTHOR_COLOGNE_DATA } from './stub-data'; 
+import { STUB_AUTHOR_COLOGNE_DATA } from './stub-data';
 
 import './../news-block.scss';
 
 const type = 'Знания';
 
-export function KnowledgeSection({ }) {
+export function KnowledgeSection() {
   return (
     <Container className="py-3 news-block padding-x-20">
       <Row className="align-items-center mb-2">

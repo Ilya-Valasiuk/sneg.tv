@@ -13,7 +13,7 @@ import './../news-block.scss';
 
 const type = "Эмоции";
 
-export function EmotionSectionMobile({ }) {
+export function EmotionSectionMobile() {
   const NEWS_DATA = cloneDeep(STUB_DATA);
 
   return (

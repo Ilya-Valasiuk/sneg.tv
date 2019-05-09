@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { mobileCar } from '../../img/banners';
 
 import './mobile-news.scss';
 

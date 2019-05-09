@@ -27,7 +27,7 @@ export function NewsSimpleItem({ date, type, text, typeLink, previewText, link, 
 }
 
 NewsSimpleItem.defaultProps = {
-  link: '#',
+  link: '/inner',
   typeLink: '#',
   className: '',
 };

@@ -1,6 +1,5 @@
 import React from "react";
-import { Row, Col, Button } from "reactstrap";
-import { NewsSimpleItem } from "./../news-simple-item/news-simple-item";
+import { Button } from "reactstrap";
 
 import "./news-test-item.scss";
 

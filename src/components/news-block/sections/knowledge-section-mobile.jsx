@@ -10,7 +10,7 @@ import './../news-block.scss';
 
 const type = "Знания";
 
-export function KnowledgeSectionMobile({ }) {
+export function KnowledgeSectionMobile() {
   const NEWS_DATA = cloneDeep(STUB_DATA);
 
   return (

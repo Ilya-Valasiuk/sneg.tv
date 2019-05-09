@@ -2,13 +2,10 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import {
   largeBlockImg,
-  newsImg1,
 } from './../../../img/news';
 import { More } from './../../shared/more/more';
 import { NewsInnerMobile } from './../news/news-inner-mobile';
 
-import { AdBanner } from './../../ad-banner/ad-baner';
-import { NewsItem } from './../news-item/news-item';
 
 import './../news-block.scss';
 
@@ -35,7 +32,7 @@ export function NewsMobile({ }) {
             isSeparatorHidden
           />
         </Col>
-       </Row>
+      </Row>
 
       <Row noGutters>
         <Col xs={12}><hr /></Col>

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 import classnames from 'classnames';
 import { NewsFeedCollapsed } from './news-feed-collapsed';
 import { NewsFeedExpanded } from './news-feed-expanded';

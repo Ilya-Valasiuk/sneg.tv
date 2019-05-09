@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from './pages/main';
 import ScrollToTop from './components/shared/scroll-to-top/scroll-to-top';
 

@@ -19,7 +19,7 @@ import { NewsTestItem } from '../news-test-item/news-test-item';
 
 const type = 'Эмоции';
 
-export function EmotionSection({ }) {
+export function EmotionSection() {
   return (
     <Container className="py-3 news-block padding-x-20">
       <Row className="align-items-center mb-2">

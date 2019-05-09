@@ -20,7 +20,7 @@ export function NewsItem({
   dateTypeClassName,
 }) {
   return (
-    <Row tag={withoutLink ? 'div' : RouterLink} to="/inner" className={classnames('flex-column news-item', { 'no-link': withoutLink })}>
+    <Row tag={withoutLink ? 'div' : RouterLink} to={link} className={classnames('flex-column news-item', { 'no-link': withoutLink })}>
       <Col xs={12}>
         <div className={classnames('position-relative', { 'news-item-image': !large })}>
           <img src={imgSrc} alt={imgAlt} className={classnames('img-fluid', { 'w-100 min-h-100': !large, 'news-item-image-large': large })} />
@@ -31,7 +31,7 @@ export function NewsItem({
           type={type}
           typeLink={typeLink}
           date={date}
-          link={link}
+          link={withoutLink ? link : null}
           previewText={previewText}
           text={text}
           dateTypeClassName={dateTypeClassName}
@@ -42,7 +42,7 @@ export function NewsItem({
 }
 
 NewsItem.defaultProps = {
-  link: '#',
+  link: '/inner',
   typeLink: '#',
   large: false,
   withoutLink: false,

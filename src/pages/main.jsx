@@ -365,7 +365,6 @@ class MainPage extends Component {
                       {...props}
                       isMobile={isMobile}
                       isTabletSm={isTabletSm}
-                      isTabletSm={isTabletSm}
                     />
                   )}
                   />

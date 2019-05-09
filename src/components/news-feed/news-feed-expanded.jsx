@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import { SnowLogo } from '../snow-logo/snow-logo';
 
 export function NewsFeedExpanded({ onToggle, isMenuOpened }) {
