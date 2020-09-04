@@ -10,7 +10,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "moment-range": "^4.0.2",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "react": "^16.6.1",
     "react-daterange-picker": "^2.0.1",
     "react-dom": "^16.6.1",
